@@ -16,7 +16,7 @@
 <!-- Estilos -->
 <%--<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">--%>
 <!-- Bootstrap 3.3.7 -->
-<link rel="stylesheet" href="~/Styles/2018/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Styles/2018/css/bootstrap222.min.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="~/Styles/2018/css/font-awesome.min.css">
 
@@ -492,7 +492,7 @@
             </asp:LoginView>
 
             <!-- Menu Tablet, se muestra solo en esa resolucion -->
-            <ul class="menu colocar_izquierda visible_en_celular2222">
+            <ul class="menu colocar_izquierda visible_en_celular">
                 <li><a href="#" data-toggle="collapse" data-target=".menu_desplegable"><i class="icono_desplazar_menu_izquierda"></i></a></li>
                 <li class="linea_division_vertical"></li>
             </ul>
@@ -518,11 +518,32 @@
 
 
 
+
 <!--Nuevo Menu Principal -->
 <aside class="main-sidebar">
     <section class="sidebar">
       <ul class="sidebar-menu" data-widget="tree">
-       
+        
+        <li>
+          <asp:LinkButton ID="LinkButton1" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_comisiones" >
+            <i class="fa"></i>
+            <asp:Label ID="Label15" runat="server" Text="Comisiones" class="texto_menu" ></asp:Label> 
+          </asp:LinkButton>
+        </li>
+        <li>
+          <asp:LinkButton ID="LinkButton5" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_comisiones" >
+            <i class="fa"></i>
+            <asp:Label ID="Label17" runat="server" Text="Comisiones" class="texto_menu" ></asp:Label> 
+          </asp:LinkButton>
+        </li>
+        <li>
+          <asp:LinkButton ID="LinkButton16" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_comisiones" >
+            <i class="fa"></i>
+            <asp:Label ID="Label26" runat="server" Text="Comisiones" class="texto_menu" ></asp:Label> 
+          </asp:LinkButton>
+        </li>
+
+
         <li>
           <asp:LinkButton ID="LinkButton2" runat="server" href="Dashboard.aspx" class="icono_inicio" >
             <i class="fa"></i>
