@@ -14,7 +14,7 @@
 
 
 <!-- Estilos -->
-<%--<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">--%>
+
 <!-- Bootstrap 3.3.7 -->
 <link rel="stylesheet" href="~/Styles/2018/css/bootstrap222.min.css">
 <!-- Font Awesome -->
@@ -78,7 +78,7 @@
 </head>
 
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition  sidebar-mini">
     <form runat="server">
 
     <!-- Modernizr -->
@@ -123,29 +123,20 @@
 <div id="contenedor_de_pagina" class="ancho_de_pagina" >
 
 
-
-
-
-
     <!-- Cabecera-->
     <header class="menu menu-estilo1">
- 
     <div class="menu-interior" style="height: 54px!important;">
-    <!-- div#fila-ajustable -->
     <div class="fila-ajustable">
 
 
 
 
-    <header class="main-header">
-    
-    <div class="">
     <!-- Ocultar Menu -->
-    <a href="#" class="bajar_movil alinear_icono_menu" data-toggle="push-menu" role="button" >
-        <asp:Image ID="Image11" runat="server" ImageUrl="~/Styles/img/icono_menu.jpg" class="icono_menu" />
+    <header class="main-header">  
+    <a href="#" class="alinear_icono_menu" data-toggle="push-menu" role="button" >
+        <asp:Image ID="Image11" runat="server" ImageUrl="~/Styles/2018/img/icono_menu.png" class="icono_menu" />
     </a>
     </header>
-
 
 
 
@@ -509,9 +500,7 @@
 
 
     </div>
-    <!-- /div#fila-ajustable -->
     </div>
-
     </header>
     <!-- /Cabecera-->
 
@@ -523,132 +512,77 @@
 <aside class="main-sidebar">
     <section class="sidebar">
       <ul class="sidebar-menu" data-widget="tree">
-        
         <li>
-          <asp:LinkButton ID="LinkButton1" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_comisiones" >
+          <asp:LinkButton ID="LinkButton1" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_dashboard" >
             <i class="fa"></i>
-            <asp:Label ID="Label15" runat="server" Text="Comisiones" class="texto_menu" ></asp:Label> 
+            <asp:Label ID="Label15" runat="server" Text="Dashboard" class="texto_menu" ></asp:Label> 
           </asp:LinkButton>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton5" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_comisiones" >
+          <asp:LinkButton ID="LinkButton5" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_crm" >
             <i class="fa"></i>
-            <asp:Label ID="Label17" runat="server" Text="Comisiones" class="texto_menu" ></asp:Label> 
+            <asp:Label ID="Label17" runat="server" Text="CRM" class="texto_menu" ></asp:Label> 
           </asp:LinkButton>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton16" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_comisiones" >
+          <asp:LinkButton ID="LinkButton16" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_pedido" >
             <i class="fa"></i>
-            <asp:Label ID="Label26" runat="server" Text="Comisiones" class="texto_menu" ></asp:Label> 
+            <asp:Label ID="Label26" runat="server" Text="Pedidos" class="texto_menu" ></asp:Label> 
           </asp:LinkButton>
         </li>
+        <li>
+          <asp:LinkButton ID="LinkButton17" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_sucursales" >
+            <i class="fa"></i>
+            <asp:Label ID="Label27" runat="server" Text="Gestión de Sucursales" class="texto_menu" ></asp:Label> 
+          </asp:LinkButton>
+        </li>
+        <li>
+          <asp:LinkButton ID="LinkButton18" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_reportes" >
+            <i class="fa"></i>
+            <asp:Label ID="Label28" runat="server" Text="Reportes" class="texto_menu" ></asp:Label> 
+          </asp:LinkButton>
+        </li>
+        <li>
+          <asp:LinkButton ID="LinkButton19" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_finanzas" >
+            <i class="fa"></i>
+            <asp:Label ID="Label29" runat="server" Text="Finanzas" class="texto_menu" ></asp:Label> 
+          </asp:LinkButton>
+        </li>
+        <li>
+          <asp:LinkButton ID="LinkButton20" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_rrhh" >
+            <i class="fa"></i>
+            <asp:Label ID="Label30" runat="server" Text="RRHH" class="texto_menu" ></asp:Label> 
+          </asp:LinkButton>
+        </li>
+        <li>
+          <asp:LinkButton ID="LinkButton21" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_sms" >
+            <i class="fa"></i>
+            <asp:Label ID="Label31" runat="server" Text="SMS" class="texto_menu" ></asp:Label> 
+          </asp:LinkButton>
+        </li>      
 
-
-        <li>
-          <asp:LinkButton ID="LinkButton2" runat="server" href="Dashboard.aspx" class="icono_inicio" >
-            <i class="fa"></i>
-            <asp:Label ID="Label37" runat="server" Text="Inicio" class="texto_menu" ></asp:Label>  
-          </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton3" runat="server" href="#" class="icono_zarpe" >
-            <i class="fa"></i>
-            <asp:Label ID="Label6" runat="server" Text="Zarpe" class="texto_menu" ></asp:Label>  
-          </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton4" runat="server" href="Modules/Genealogy/Genealogy.aspx" class="icono_genealogia" >
-            <i class="fa"></i>
-            <asp:Label ID="Label12" runat="server" Text="Genealogía" class="texto_menu" ></asp:Label>  
-          </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton6" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_comisiones" >
-            <i class="fa"></i>
-            <asp:Label ID="Label115" runat="server" Text="Comisiones" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton7" runat="server" href="Modules/Compras/HistoricoCompras.aspx" class="icono_compras" >
-            <i class="fa"></i>
-            <asp:Label ID="Label116" runat="server" Text="Mis compras" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton8" runat="server" href="Modules/Inscribir/Inscribir_1.aspx" class="icono_inscribir" >
-            <i class="fa"></i>
-            <asp:Label ID="Label117" runat="server" Text="Inscribir" class="texto_menu" ></asp:Label>
-          </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton9" runat="server" href="Modules/Creditos/ComprarConCreditos.aspx" class="icono_creditos" >
-            <i class="fa"></i>
-            <asp:Label ID="Label118" runat="server" Text="Créditos" class="texto_menu" ></asp:Label>
-          </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton10" runat="server" href="Modules/Suscripcion/NoInscrito.aspx" class="icono_suscripcion" >
-            <i class="fa"></i>
-            <div style="margin-top:-25px; line-height: 1; " class="mover_izquierda_1">
-            <asp:Label ID="Label119" runat="server" Text="Suscripción " class="texto_menu" ></asp:Label> <br> 
-            <asp:Label ID="Label111" runat="server" Text="Mensual" class="texto_menu" ></asp:Label>  
-            </div>     
-            <%--<asp:Label ID="Label19" runat="server" Text="SuscripciónMensual" class="texto_menu" ></asp:Label> --%>   
-          </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton11" runat="server" href="Modules/X5/X5.aspx" class="icono_x5" >
-            <i class="fa"></i>
-            <asp:Label ID="Label20" runat="server" Text="Mi equipo X5" class="texto_menu" ></asp:Label>
-          </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton12" runat="server" href="Modules/X3/X3.aspx" class="icono_x3" >
-            <i class="fa"></i>
-            <asp:Label ID="Label18" runat="server" Text="Mi equipo X3" class="texto_menu" ></asp:Label>    
-          </asp:LinkButton>
-        </li>
-
-        <li>
+        <%--<li>
           <asp:LinkButton ID="LinkButton13" runat="server" href="Modules/Extralife/Extralife.aspx" class="icono_extralife" >
             <i class="fa"></i>
             <asp:Image ID="Image6" runat="server" ImageUrl="~/Styles/img/icono_menu_extralife_texto.png" 
             style="margin-top:-14px;" class="extralife_texto"/>
             <asp:Image ID="Image7" runat="server" ImageUrl="~/Styles/img/icono_menu_extralife_texto_on.png" 
-            style="margin-top:-14px;" class="extralife_texto_on"/>
-            <%--<asp:Label ID="Label22" runat="server" Text="Extralife" class="texto_menu" ></asp:Label> --%>       
+            style="margin-top:-14px;" class="extralife_texto_on"/>   
           </asp:LinkButton>
-        </li>
-
-        <li>
-          <asp:LinkButton ID="LinkButton14" runat="server" href="Modules/Herramientas/Descarga.aspx" class="icono_herramientas" >
-            <i class="fa"></i>
-            <asp:Label ID="Label19" runat="server" Text="Herramientas" class="texto_menu" ></asp:Label>    
-          </asp:LinkButton>
-        </li>
-
-        <li>
+        </li>--%>
+        
+        <%--<li>
           <asp:LinkButton ID="LinkButton15" runat="server" href="Modules/Contacto/Contacto.aspx" class="icono_ayuda" >
             <i class="fa"></i>
             <asp:Label ID="Label24" runat="server" Text="¿Quieres ayuda?" class="texto_menu" ></asp:Label>    
           </asp:LinkButton>
-        </li>
-  
+        </li>  
         <li>
           <div class="" style="border:1px solid #cccccc; padding:5px; margin:12px 11px 3px 20px ; ">
             <asp:Image ID="Image15" runat="server" ImageUrl="~/Styles/img/icono_telefono.png"/>
             <asp:Label ID="Label39" runat="server" Text="¡Contáctanos!" ForeColor="#8e8e8e" class="texto_home_13" ></asp:Label>         
           </div>
-        </li>
+        </li>--%>
 
       </ul>
     </section>
@@ -656,9 +590,36 @@
 
 
 
+<!-- Datos de Cambio -->
+<table border="0" align="center" cellpadding="0" cellspacing="0" style="width:90%!important; height:40px; ">
+            <tr>
+            <td align="right" >
+            <div id="menu_datos">                
+                <table border="0" align="center" cellpadding="0" cellspacing="0" >
+                <tr>
+                <td align="right" >
+                <%--<asp:Label ID="Label9" runat="server" Text="" Width="100px"></asp:Label>--%>
+                <asp:Label ID="lblDateTime" runat="server" Text="" ForeColor="#676664"></asp:Label>
+                </td>
 
+                <td align="right" width="115px" >
+                <%--<asp:Label ID="Label10" runat="server" Text="" Width="130px"></asp:Label>--%>
+                <asp:HyperLink ID="lnkExchangeRate" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRate.aspx">
+                    <asp:Label ID="lblExchangeRate" runat="server" Text="0.00" Font-Bold="True" ForeColor="#CC00CC"></asp:Label>
+                </asp:HyperLink>
+                <asp:Label ID="lblSeparatorTC" runat="server" Text="│" ForeColor="#676664"></asp:Label>
+                <asp:HyperLink ID="lnkExchangeRateOficial" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRateOficial.aspx">
+                    <asp:Label ID="lblExchangeRateOficial" runat="server" Text="0.00" Font-Bold="True" ForeColor="#00CCFF"></asp:Label>
+                </asp:HyperLink>
 
-
+                
+                </td>
+                </tr>
+                </table>
+            </div>
+            </td>
+            </tr>
+</table>
 
 
 
@@ -669,13 +630,11 @@
 
 
 <!-- Contenido total lado izquierda -->
-<table border="0" align="center" cellpadding="8" cellspacing="8" style="width:94%!important;  ">
+<table border="0" align="center" cellpadding="8" cellspacing="8" style="display:none;">
             <tr>
             <td align="left">
-
-
-            <!-- Menu Principal -->
-            <div  class="ocultar_en_pc"  runat="server" style="height: 90px!important;">
+            <!-- Menu Principal Horizontal -->
+            <div  class="ocultar_en_pc22"  runat="server" style="height: 90px!important; display:none;">
             <div id="menu_inicio">
                         <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/Dashboard.aspx#top" TabIndex="7"
                         CssClass="menu_inicio_borde icono_menu icono_inicio ancho_item_menu" >
@@ -729,24 +688,11 @@
                             <asp:Label ID="Label2" runat="server" Text="SMS" ></asp:Label>
                         </asp:HyperLink>
             </div>
-             <div id="menu_datos">
-                <asp:Label ID="Label9" runat="server" Text="" Width="100px"></asp:Label>
-                <asp:Label ID="lblDateTime" runat="server" Text="" ></asp:Label>
-                <br />
-                <asp:Label ID="Label10" runat="server" Text="" Width="130px"></asp:Label>
-                <asp:HyperLink ID="lnkExchangeRate" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRate.aspx">
-                    <asp:Label ID="lblExchangeRate" runat="server" Text="0.00" Font-Bold="True" ForeColor="#CC00CC"></asp:Label>
-                </asp:HyperLink>
-                <asp:Label ID="lblSeparatorTC" runat="server" Text="│" ></asp:Label>
-                <asp:HyperLink ID="lnkExchangeRateOficial" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRateOficial.aspx">
-                    <asp:Label ID="lblExchangeRateOficial" runat="server" Text="0.00" Font-Bold="True" ForeColor="#00CCFF"></asp:Label>
-                </asp:HyperLink>
-
-            </div>
+             
             </div>
 
 
-            <!-- / Menu Principal anterior -->
+            <!-- / Menu Principal antiguo -->
             <div class="tabs_lateral_contenido" style="margin-left:30px;">
                 <div class="tabs_contenido">
 
@@ -922,6 +868,9 @@
 
 
 
+
+
+
 <aside id="pagina_barra_lateral" runat="server"  >
         <div >
             <!-- Mini logo -->
@@ -955,8 +904,8 @@
 <asp:UpdatePanel ID="upMenu2" runat="server">
 <ContentTemplate>
 
-    <!-- /Menu Tiles Principal -->
-    <div id="centrado" runat="server" class="ocultar_menu_tiles">
+    <!-- /Menu Tiles Principal Ocultado -->
+    <div id="centrado" runat="server" class="ocultar_menu_tiles222" style="display:none;">
 
         <div id="fondo_menu_tablet" runat="server"  >
 
