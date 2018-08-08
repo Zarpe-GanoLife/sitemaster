@@ -49,9 +49,6 @@
 
 
 
-
-
-
 <%--    <!-- Estilos -->
     <link href='https://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
     <!-- Bootstrap -->
@@ -508,6 +505,48 @@
 
 
 
+
+
+
+
+<!-- Datos de Cambio -->
+<table border="0" align="center" cellpadding="0" cellspacing="0" style="width:90%!important; height:40px; ">
+            <tr>
+            <td align="right" >
+            <div id="menu_datos">                
+                <table border="0" align="center" cellpadding="0" cellspacing="0" >
+                <tr>
+                <td align="right" >
+                <%--<asp:Label ID="Label9" runat="server" Text="" Width="100px"></asp:Label>--%>
+                <asp:Label ID="lblDateTime" runat="server" Text="" ForeColor="#676664"></asp:Label>
+                </td>
+
+                <td align="right" class="ancho_div_cambio" >
+                <%--<asp:Label ID="Label10" runat="server" Text="" Width="130px"></asp:Label>--%>
+                <asp:HyperLink ID="lnkExchangeRate" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRate.aspx">
+                    <asp:Label ID="lblExchangeRate" runat="server" Text="0.00" Font-Bold="True" ForeColor="#CC00CC"></asp:Label>
+                </asp:HyperLink>
+                <asp:Label ID="lblSeparatorTC" runat="server" Text="│" ForeColor="#676664"></asp:Label>
+                <asp:HyperLink ID="lnkExchangeRateOficial" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRateOficial.aspx">
+                    <asp:Label ID="lblExchangeRateOficial" runat="server" Text="0.00" Font-Bold="True" ForeColor="#00CCFF"></asp:Label>
+                </asp:HyperLink>
+
+                
+                </td>
+                </tr>
+                </table>
+            </div>
+            </td>
+            </tr>
+</table>
+
+
+
+    <asp:UpdatePanel ID="upMenu" runat="server" ClientIDMode="Static">
+    <ContentTemplate>
+
+
+
 <!--Nuevo Menu Principal -->
 <aside class="main-sidebar">
     <section class="sidebar">
@@ -543,19 +582,19 @@
           </asp:LinkButton>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton19" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_finanzas" >
+          <asp:LinkButton ID="LinkButton19" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_finanzas" >
             <i class="fa"></i>
             <asp:Label ID="Label29" runat="server" Text="Finanzas" class="texto_menu" ></asp:Label> 
           </asp:LinkButton>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton20" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_rrhh" >
+          <asp:LinkButton ID="LinkButton20" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_rrhh" >
             <i class="fa"></i>
             <asp:Label ID="Label30" runat="server" Text="RRHH" class="texto_menu" ></asp:Label> 
           </asp:LinkButton>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton21" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="icono_sms" >
+          <asp:LinkButton ID="LinkButton21" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_sms" >
             <i class="fa"></i>
             <asp:Label ID="Label31" runat="server" Text="SMS" class="texto_menu" ></asp:Label> 
           </asp:LinkButton>
@@ -587,45 +626,6 @@
       </ul>
     </section>
 </aside>
-
-
-
-<!-- Datos de Cambio -->
-<table border="0" align="center" cellpadding="0" cellspacing="0" style="width:90%!important; height:40px; ">
-            <tr>
-            <td align="right" >
-            <div id="menu_datos">                
-                <table border="0" align="center" cellpadding="0" cellspacing="0" >
-                <tr>
-                <td align="right" >
-                <%--<asp:Label ID="Label9" runat="server" Text="" Width="100px"></asp:Label>--%>
-                <asp:Label ID="lblDateTime" runat="server" Text="" ForeColor="#676664"></asp:Label>
-                </td>
-
-                <td align="right" width="115px" >
-                <%--<asp:Label ID="Label10" runat="server" Text="" Width="130px"></asp:Label>--%>
-                <asp:HyperLink ID="lnkExchangeRate" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRate.aspx">
-                    <asp:Label ID="lblExchangeRate" runat="server" Text="0.00" Font-Bold="True" ForeColor="#CC00CC"></asp:Label>
-                </asp:HyperLink>
-                <asp:Label ID="lblSeparatorTC" runat="server" Text="│" ForeColor="#676664"></asp:Label>
-                <asp:HyperLink ID="lnkExchangeRateOficial" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRateOficial.aspx">
-                    <asp:Label ID="lblExchangeRateOficial" runat="server" Text="0.00" Font-Bold="True" ForeColor="#00CCFF"></asp:Label>
-                </asp:HyperLink>
-
-                
-                </td>
-                </tr>
-                </table>
-            </div>
-            </td>
-            </tr>
-</table>
-
-
-
-    <asp:UpdatePanel ID="upMenu" runat="server" ClientIDMode="Static">
-    <ContentTemplate>
-
 
 
 
