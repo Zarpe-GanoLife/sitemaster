@@ -22,7 +22,7 @@
 
 <!-- Theme style -->
 <link rel="stylesheet" href="~/Styles/2018/css/principal.css">
-<link rel="stylesheet" href="~/Styles/2018/css/skins.css">
+<link rel="stylesheet" href="~/Styles/2018/css/skins222.css">
  
 
 <!-- Elegir rango de Fecha -->
@@ -44,6 +44,9 @@
 <!-- Bootstrap 3.3.7 -->
 <script src="Styles/2018/js/bootstrap.min.js"></script>
 <script src="Styles/2018/js/adminlte.min.js"></script>
+
+
+
 
 
 
@@ -552,52 +555,52 @@
     <section class="sidebar">
       <ul class="sidebar-menu" data-widget="tree">
         <li>
-          <asp:LinkButton ID="LinkButton1" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_dashboard" >
+          <asp:HyperLink ID="LinkButton1" runat="server" NavigateUrl="~/Dashboard.aspx#top" TabIndex="7" class="menu_dashboard" >
             <i class="fa"></i>
-            <asp:Label ID="Label15" runat="server" Text="Dashboard" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
+            <asp:Label ID="Label15" runat="server" Text="Dashboard" meta:resourcekey="lblMenuHomeResource1" class="texto_menu" ></asp:Label> 
+          </asp:HyperLink>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton5" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_crm" >
+          <asp:HyperLink ID="LinkButton5" runat="server" NavigateUrl="~/Modules/CRM/CRMdashboard.aspx#top" TabIndex="8" class="menu_crm" >
             <i class="fa"></i>
-            <asp:Label ID="Label17" runat="server" Text="CRM" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
+            <asp:Label ID="Label17" runat="server" Text="CRM" meta:resourcekey="Label1Resource1" class="texto_menu" ></asp:Label> 
+          </asp:HyperLink> 
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton16" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_pedido" >
+          <asp:HyperLink ID="LinkButton16" runat="server" NavigateUrl="~/Modules/Orders/OrderDashboard.aspx#top" TabIndex="9" class="menu_pedido" >
             <i class="fa"></i>
-            <asp:Label ID="Label26" runat="server" Text="Pedidos" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
+            <asp:Label ID="Label26" runat="server" Text="Pedidos" meta:resourcekey="Label5Resource1" class="texto_menu" ></asp:Label> 
+          </asp:HyperLink>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton17" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_sucursales" >
+          <asp:HyperLink ID="LinkButton17" runat="server" NavigateUrl="~/Modules/WarehouseManager/Home.aspx#top" TabIndex="10" class="menu_sucursales" >
             <i class="fa"></i>
-            <asp:Label ID="Label27" runat="server" Text="Gestión de Sucursales" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
+            <asp:Label ID="Label27" runat="server" Text="Gestión de Sucursales" meta:resourcekey="lblBranchManagementResource1" class="texto_menu" ></asp:Label> 
+          </asp:HyperLink>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton18" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_reportes" >
+          <asp:HyperLink ID="LinkButton18" runat="server" NavigateUrl="~/Modules/Reports/Dashboard.aspx" TabIndex="10" class="menu_reportes" >
             <i class="fa"></i>
-            <asp:Label ID="Label28" runat="server" Text="Reportes" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
+            <asp:Label ID="Label28" runat="server" Text="Reportes" meta:resourcekey="Label16Resource1" class="texto_menu" ></asp:Label> 
+          </asp:HyperLink>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton19" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_finanzas" >
+          <asp:HyperLink ID="LinkButton19" runat="server" NavigateUrl="~/Modules/Management/Accounting/AccountingDashboard.aspx" class="menu_finanzas" >
             <i class="fa"></i>
-            <asp:Label ID="Label29" runat="server" Text="Finanzas" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
+            <asp:Label ID="Label29" runat="server" Text="Finanzas" meta:resourcekey="Label13Resource1" class="texto_menu" ></asp:Label> 
+          </asp:HyperLink>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton20" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_rrhh" >
+          <asp:HyperLink ID="LinkButton20" runat="server" NavigateUrl="~/Modules/RRHH/RRHHDashboard.aspx" class="menu_rrhh" >
             <i class="fa"></i>
             <asp:Label ID="Label30" runat="server" Text="RRHH" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
+          </asp:HyperLink>
         </li>
         <li>
-          <asp:LinkButton ID="LinkButton21" runat="server" href="Modules/Commissions/HistoricoCiclo.aspx" class="menu_sms" >
+          <asp:HyperLink ID="LinkButton21" runat="server" NavigateUrl="~/Modules/SMS/SmsDashboard.aspx" class="menu_sms" >
             <i class="fa"></i>
             <asp:Label ID="Label31" runat="server" Text="SMS" class="texto_menu" ></asp:Label> 
-          </asp:LinkButton>
+          </asp:HyperLink>
         </li>      
 
         <%--<li>
