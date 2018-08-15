@@ -39,15 +39,10 @@
 
 
 
-<!-- jQuery 3 -->
+<!-- jQuery -->
 <script src="Styles/2018/js/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
 <script src="Styles/2018/js/bootstrap.min.js"></script>
 <script src="Styles/2018/js/adminlte.min.js"></script>
-
-
-
-
 
 
 
@@ -539,6 +534,7 @@
                 </tr>
                 </table>
             </div>
+            <br>
             </td>
             </tr>
 </table>
