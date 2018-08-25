@@ -1,1402 +1,2113 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
- 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head runat="server">
-    <title></title>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Master.cs" Inherits="SiteMaster" %>
 
-    <%--<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">--%>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zarpe con nosotros</title>
+<link rel="shortcut icon" type="image/png" href="https://www.zar.pe/descargas/Imagenes/favicon.png"/>
+<%--<meta name="description" content="La plataforma que le ayudará a hacer crecer su negocio está aquí. Ingrese hoy y comparta nuestro contenido con todos para llegar más lejos." />--%>
+<meta name="keywords" content="zarpe, zarpe con nosotros, bienestar, salud, vida sana, emprendimiento, ganoderma,  ganoderma 365, ganoderma lucidum, hongo, hongo chino, super alimentos, latte, black, latte 365, black 365, atp, atp 365, reset, reset 365, medicina tradicional asiática , shelf mushroom, bracket fungus, conk funguss, hongo narigon, fungi, ganodermataceae, reishi, lingzhi, hongo milenario, Maca, guaraná, cordyceps, bebida energética, Rosa de Jamaica, Hibiscus sabdariffa, Flor de Jamaica, Roselle, café, café saludable, rutina, fórmula perfecta, bebida saludable" />
+<%--<link rel="canonical" href="https://www.zar.pe/" /> --%>
+
+
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/css/main.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/css/patch.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/bower_components/flag-icon-css/css/flag-icon.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/bower_components/bootstrap-drawer/dist/css/bootstrap-drawer.min.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/bower_components/slick-carousel/slick/slick.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/bower_components/slick-carousel/slick/slick-theme.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/bower_components/bootstrap/dist/css/bootstrap.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/PopupDialog.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.toastmessage-min.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+    <%-- SLider --%>
+    <%--<link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/slider/hwslider.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>--%>
+
+
+
+    <%--<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet" type="text/css">--%>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <!-- Parallax -->
+    <link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/css/parallax.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+
+
+    <!-- Slider comentarios -->
+    <%--<link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/css/slidezarpe.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+--%>
+
+
+
+
+
+<!-- PopupMessage -->
+<style>
+.aparecer 
+{
+-webkit-animation-name: MiAnimacion; /* Chrome, Safari, Opera */
+-webkit-animation-duration: 5s; /* Chrome, Safari, Opera */
+/*-webkit-animation-delay: 10s;*/
+animation-name: MiAnimacion;
+animation-duration: 8s;
+/*animation-delay: 10s;*/
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes MiAnimacion {
+from {opacity: 0; bottom:-3000%;}
+to {opacity: 1}
+}
+/* Standard syntax */
+@keyframes MiAnimacion {
+from {opacity: 0; bottom:-3000%;}
+to {opacity: 1}
+}
+
+
+
+</style>
+
 
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+
+
     </asp:ContentPlaceHolder>
 
+    </head>
+    <body class="has-drawer">
 
 
-<!-- Estilos -->
-
-<!-- Bootstrap 3.3.7 -->
-<link rel="stylesheet" href="~/Styles/2018/css/bootstrap222.min.css">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="~/Styles/2018/css/font-awesome.min.css">
-
-<!-- Theme style -->
-<link rel="stylesheet" href="~/Styles/2018/css/principal.css">
-<link rel="stylesheet" href="~/Styles/2018/css/skins222.css">
- 
-
-<!-- Elegir rango de Fecha -->
-<link rel="stylesheet" href="~/Styles/2018/css/bootstrap-datepicker.min.css">
+    <form id="Form1" runat="server">
 
 
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-
-
-<!-- jQuery -->
-<script src="Styles/2018/js/jquery.min.js"></script>
-<script src="Styles/2018/js/bootstrap.min.js"></script>
-<script src="Styles/2018/js/adminlte.min.js"></script>
-
-
-
-
-<%--    <!-- Estilos -->
-    <link href='https://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
-    <!-- Bootstrap -->
-    <link href='~/Styles/2015/css/bootstrap.css' rel="stylesheet">
-    <!-- Iconos / javascript plugins -->
-    <link href='~/Styles/2015/css/plugins.css' rel="stylesheet">
-    <!-- Estilos Base -->
-    <link href='~/Styles/2015/css/principal.css' rel="stylesheet">
-    <!-- Colores / elementos -->
-    <link href='~/Styles/2015/css/colores.css' rel="stylesheet">
-
-    <link href='~/Styles/2015/css/mensajes/jquery.toastmessage-min.css' rel="stylesheet" type="text/css">--%>
-
-
-    <!-- Menu movil -->
-    <%--<link rel="stylesheet" type="text/css" href="~/Styles/2015/menu/css/component.css" />
-    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/2015/menu/js/modernizr.custom.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
---%>
-
-<%--<script type="text/javascript">
-        document.oncontextmenu = function () { return false; }
-</script>--%>
-
-</head>
-
-
-<body class="hold-transition  sidebar-mini">
-    <form runat="server">
-
-    <!-- Modernizr -->
-    <script type='text/javascript' src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/2015/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
-
-
+    <%-- GENERAL --%>
     <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery-1.11.3.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
     <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery-ui-1.10.3.custom.min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
     <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.blockUI.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
 
-    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.alerts.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
-    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/alertify.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+
+<%--    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/bower_components/jquery/dist/jquery.min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>--%>
+    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/bower_components/bootstrap/dist/js/bootstrap.min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/bower_components/bootstrap-drawer/dist/js/drawer.min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/bower_components/slick-carousel/slick/slick.min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/js/app.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+
+
+<%--    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.alerts.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/alertify.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>--%>
     <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.bpopup.min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+<%--    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.quicksearch.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.numeric.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>--%>
+    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.toastmessage-min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
     <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.quicksearch.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
-    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General/jquery.numeric.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
 
     <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/General.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
     <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/MasterPage.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
     <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/Services.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
 
-    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/EventTesting.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+<script>
 
-    <script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/2015/css/mensajes/jquery.toastmessage-min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+    $.ajax({
+        url: 'https://api.ipstack.com/check?access_key=27feae6f49366d628feaf371f8edc3f4',
+        dataType: 'jsonp',
+        success: function (json) {
+            //alert(json.country_name);
+            var hdCountryForLocation = document.getElementById("hdCountryForLocation");
+            var btnCountryForLocation = document.getElementById("btnCountryForLocation");
 
-    <script type="text/javascript">
+            hdCountryForLocation.value = json.country_name;
+            btnCountryForLocation.click();
+        }
+    });
 
-        SetBaseUrl('<%= Page.ResolveClientUrl("~/") %>');
-        SetWebPagePath('<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"] %>');
-        SetWebVersion('<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>');
+</script>
 
-    </script>
 
-    <%--<asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" CombineScripts="True" EnableScriptGlobalization="True" AsyncPostBackTimeout="120000" ScriptMode="Release" />--%>
+
+
+<!-- Carusel Menu / Items  -->
+<%--<link type="text/css" media="all" href="slide/slide2222222.css" rel="stylesheet" />
+<script type='text/javascript' src='slide/jquery222222.js'></script>--%>
+<link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/slide/slide2.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+<script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/slide/jquery.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
+
+
+
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="http://www.masterslider.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->	
+
+
+<%--<link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/css/slidezarpe.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>--%>
+
+<%--<link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/slide/sticky.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+<link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/slide/style.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+<link rel="stylesheet" href='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/slide/pure-js-carousel.css<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'>
+
+--%>
+
+
+
+
+<asp:HiddenField ID="hdCountryForLocation" runat="server" ClientIDMode="Static" />
+<asp:Button ID="btnCountryForLocation" runat="server" ClientIDMode="Static" onclick="btnCountryForLocation_Click" style="display:none;" />
+
+
     <asp:ScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" AsyncPostBackTimeout="120000" ScriptMode="Release" />
 
 
-  
-<!-- /Total -->
-<div id="st-container" class="st-container">
 
-<!-- Contenedor principal -->
-<div id="contenedor_de_pagina" class="ancho_de_pagina" >
+<asp:UpdatePanel ID="upPopups" runat="server">
+<ContentTemplate>
+
+<!-- PopupMessage -->
+<div id="popupMessageShippingFree" runat="server" visible="false"
+     class="aparecer" style="background-color: #a4cde1; bottom:0px; position:fixed; width:100%; z-index:99998; padding:0px; ">
+    <table width="94%" border="0" align="center" cellpadding="0" cellspacing="0" >
+    <tr>
+    <td > 
+    <div style="float:right; padding-right:15px;">
+    <asp:ImageButton ID="imgShippingFreeClose" runat="server" ImageUrl="~/Styles/images/zarpe_x3.png" 
+    OnClientClick="$('#popupMessageShippingFree').bPopup().close();" style="width:100%; max-width:30px; " />
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td align="center" >
+    <asp:LinkButton ID="lnkShippingFreeSales" runat="server" OnClick="lnkShippingFreeSales_Click" style="text-decoration:none; ">
+    <asp:Image ID="imgShippingFreeSales" runat="server" ImageUrl="~/Styles/images/popup_compra_1.jpg" style="width:90%; display:none; "/>
+    <asp:Label ID="Label64" runat="server" ForeColor="#001E3A" Text="ENVÍO TOTALMENTE ¡GRATIS! EN ÓRDENES SUPERIORES A US$50" 
+    CssClass="texto_6b" ></asp:Label>
+    <br>
+    <div style="background: #ffffff; margin:10px; padding:9px; width:210px!important; border-radius:30px; text-decoration:none; 
+    color:#001E3A; width:70%; " class="texto_3">
+    <asp:Label ID="Label65" runat="server" ForeColor="#001E3A" Text="¡ORDENAR AHORA!" CssClass="texto_6b" ></asp:Label>
+    </div>
+
+    </asp:LinkButton>
+
+<%--    <asp:LinkButton ID="lnkShippingFreeClose" runat="server" OnClientClick="$('#popupMessageShippingFree').bPopup().close();">--%>
+    
+
+    
+<%--    </asp:LinkButton>--%>
+    </td>
+    </tr>
+    </table>
+</div>
+
+<!-- PopupMessage GetProductDiscount -->
+<div id="popupMessageGetProductDiscount" runat="server" visible="false" 
+    class="aparecer" style="background-color: #a4cde1; bottom:0px; position:fixed; width:100%; z-index:99999; padding:0px; ">
+    <table width="94%" border="0" align="center" cellpadding="0" cellspacing="0" >
+    <tr>
+    <td>
+    <div style="float:right; padding-right:15px;">
+    <asp:ImageButton ID="imgGetProductDiscountClose" runat="server" ImageUrl="~/Styles/images/zarpe_x3.png" 
+    OnClientClick="$('#popupMessageGetProductDiscount').bPopup().close();" style="width:100%; max-width:30px; " />
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td align="center" >
+    <asp:LinkButton ID="lnkGetProductDiscount" runat="server" OnClientClick="$('#pnlGetProductDiscount').bPopup().show(); return false;" style="text-decoration:none; ">
+    <asp:Image ID="imgGetProductDiscountSales" runat="server" ImageUrl="~/Styles/images/popup_compra_1.jpg" style="width:90%; display:none; "/>
+    <asp:Label ID="Label67" runat="server" ForeColor="#001E3A" Text="¿Deseas ahorrar hasta el 40% de descuento en nuestros productos?" CssClass="texto_6b" ></asp:Label>
+    <br>
+    <div style="background: #ffffff; margin:10px; padding:9px; width:210px!important; border-radius:30px; text-decoration:none; 
+    color:#001E3A; width:70%; " class="texto_3">
+    <asp:Label ID="Label68" runat="server" ForeColor="#001E3A" Text="¡ENTÉRATE CÓMO!" CssClass="texto_6b" ></asp:Label>
+    </div>
+
+    </asp:LinkButton>
+
+<%--    <asp:LinkButton ID="lnkGetProductDiscountClose" runat="server" OnClientClick="$('#popupMessageGetProductDiscount').bPopup().close();">
+    </asp:LinkButton>--%>
+    </td>
+    </tr>
+    </table>
+</div>
 
 
-    <!-- Cabecera-->
-    <header class="menu menu-estilo1">
-    <div class="menu-interior" style="height: 54px!important;">
-    <div class="fila-ajustable">
 
+    <!-- POPUP DESCUENTO EN PRODUCTOS -->
+<%--    <asp:HiddenField ID="hdGetProductDiscount" runat="server" ClientIDMode="Static" />
+    <asp:ModalPopupExtender ID="mpeGetProductDiscount" BehaviorID="mpeGetProductDiscount" runat="server" ClientIDMode="Static" BackgroundCssClass="modalBackground2" 
+        PopupControlID="pnlGetProductDiscount" TargetControlID="hdGetProductDiscount" CancelControlID="lnkGetProductDiscountCancel" >
+    </asp:ModalPopupExtender>--%>
 
+    <asp:Panel ID="pnlGetProductDiscount" runat="server" ClientIDMode="Static" CssClass="PopupStyle popup_ancho" style="text-align:center; height:auto;">
 
+    <asp:HiddenField ID="hdGetProductDiscountID" runat="server" Visible="false" />
+    <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" style="background-color: #ffffff; padding:7px; border-radius:6px;">
+        <tr>
+        <td align="center">
 
-    <!-- Ocultar Menu -->
-    <header class="main-header">  
-    <a href="#" class="alinear_icono_menu" data-toggle="push-menu" role="button" >
-        <asp:Image ID="Image11" runat="server" ImageUrl="~/Styles/2018/img/icono_menu.png" class="icono_menu" />
-    </a>
-    </header>
+            <br>
+            <h4>
+            <asp:Label ID="Label80" runat="server" Text="Ahorra mucho más en tus compras de producto ZARPE." ForeColor="#001e3a"></asp:Label>
+            </h4>
 
+            </td>
+        </tr>
+        <tr>
+        <td style="padding: 30px;" align="left">
 
+            <div style="height: 220px; overflow-y: scroll;" >
 
-            <asp:UpdatePanel ID="upShoppingCar" runat="server" ClientIDMode="Static">
-            <ContentTemplate>
-        
+            <asp:Label ID="Label69" runat="server" Text="¿Que tienes que hacer?" ForeColor="#001e3a"></asp:Label>
+            <br /><asp:Label ID="Label82" runat="server" Text="Al comprar un paquete mayorista o afiliarte a nuestro programa de suscripción mensual, accedes a precios de productos descontados (hasta un 40%) en tus compras siempre." ForeColor="#001e3a"></asp:Label>
 
-        <!-- Menu tablet -->
-        <%--<div id="st-trigger-effects" class="">
-			<button id="Button1" runat="server" data-effect="st-effect-1" style="background:#ffffff; border:1px solid #ffffff;padding: 12px;">
-             <asp:Image ID="Image2" runat="server" 
-                    ImageUrl="~/Styles/2015/img/icono_menu4.png" Width="26px" />
-            </button>
-		</div>--%>
+            <br /><br />
+            <asp:Label ID="Label83" runat="server" Text="¿Cómo funciona?" ForeColor="#001e3a"></asp:Label>
+            <br /><asp:Label ID="Label84" runat="server" Text="Compra un paquete mayorista o subscribete a nuestro programa con una compra de US$100 en valor de producto y automáticamente conviértete en un afiliado y te entregaremos lo siguiente:" ForeColor="#001e3a"></asp:Label>
 
-        <div class=" ocultar_en_celular ocultar_en_tablet ocultar_en_pc">
-            <ul class="menu colocar_izquierda">
-                <!-- Icono en Pc -->
-                <li style="display:none">
-                <%--<li class="visible_en_pc">--%>
-                    <a href="#" id="desplazar_menu_izquierda" >
-                        <i class="icono_desplazar_menu_izquierda" ></i>
-                    </a>
-                </li>
+            <br /><br />
+            <asp:Label ID="Label85" runat="server" Text="En un paquete mayorista 4 unidades de tu elección de los productos de Zarpe." ForeColor="#001e3a"></asp:Label>
+            <br /><asp:Label ID="Label86" runat="server" Text="En una Suscripción Mensual te entregaremos 5 unidades de tu elección (Siempre y cuando hagas tus compras todos los meses)." ForeColor="#001e3a"></asp:Label>
 
+            <br /><br />
+            <asp:Label ID="Label87" runat="server" Text="*Los Afiliados son personas que han comprado al menos una vez en los últimos 6 meses un paquete de US$100 dólares en una sola compra y por esto reciben un descuento en el precio de nuestros productos." ForeColor="#001e3a"></asp:Label>
+            <br /><asp:Label ID="Label88" runat="server" Text="**Los afiliados suscritos a nuestro programa de compras (Al menos US$100 dólares), hacen un compromiso de comprar nuestros productos mensualmente y acceden a un descuento aún mayor!" ForeColor="#001e3a"></asp:Label>
 
-                <!-- /Icono en Pc -->
-
-                <!-- Icono en Tablet -->
-                <li style="display:none">
-                <%--<li class="visible_en_tablet">--%>
-                    <a href="#" data-toggle="collapse" data-target=".menu_desplegable" >
-                        <i class="icono_desplazar_menu_izquierda"></i>
-                    </a>
-                </li>
-                <!-- /Icono en Tablet -->
-
-            </ul>
-        </div>
-        <!-- /Menu tablet -->
-
-
-
-        <!-- Logo -->
-        <div class="">
-            <div id="contenedor_logo_principal">
-            <asp:Image ID="imgLogoGanoLife" runat="server" 
-                    ImageUrl="~/Styles/2015/img/logo.png" CssClass="colocar_izquierda bajar_logo logo_movil" 
-                    AlternateText="Logo GanoLife" ToolTip="Logo GanoLife" 
-                    meta:resourcekey="imgLogoGanoLifeResource1"/>
-            <asp:Image ID="imgline" runat="server" 
-                    ImageUrl="~/Styles/2015/img/linea_de_division.png" CssClass="colocar_izquierda" 
-                    ToolTip="Logo GanoLife" meta:resourcekey="imglineResource1"/>
-
-            <div class="colocar_busqueda_principal " TabIndex="1" >
-            <asp:TextBox ID="txtSearchSuggestion" runat="server" ClientIDMode="Static" 
-                    CssClass="campo_texto_busqueda_principal colocar_izquierda" MaxLength="30" 
-            placeholder="Que desea hacer hoy" meta:resourcekey="txtSearchResource1"></asp:TextBox>
             </div>
 
+        </td>
+        </tr>
 
-<%--            <div class="colocar_derecha colocar_webkit" style="margin-top: 10px;">
-            <table width="80px" border="0" align="left" cellpadding="8" cellspacing="8" style="margin-top:-6px; margin-left:20px;">
-                  <tr>
-                    <td align="left">
-                    <asp:ImageButton ID="btnEnglish" runat="server" CommandArgument="en-US" OnClientClick='ChangeLanguage("en-US");' ToolTip="Ingles" ImageUrl="~/Styles/2015/img/banderas1.gif" 
-                        meta:resourcekey="btnEnglishResource1" />
-                    </td>
+        <tr style="height:120px;" align="center">
+        <td>
+        <hr />
+        <br />
 
-                    <td align="right">
+        <asp:LinkButton ID="lnkGetProductDiscount_ORV" onclick="lnkPackAdd_Click" runat="server" Width="294px" 
+        style="display:inline-block; text-decoration:none!important; text-align: center;">
+        <div style="background: #afcbe0 !important; margin:10px; padding:20px; padding-bottom:10px; padding-top:10px; border-radius:30px; text-decoration:none!important; ">
+        <asp:Label ID="Label79" runat="server" ForeColor="#001e3a" CssClass="titulo_7" Text="Compra un Paquete de Suscripción" ></asp:Label>
+        </div>
+        </asp:LinkButton>
+
+        <asp:LinkButton ID="lnkGetProductDiscount_X1" runat="server" onclick="lnkPackAdd_Click" Width="294px" 
+        style="display:inline-block; text-decoration:none!important; text-align: center;">
+        <div style="background: #afcbe0 !important; margin:10px; padding:20px; padding-bottom:10px; padding-top:10px; border-radius:30px; text-decoration:none!important; ">
+        <asp:Label ID="Label70" runat="server" ForeColor="#001e3a" CssClass="titulo_7" Text="Compra un Paquete Mayorista" ></asp:Label>
+        </div>
+        </asp:LinkButton>
+
+
+        </td>
+        </tr>
+
+
+    </table>
+
+    </asp:Panel>
+
+
+
+
+</ContentTemplate>
+</asp:UpdatePanel>
+
+
+
+
+<div class="wrapper-general">
+
+
+<!-- Menu movil antiguo -->
+<div id="drawerExample" class="drawer dw-xs-10 dw-sm-6 dw-md-4 fold" aria-labelledby="drawerExample">
+
+    <div class="drawer-contents">
+        <div class="drawer-heading">
+            <h2 class="drawer-title"><asp:Image ID="imgLogoResponsive" runat="server" ImageUrl="~/Styles/images/GanoLife.png" alt="" /></h2>
+        </div>
+        <ul class="drawer-nav">
+            <li role="presentation" class="nav-mov" id="liMenuHomeResponsive" runat="server">
+                 <asp:HyperLink ID="lnkHomeResponsive" runat="server" NavigateUrl="~/Home_Zarpe.aspx">
+                        <asp:Label ID="lbHomeResponsive" runat="server" Text="Home"></asp:Label>
+                 </asp:HyperLink>
+            </li>
+            <li role="presentation" class="nav-mov" id="liMenuProfileResponsive" runat="server">
+                 <asp:HyperLink ID="lnkProfileResponsive" runat="server" NavigateUrl="~/Zarpe/Profile_Zarpe.aspx">
+                        <asp:Label ID="lbProfileResponsive" runat="server" Text="Mi Perfil"></asp:Label>
+                 </asp:HyperLink>
+            </li>
+            <li role="presentation" class="nav-mov" id="liMenuSecretResponsive" runat="server">
+                 <asp:HyperLink ID="lnkSecretResponsive" runat="server" NavigateUrl="~/Secret_Zarpe.aspx">
+                        <asp:Label ID="lbSecretResponsive" runat="server" Text="Fórmula"></asp:Label>
+                 </asp:HyperLink>
+            </li>
+            <li role="presentation" class="nav-mov" id="liMenuProductsResponsive" runat="server">
+                <asp:HyperLink ID="lnkProductsResponsive" runat="server" NavigateUrl="~/Products_Zarpe.aspx">
+                        <asp:Label ID="lbProductsResponsive" runat="server" Text="Productos"></asp:Label>
+                 </asp:HyperLink>
+            </li>
+            <%--<li role="presentation" class="nav-mov" data-nav="formula" id="liMenuFormuleResponsive" runat="server">
+                <asp:HyperLink ID="lnkFormuleResponsive" runat="server" NavigateUrl="~/Home.aspx#formula">
+                        <asp:Label ID="lbFormuleResponsive" runat="server" Text="Fórmula"></asp:Label>
+                 </asp:HyperLink>
+            </li>--%>
+            <%--<li role="presentation" class="nav-mov" data-nav="historia" id="liMenuHistoryResponsive" runat="server">
+                <asp:HyperLink ID="lnkHistoryResponsive" runat="server" NavigateUrl="~/Home.aspx#historia">
+                        <asp:Label ID="lbHistoryResponsive" runat="server" Text="Historia"></asp:Label>
+                 </asp:HyperLink>
+            </li>--%>
+<%--            <li role="presentation" class="nav-mov" id="liMenuSecretResponsive" runat="server">
+                <asp:HyperLink ID="lnkSecretResponsive" runat="server" NavigateUrl="~/Secret.aspx">
+                        <asp:Label ID="lbSecretResponsive" runat="server" Text="Secreto"></asp:Label>
+                 </asp:HyperLink>
+            </li>
+            <li role="presentation" class="nav-mov" id="li7" runat="server">
+                <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Products.aspx">
+                        <asp:Label ID="Label27" runat="server" Text="Productos"></asp:Label>
+                 </asp:HyperLink>
+            </li>--%>
+            <li role="presentation" class="nav-mov" id="liMenuSuperResponsive" runat="server">
+                <asp:HyperLink ID="lnkSuperResponsive" runat="server" NavigateUrl="~/SuperAlimentos_Zarpe.aspx">
+                        <asp:Label ID="lbSuperResponsive" runat="server" Text="Súper Alimentos"></asp:Label>
+                 </asp:HyperLink>
+            </li>
+<%--            <li role="presentation" class="nav-mov" id="li8" runat="server">
+                <asp:HyperLink ID="lnkSuperResponsive" runat="server" NavigateUrl="~/.aspx">
+                        <asp:Label ID="lbSuperResponsive" runat="server" Text=""></asp:Label>
+                 </asp:HyperLink>
+            </li>--%>
+            <li role="presentation" class="nav-mov" id="liMenuOportunityResponsive" runat="server">
+                <asp:HyperLink ID="lnkOportunityResponsive" runat="server" NavigateUrl="~/Opportunity_Zarpe.aspx">
+                        <asp:Label ID="lbOportunityResponsive" runat="server" Text="Oportunidad"></asp:Label>
+                 </asp:HyperLink>
+            </li>
+
+            <li role="presentation" class="nav-mov" id="li1" runat="server">
+                <div style="margin-left:15px;">
+                        <asp:Label ID="Label14" runat="server" ForeColor="#777777" Text="Zarpe"></asp:Label>
+                 </div>
+
+                <ul style="margin-left:-20px; ">
+                <li id="liMenuZarpe_HomeZarpeResponsive" runat="server">
+                    <asp:HyperLink ID="lnkZarpe_HomeZarpeResponsive" runat="server" NavigateUrl="~/Zarpe/Home_Zarpe.aspx">- 
+                    <asp:Label ID="lbZarpe_HomeZarpeResponsive" runat="server" Text="Home"></asp:Label> </asp:HyperLink></li>
+
+
+                <li id="liMenuZarpe_DashboardZarpeResponsive" runat="server">
+                    <asp:HyperLink ID="lnkZarpe_DashboardZarpeResponsive" runat="server" NavigateUrl="~/Zarpe/Dashboard_Zarpe.aspx">- 
+                    <asp:Label ID="lbZarpe_DashboardZarpeResponsive" runat="server" Text="Tablero de Control"></asp:Label> </asp:HyperLink></li>
+
+                <li id="liMenuZarpe_ProfileZarpeResponsive" runat="server">
+                    <asp:HyperLink ID="lnkZarpe_ProfileZarpeResponsive" runat="server" NavigateUrl="~/Zarpe/Profile_Zarpe.aspx">- 
+                    <asp:Label ID="lbZarpe_ProfileZarpeResponsive" runat="server" Text="Influenciador"></asp:Label> </asp:HyperLink></li>
+
+                <li id="liMenuZarpe_First10HomeZarpeResponsive" runat="server">
+                    <asp:HyperLink ID="lnkZarpe_First10HomeZarpeResponsive" runat="server" NavigateUrl="~/Zarpe/First10_Home_Zarpe.aspx">- 
+                    <asp:Label ID="lbZarpe_First10HomeZarpeResponsive" runat="server" Text="Mis Primeros $10.00"></asp:Label> </asp:HyperLink></li>
+
+                <li id="liMenuZarpe_First10SendCouponZarpeResponsive" runat="server">
+                    <asp:HyperLink ID="lnkZarpe_First10SendCouponZarpeResponsive" runat="server" NavigateUrl="~/Zarpe/First10_SendCoupon_Zarpe.aspx">- 
+                    <asp:Label ID="lbZarpe_First10SendCouponZarpeResponsive" runat="server" Text="Envie Descuentos a tus Amigos"></asp:Label> </asp:HyperLink></li>
+
+                <%--<li><asp:HyperLink ID="HyperLink17" runat="server" NavigateUrl="~/Zarpe/Get3_Home_Zarpe.aspx">- 
+                    <asp:Label ID="Label35" runat="server" Text="Consiga 3, reciba el suyo GRATIS"></asp:Label> </asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink18" runat="server" NavigateUrl="~/Zarpe/Dashboard_Zarpe.aspx">- 
+                    <asp:Label ID="Label40" runat="server" Text="Tablero de Control"></asp:Label> </asp:HyperLink></li>--%>
+                </ul>
+            </li>
+
+
+            <li role="presentation" class="nav-mov" data-nav="rutina" id="liMenuPurchaseResponsive" runat="server">
+                <div class="btn_comprar" >
+                 <asp:HyperLink ID="lnkPurchaseResponsive" runat="server" NavigateUrl="~/Modules/Sales/ShoppingCar_02_Products.aspx">
+                    <asp:Label ID="lbPurchaseResponsive" runat="server" Text="Comprar" ForeColor="#ffffff"></asp:Label>
+                 </asp:HyperLink>
+                 </div>
+            </li>
+
+            <li role="presentation" class="nav-mov" data-nav="plan365" id="liMenuPlan365Responsive" runat="server" visible="false">
+                <asp:HyperLink ID="lnkPlan365Responsive" runat="server" NavigateUrl="~/Modules/Sales/ShoppingCar_01_Home.aspx">
+                        <asp:Label ID="lbPlan365Responsive" runat="server" Text="Plan 365"></asp:Label>
+                 </asp:HyperLink>  
+            </li>
+        </ul>
+        <div class="" style="margin-top:30px; margin-left:20px;">
+            <small>
+                <asp:Image ID="imgMailBlack" runat="server" ImageUrl="~/Styles/images/icono_mail_black.png" alt="" Width="30px" /> 
+                <asp:Label ID="lbMailBlack" runat="server" Text="Email: info@ganolife.com"> </asp:Label>
+            </small>
+        </div>
+    </div>
+
+</div>
+
+<asp:UpdatePanel ID="upMasterPage" runat="server">
+<ContentTemplate>
+
+
+
+<!-- Menu Superior -->
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style=" background:#042743!important;" id="divHiddenInShare" runat="server">
+    <tr>
+    <td align="center"> 
+
+    <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:1100px">
+        <tr>
+        <td>
+            <ul class="nav navbar-nav--top ">
+                <!-- Menu Movil -->
+                <li class="dropdown">
                     
-                    <asp:ImageButton ID="btnSpanish" runat="server" CommandArgument="es-PE" OnClientClick='ChangeLanguage("es-PE");' ToolTip="Español" ImageUrl="~/Styles/2015/img/banderas3.gif"
-                        meta:resourcekey="btnSpanishResource1" />
+                    
+
+
+                    
+                    <asp:HyperLink ID="HyperLink5" runat="server"  href="#" class="dropdown-toggle ver_en_movil" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <div class="ver_en_movil" >
+                        <asp:Image ID="imgMenuLogin" runat="server" ImageUrl="~/Styles/images/zarpe_menu1.jpg" class="zarpe_iconomenu"/>
+                        <asp:Label ID="Label60" runat="server" ForeColor="#ffffff" Text="MENÚ" class="texto_18" style="margin-left:10px;" ></asp:Label>
+                        </div>
+                    </asp:HyperLink>
+                    
+
+                    <ul class="dropdown-menu dropdown-menu--black" style="width:100px!important;margin-left:10px!important; min-width:170px!important;">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink7" runat="server" Text="IR A GANOLIFE.COM" style="display:none;" 
+                        NavigateUrl="https://www.ganolife.com" Target="_blank" Font-Bold="true" class="texto_18" ForeColor="#042842"></asp:HyperLink>
+                        </li>
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink10" runat="server" Text="IR A ZAR.PE" style="display:none;" 
+                        NavigateUrl="https://www.zar.pe/" Target="_blank" 
+                        Font-Bold="true" class="texto_18" ForeColor="#042842"></asp:HyperLink>
+                        </li>
+
+                        
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink41" runat="server" Text="Inicio" 
+                        NavigateUrl="~/Home_Zarpe.aspx" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
+                            <hr style="background:#a7b0c1!important; margin: 3px!important; margin-left:15px!important; ">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink42" runat="server" Text="Fórmula" 
+                        NavigateUrl="~/Secret_Zarpe.aspx" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
+                            <hr style="background:#a7b0c1!important; margin: 3px!important; margin-left:15px!important; ">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink44" runat="server" Text="Súper Alimentos" 
+                        NavigateUrl="~/SuperAlimentos_Zarpe.aspx" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
+                            <hr style="background:#a7b0c1!important; margin: 3px!important; margin-left:15px!important; ">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink45" runat="server" Text="Productos" 
+                        NavigateUrl="~/Products_Zarpe.aspx" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
+                            <hr style="background:#a7b0c1!important; margin: 3px!important; margin-left:15px!important; ">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink46" runat="server" Text="Negocio en línea" 
+                        NavigateUrl="~/Share_Zarpe.aspx" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
+                            <hr style="background:#a7b0c1!important; margin: 3px!important; margin-left:15px!important; ">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink47" runat="server" Text="Oportunidad" 
+                        NavigateUrl="~/Opportunity_Zarpe.aspx" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
+                            <hr style="background:#a7b0c1!important; margin: 3px!important; margin-left:15px!important; ">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink48" runat="server" Text="Comprar" 
+                        NavigateUrl="~/Modules/Sales/ShoppingCar_02_Products.aspx" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
+                            
+                            <hr style="background:#a7b0c1!important; margin: 1px!important; margin-left:15px!important; margin-bottom:12px!important;">
                        
-                    </td>
-                    boton_paises
-                  </tr>
-                </table>
-            </div>--%>
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink49" runat="server" Text="Mi cuenta" 
+                        NavigateUrl="~/Zarpe/Profile_Zarpe.aspx" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
+                            <hr style="background:#a7b0c1!important; margin: 3px!important; margin-left:15px!important; ">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="lnkMenuBackOfficeResponsive" runat="server" Text="Oficina Virtual" 
+                        NavigateUrl="#" Target="_blank" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
 
 
-             <!-- Idiomas -->
-             <ul class="colocar_derecha colocar_botones_principal" style="margin-top: 10px;" >
-                    <li class="desplegable notificaciones_desplegable">
-                        <asp:HyperLink ID="lnkCurrentLanguage" runat="server" NavigateUrl="#" TabIndex="5" 
-                        class="boton_basico boton_idiomas" data-toggle="desplegable" >
-                            <asp:Image ID="imgCurrentLanguage" runat="server" CssClass="icono_adaptable_pais_s" meta:resourcekey="imgCurrentLanguageResource1"/>
-&nbsp;&nbsp;
-                        </asp:HyperLink>
-                            <ul class="menu_desplegable menu_desplegable_alinear_idiomas aparecer3" style="z-index: 1100; box-shadow: 0 3px 15px rgba(0,0,0,.5) !important;">
+                         <hr style="background:#a7b0c1!important; margin: 3px!important; margin-left:15px!important; ">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink51" runat="server" Text="Contacto" 
+                        NavigateUrl="~/ContactUs.aspx" Font-Bold="true" class="texto_20" ForeColor="#042745"></asp:HyperLink>
+                        </li>
 
-                                 <asp:DataList ID="dtlLanguage" runat="server" RepeatColumns="3" ClientIDMode="Static"
-                                    RepeatDirection="Horizontal" onitemdatabound="dtlLanguage_ItemDataBound" 
-                                     meta:resourcekey="dtlLanguageResource1" >
-                                <ItemTemplate>
-                                    <div class="etiqueta menu_desplegable_item" align="center" style="margin-top: 10px;">
-                                        <asp:HiddenField ID="hdCode" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "Code") %>' />
-                                        <div class="itemborde efecto_zoom" align="center">
-                                        <asp:ImageButton ID="imgSelectLanguage" runat="server" 
-                                                CssClass="icono_adaptable_pais" OnClientClick='<%# "ChangeLanguage(\""+DataBinder.Eval(Container.DataItem, "Code")+"\");" %>'
-                                                OnClick="imgSelectLanguage_Click" />
-                                        </div>
-                                        <br>
-                                        <asp:Label ID="lbSelectLanguage" runat="server" 
-                                            Text='<%# DataBinder.Eval(Container.DataItem, "Description") %>' 
-                                            CssClass="texto_gris" Font-Bold="False" ></asp:Label>
-
-                                    </div>
-                                </ItemTemplate>
-                            </asp:DataList>
-
-                            </ul>
-                    </li>  
-             </ul>
+                    </ul>
+                </li> 
 
 
-            <!-- Empresas -->
-            <ul class="colocar_derecha colocar_botones_principal" style="margin-top: 10px;" >
-                    <li class="desplegable notificaciones_desplegable">
-                        <asp:LinkButton ID="lnkCurrentCompany" runat="server" href="#" TabIndex="4"
-                            class="boton_basico boton_empresas" data-toggle="desplegable" >
-                            <asp:Image ID="imgCurrentCompany" runat="server" CssClass="icono_adaptable_empresa_s"  meta:resourcekey="imgCurrentCompanyResource1"/>
-&nbsp;&nbsp;
-                            <asp:Label ID="lbCurrentCompany" runat="server" Text="Empresas" 
-                            CssClass="ocultar_en_tablet_landscape boton_empresas_alinear_texto" 
-                            meta:resourcekey="lbCurrentCompanyResource1" ></asp:Label>
-</asp:LinkButton>
-
-                            <ul class="menu_desplegable menu_desplegable_alinear_empresas aparecer3" style="z-index: 1100; box-shadow: 0 3px 15px rgba(0,0,0,.5) !important;">
-
-                            <asp:DataList ID="dtlCompanyAccess" runat="server" RepeatColumns="3" ClientIDMode="Static"
-                            RepeatDirection="Horizontal" onitemdatabound="dtlCompanyAccess_ItemDataBound" meta:resourcekey="dtlCompanyAccessResource1" >
-                                     <ItemTemplate>
-                                         <div align="center" class="etiqueta menu_desplegable_item" 
-                                             style="margin-top: 10px;">
-                                             <asp:HiddenField ID="hdCompanyID" runat="server" 
-                                                 Value='<%# DataBinder.Eval(Container.DataItem, "CompanyID") %>' />
-                                             <div align="center" class="itemborde efecto_zoom">
-                                                 <asp:ImageButton ID="imgSelectCompany" runat="server" 
-                                                     CssClass="icono_adaptable_empresas" 
-                                                     meta:resourcekey="imgSelectCompanyResource1" OnClick="imgSelectCompany_Click" />
-                                             </div>
-                                             <br>
-                                             <asp:Label ID="lbSelectCompany" runat="server" CssClass="texto_gris" 
-                                                 Font-Bold="False" meta:resourcekey="lbSelectCompanyResource1" 
-                                                 Text='<%# DataBinder.Eval(Container.DataItem, "CompanyName") %>'></asp:Label>
-                                             </br>
-                                         </div>
-                                     </ItemTemplate>
-                            </asp:DataList>
-
-                            </ul>
-                    </li>
-             </ul>
-
-
-            <!-- Paises -->
-            <ul class="colocar_derecha colocar_botones_principal" style="margin-top: 10px;" >
-                    <li class="desplegable notificaciones_desplegable">
-                        <asp:LinkButton ID="lnkCurrentCountry" runat="server" href="#" TabIndex="3" 
-                        class="boton_basico boton_paises" data-toggle="desplegable" >
-                            <asp:Image ID="imgCurrentCountry" runat="server" CssClass="icono_adaptable_pais_s"  meta:resourcekey="imgCurrentCountryResource1"/>
-&nbsp;&nbsp;
-                        <asp:Label ID="lbCurrentCountry" runat="server" Text="Paises" 
-                            CssClass="ocultar_en_tablet_landscape boton_paises_alinear_texto" 
-                            meta:resourcekey="lbCurrentCountryResource1"></asp:Label>
-</asp:LinkButton>
-
-                            <ul class="menu_desplegable menu_desplegable_alinear_paises aparecer3" style="z-index: 1100; box-shadow: 0 3px 15px rgba(0,0,0,.5) !important;">
-
-                            <asp:DataList ID="dtlCountryAccess" runat="server" RepeatColumns="3" ClientIDMode="Static"
-                            RepeatDirection="Horizontal" onitemdatabound="dtlCountryAccess_ItemDataBound" meta:resourcekey="dtlCountryAccessResource1" >
-                                    <ItemTemplate>
-                                    <div class="etiqueta menu_desplegable_item" align="center" style="margin-top: 10px;">
-                                        <asp:HiddenField ID="hdCountryID" runat="server" 
-                                            Value='<%# DataBinder.Eval(Container.DataItem, "CountryID") %>' />
-                                        <div class="itemborde efecto_zoom" align="center">
-                                        <asp:ImageButton ID="imgSelectCountry" runat="server" 
-                                                CssClass="icono_adaptable_pais" onclick="imgSelectCountry_Click" 
-                                                meta:resourcekey="imgSelectCountryResource1" />
-                                        </div>
-                                        <br>
-                                        <asp:Label ID="lbSelectCountry" runat="server" 
-                                            Text='<%# DataBinder.Eval(Container.DataItem, "CountryName") %>' 
-                                            CssClass="texto_gris" Font-Bold="False" 
-                                            meta:resourcekey="lbSelectCountryResource1" ></asp:Label>
-
-                                    </div>
-                                </ItemTemplate>
-                            </asp:DataList>
-
-                            </ul>
-                    </li>
-             </ul>
-
-
-            <!-- Favoritos -->
-             <ul class="colocar_derecha colocar_botones_principal" style="margin-top: 10px;" >
-                    <li class="desplegable notificaciones_desplegable">
-                        <asp:HyperLink ID="lnkFav" runat="server" NavigateUrl="#" TabIndex="2" 
-                            class="boton_basico boton_favoritos" data-toggle="desplegable">
-                            <asp:Label ID="lblFav1" runat="server" Text="Favoritos" meta:resourcekey="lblFav1Resource1" ></asp:Label>
-</asp:HyperLink>         
-                            <ul class="menu_desplegable menu_desplegable_alinear_favoritos aparecer3" style="z-index: 1100; box-shadow: 0 3px 15px rgba(0,0,0,.5) !important;">
-                                <table width="380px" border="0" align="center" cellpadding="10" cellspacing="0" >
-                                <tr>
-                                <td width="25%" align="center">
-                                <asp:HyperLink ID="lnkFavIcon1" runat="server" NavigateUrl="~/Dashboard.aspx#top"  ><asp:Image ID="imgFavIcon1" 
-                                        runat="server" CssClass="efecto_zoom icono_adaptable_favoritos" ImageUrl="~/Styles/2015/img/icono_fav_1.png" />
-<br>
-                                <asp:Label ID="lblTextFav1" runat="server" Text="Dashboard" CssClass="texto_gris" 
-                                        meta:resourcekey="lblTextFav1Resource1" ></asp:Label>
-</asp:HyperLink>
-                                <br><br>
-                                </td>
-
-                                <td width="25%" align="center" >
-                                <asp:HyperLink ID="lnkFavIcon2" runat="server" 
-                                NavigateUrl="~/Reports/Management/ManagementDashboard.aspx#top" >
-                                <asp:Image ID="imgFavIcon2" runat="server" CssClass="efecto_zoom icono_adaptable_favoritos" 
-                                        ImageUrl="~/Styles/2015/img/icono_fav_6.png"  />
-<br>
-                                <asp:Label ID="lblTextFav2" runat="server" Text="Reportes Gerenciales" 
-                                        CssClass="texto_gris" meta:resourcekey="lblTextFav2Resource1"></asp:Label>
-</asp:HyperLink>
-                                </td>
-
-                                <td width="25%" align="center">
-                                <asp:HyperLink ID="lnkFavIcon3" runat="server" 
-                                        NavigateUrl="~/Modules/CRM/CRMNewCustomer.aspx" ><asp:Image ID="imgFavIcon3" 
-                                        runat="server" CssClass="efecto_zoom icono_adaptable_favoritos" 
-                                        ImageUrl="~/Styles/2015/img/icono_fav_3.png"  />
-<br>
-                                <asp:Label ID="lblTextFav3" runat="server" Text="Nueva Afiliación" CssClass="texto_gris" 
-                                        meta:resourcekey="lblTextFav3Resource1"></asp:Label>
-</asp:HyperLink>
-                                
-                                </td>
-
-                                <td width="25%" align="center">
-                                <asp:HyperLink ID="lnkFavIcon4" runat="server" 
-                                        NavigateUrl="~/Modules/Orders/NewOrder.aspx#top" ><asp:Image ID="imgFavIcon4" 
-                                        runat="server" CssClass="efecto_zoom icono_adaptable_favoritos" 
-                                        ImageUrl="~/Styles/2015/img/icono_fav_5.png" />
-<br>
-                                <asp:Label ID="lblTextFav4" runat="server" Text="Nuevo Pedido" 
-                                        CssClass="texto_gris" meta:resourcekey="lblTextFav4Resource1"></asp:Label>
-</asp:HyperLink>
-
-                                </td>
-
-                                </tr>
-
-
-
-                                <tr>
-
-                                <td width="25%" align="center">
-                                    <asp:HyperLink ID="lnkFavIcon6" runat="server" NavigateUrl="~/Modules/WarehouseManager/ShippingOrder.aspx#top" >
-                                    <asp:Image ID="imgFavIcon6" runat="server" CssClass="efecto_zoom icono_adaptable_favoritos" ImageUrl="~/Styles/2015/img/icono_fav_11.png" />
-                                    <br>
-                                    <asp:Label ID="lblTextFav6" runat="server" Text="Entrega de Pedido" CssClass="texto_gris" meta:resourcekey="lblTextFav6Resource1"></asp:Label>
-                                    </asp:HyperLink>
-                                </td>
-
-                                <td width="25%" align="center">
-                                    <asp:HyperLink ID="lnkFavIcon5" runat="server" NavigateUrl="http://ganolife.pe/Correo/" Target="_blanck"  >
-                                    <asp:Image ID="imgFavIcon5" runat="server" CssClass="efecto_zoom icono_adaptable_favoritos" ImageUrl="~/Styles/2015/img/icono_fav_8.png" />
-                                    <br>
-                                    <asp:Label ID="lblTextFav5" runat="server" Text="Email" CssClass="texto_gris" meta:resourcekey="lblTextFav5Resource1"></asp:Label>
-                                    </asp:HyperLink>
-                                </td>
-
-                                <td width="25%" align="center" >
-                                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Modules/CRM/Genealogy.aspx#top" >
-                                    <asp:Image ID="Image1" runat="server" CssClass="efecto_zoom icono_adaptable_favoritos" ImageUrl="~/Styles/2015/img/icono_fav_2.png" />
-                                    <br>
-                                    <asp:Label ID="Label23" runat="server" Text="Genealogía" CssClass="texto_gris" meta:resourcekey="Label23Resource1"></asp:Label>
-                                    </asp:HyperLink>
-                                </td>
-
-                                <td width="25%" align="center" >
-                                    <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Modules/Reports/Dashboard.aspx" >
-                                    <asp:Image ID="Image4" runat="server" CssClass="efecto_zoom icono_adaptable_favoritos" ImageUrl="~/Styles/2015/img/icono_fav_7.png" />
-                                    <br>
-                                    <asp:Label ID="Label25" runat="server" Text="Reportes" CssClass="texto_gris" meta:resourcekey="Label25Resource1"></asp:Label>
-                                    </asp:HyperLink>
-                                </td>
-
-                                </tr>
-                                </table>
-                            </ul>
-                    </li>  
-             </ul>
-          
-    
-            </div>    
-        </div>
-        <!-- /Logo -->
-
-
-        <!-- Navegacion derecha -->
-        <div id="cabecera_seccion_menu" >
-        
-            <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="False">
-
-                <AnonymousTemplate>
-                <a href="~/Login.aspx" ID="HeadLoginStatus" runat="server" style="text-decoration: none" >
-                <asp:Label ID="lblLogin" runat="server" Text="LOGIN" Font-Names="Arial" ForeColor="White" meta:resourcekey="lblLoginResource1"></asp:Label>
-                        &nbsp;&nbsp;
-                </a>
-                </AnonymousTemplate>
-
-
-                <LoggedInTemplate>
-                <!-- Usuario -->
-                <div class="colocar_derecha arriba">
-                <table  width="700" border="0" align="right" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td width="572">
-                    <div class="menu colocar_derecha subir_salir">
-                    <asp:LoginName ID="HeadLoginName" runat="server" CssClass="texto_en_tablet ocultar_en_tablet2" ForeColor="#27C266" 
-                            meta:resourcekey="HeadLoginNameResource1"/> 
-                    <asp:Label ID="lblLoginUserID" runat="server" CssClass="texto_en_tablet" 
-                            meta:resourcekey="lblLoginUserIDResource1"></asp:Label>
-                    </div>
-                    </td>
-
-                    <td width="72">
-                    <div class="menu colocar_derecha subir_salir">
-                    <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" CssClass="texto_en_tablet2" 
-                    LogoutText="Salir" LogoutPageUrl="~/" TabIndex="6" meta:resourcekey="HeadLoginStatusResource1" />
-                    </div>
-                    </td>
-
-                    <td width="72">
-                    </td>
-                  </tr>
-                </table>
-                </div>
-                <!-- /Usuario -->
-                </LoggedInTemplate>
-
-            </asp:LoginView>
-
-            <!-- Menu Tablet, se muestra solo en esa resolucion -->
-            <ul class="menu colocar_izquierda visible_en_celular">
-                <li><a href="#" data-toggle="collapse" data-target=".menu_desplegable"><i class="icono_desplazar_menu_izquierda"></i></a></li>
-                <li class="linea_division_vertical"></li>
-            </ul>
-            <!-- /Menu Tablet -->
-
-        </div>
-        <!-- /Navegacion derecha -->
-
-
-
-            </ContentTemplate>
-            </asp:UpdatePanel>
-
-
-
-    </div>
-    </div>
-    </header>
-    <!-- /Cabecera-->
-
-
-
-
-
-
-
-
-
-<!-- Datos de Cambio -->
-<table border="0" align="center" cellpadding="0" cellspacing="0" style="width:90%!important; height:40px; ">
-            <tr>
-            <td align="right" >
-            <div id="menu_datos">                
-                <table border="0" align="center" cellpadding="0" cellspacing="0" >
-                <tr>
-                <td align="right" >
-                <%--<asp:Label ID="Label9" runat="server" Text="" Width="100px"></asp:Label>--%>
-                <asp:Label ID="lblDateTime" runat="server" Text="" ForeColor="#676664"></asp:Label>
-                </td>
-
-                <td align="right" class="ancho_div_cambio" >
-                <%--<asp:Label ID="Label10" runat="server" Text="" Width="130px"></asp:Label>--%>
-                <asp:HyperLink ID="lnkExchangeRate" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRate.aspx">
-                    <asp:Label ID="lblExchangeRate" runat="server" Text="0.00" Font-Bold="True" ForeColor="#CC00CC"></asp:Label>
-                </asp:HyperLink>
-                <asp:Label ID="lblSeparatorTC" runat="server" Text="│" ForeColor="#676664"></asp:Label>
-                <asp:HyperLink ID="lnkExchangeRateOficial" runat="server" NavigateUrl="~/Modules/Management/Accounting/ExchangeRateOficial.aspx">
-                    <asp:Label ID="lblExchangeRateOficial" runat="server" Text="0.00" Font-Bold="True" ForeColor="#00CCFF"></asp:Label>
-                </asp:HyperLink>
+                <!-- Link Oficina vitual -->
+                <li>
+                    <asp:HyperLink ID="lnkMenuBackOffice" runat="server" NavigateUrl="#" Target="_blank" CssClass="no_ver_en_movil4">
+                    <asp:Label ID="Label55" runat="server" ForeColor="#ffffff" Text="OFICINA VIRTUAL" class="texto_18"></asp:Label>
+                    <asp:Image ID="Image27" runat="server" ImageUrl="~/Styles/images/icono_persona1.png" Width="23px" style="margin-top:-3px;"/>
+                    </asp:HyperLink>
+                </li>
 
                 
+
+            </ul>
+        </td>
+
+
+        <td align="right"> 
+            
+                    <ul class="nav navbar-nav--top">
+
+                    <!-- Idioma -->
+                    <ul id="Ul1" class="nav navbar-nav navbar-right navbar-nav--top" runat="server" visible="false">
+                        <li class="dropdown">
+                                    <asp:HyperLink ID="lnkSelectLanguage" runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <asp:Label ID="Label26" runat="server" ForeColor="#ffffff" Text="English"></asp:Label> <span style="color: #ffffff" class="caret"></span>
+                                    </asp:HyperLink>
+                            <ul class="dropdown-menu dropdown-menu--black menu-country" style="padding:0px!important;">
+                                <li>
+                                    <asp:HyperLink ID="lnkLanguageSpanish" runat="server"  href="#">
+                                    <asp:Label ID="lbLanguageSpanish" runat="server" Text="ESPAÑOL"></asp:Label>
+                                    </asp:HyperLink> 
+                                </li>
+                                <li style="margin-top:-8px;">
+                                    <asp:HyperLink ID="lnkLanguageEnglish" runat="server"  href="#">
+                                    <asp:Label ID="lbLanguageEnglish" runat="server" Text="INGLES"></asp:Label>
+                                    </asp:HyperLink> 
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+<%--                        <li id="Li2" style="display:none;" runat="server" visible="false">
+                            <asp:HyperLink ID="lnkMenuBackOffice" runat="server" NavigateUrl="http://www.myganolife.com/Login.aspx" Target="_blank">
+                            <asp:Label ID="lbMenuBackOffice" runat="server" Text="Oficina Virtual " ForeColor="#ffffff" ></asp:Label>
+                            <asp:Image ID="imgMenuBackOffice" runat="server" ImageUrl="~/Styles/images/icono_oficina.png" />
+                            </asp:HyperLink>
+                        </li>--%>
+
+
+
+
+                <!-- Mi cuenta -->
+                <li class="dropdown" id="liMenuAccount" runat="server">
+                    <asp:HyperLink ID="lnkMenuAccount" runat="server"  href="#" class="dropdown-toggle texto_18 no_ver_en_movil2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <asp:Label ID="lbMenuAccount" runat="server" ForeColor="#ffffff" Text="MI CUENTA "></asp:Label>
+                        <%--<span style="color: #ffffff" class="caret"></span>--%>
+                        <asp:Image ID="Image9" runat="server" ImageUrl="~/Styles/images/flecha_abajo.jpg" Width="15px" style="margin-top:-5px;"/>
+                    </asp:HyperLink>
+                    <ul class="dropdown-menu dropdown-menu--black" style="margin-top: 9px!important; ">
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="lnkAccountProfile" runat="server" Text="MI PERFIL" Font-Bold="true" class="texto_18" ForeColor="#042842" NavigateUrl="~/Zarpe/Profile_Zarpe.aspx" ></asp:HyperLink></li>
+<%--								<li><asp:HyperLink ID="lnkAccountOrders" runat="server" Text="Administrar Ordenes" NavigateUrl="~/Modules/Account/Orders.aspx#top" ></asp:HyperLink></li>
+                        <li><asp:HyperLink ID="lnkCanceled" runat="server" Text="Cancelar Ordenes" NavigateUrl="~/Modules/Account/Canceled.aspx#top" ></asp:HyperLink></li>--%>
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="lnkAddress" runat="server" Text="Configurar Direcciones" Font-Bold="true" class="texto_18" ForeColor="#042842" NavigateUrl="~/Modules/Account/Address.aspx#top" Visible="false"></asp:HyperLink></li>
+                        <li class="zarpe_margen_izquierda4"><asp:HyperLink ID="HyperLink6" runat="server" Text="Compartir" Font-Bold="true" class="texto_18" ForeColor="#042842" NavigateUrl="~/Modules/Account/Share.aspx#top" Visible="false"></asp:HyperLink></li>
+                    </ul>
+                </li>
+
+
+                <!-- Nombre -->
+                <li>
+                    <asp:LinkButton ID="lnkMenuLogin" runat="server" OnClick="lnkMenuLogin_Click" >
+                    <asp:Label ID="lbLoginName" ForeColor="#ffffff" runat="server" class="texto_19"></asp:Label>
+                    <asp:Label ID="lbLoginStatus" ForeColor="#ffffff" runat="server" class="texto_19"></asp:Label>
+    <%--                            <asp:Image ID="imgMenuLogin" runat="server" ImageUrl="~/Styles/images/icono_ingresar_l.jpg" />--%>
+                    </asp:LinkButton>
+                </li>
+
+
+
+
+
+
+                        <!-- Carrito -->
+                        <li class="dropdown ">
+                            <asp:HyperLink ID="lnkShopingCart" runat="server"  href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" 
+                            aria-haspopup="true" aria-expanded="false" style="margin-top:0px;">
+
+                            <asp:Label ID="Label23" runat="server" ForeColor="#ffffff" Text="CARRITO" CssClass="no_ver_en_movil4 texto_18"></asp:Label>
+                                 <div class="ancho_carrito_boton" >
+                                 <asp:Image ID="imgShopingCart" runat="server" ImageUrl="~/Styles/images/icono_carrito3.gif" class="ancho_icono_carrito" 
+                                 style="margin-top:-3px;"/>
+                                 <div style="color:#042842; height:15px;text-align:center; width:30px;
+                                     display: inline-block; margin-top:1px; margin-right:-3px; margin-left: -10px;">
+                                    <asp:Label ID="lbQtyItems" runat="server" Text="0" CssClass="texto_7" style="margin-top:0px;"></asp:Label>
+                                </div>
+                                </div> 
+                            </asp:HyperLink>
+
+                            <ul class="dropdown-menu dropdown-menu--black dropdown-menu--cart menu_carrito" id="ulDivShoppingCar" 
+                            style="background:#ffffff!important;" runat="server">
+                            <div ID="divShoppingCar_1" runat="server" style="text-align: center">
+                                <div class="img">
+                                    <asp:Image ID="imgShoppingCarEmpty" runat="server" ImageUrl="~/Styles/images/icono_compras_c.png" style=" width:60%; max-width:90px;" />
+                                </div>
+                                <p><asp:Label ID="Label11" runat="server" Text="Su carrito de compras está vacio" class="texto_18"></asp:Label></p>
+                     
+                                 <%--<asp:LinkButton ID="lnkShoppingCarEmpty" runat="server" class="btn btn-success btn-ganolife2" Text="COMPRAR AHORA" onclick="lnkShoppingCarEmpty_Click"></asp:LinkButton>--%>
+                            </div>
+
+                            <div ID="divShoppingCar_2" runat="server" >
+                                <asp:Label ID="Label4" runat="server" Text="Últimos items agregados" class="texto_7" ForeColor="#58595B"></asp:Label>                   
+                                <br><br>
+
+                                <table width="100%">
+
+                                <asp:DataList ID="dtlMasterOrderLines" runat="server"
+                                ClientIDMode="Static" TabIndex="86" RepeatDirection="Horizontal" RepeatLayout="Flow"
+                                onitemdatabound="dtlMasterOrderLines_ItemDataBound">
+                                    <ItemTemplate>
+
+                                    <table width="94%" border="0" align="center" cellpadding="0" cellspacing="0" 
+                                    style=" text-align:right !important;">
+                                      <tr>
+                                        <td style="background-color:#ffffff;text-align: left;">
+                                        <asp:Image ID="imgItemProduct" runat="server" 
+                                        ImageUrl='<%# "~/Styles/images/Products/zarpe/"+DataBinder.Eval(Container.DataItem, "ProductID")+"_zarpe_producto_2.jpg" %>' 
+                                        width="50px"/></td>
+                                        <td><asp:Label ID="lbItemProductName" runat="server" 
+                                        Text='<%# DataBinder.Eval(Container.DataItem, "ProductName") %>' CssClass="texto_7"  ForeColor="#58595B"></asp:Label></td>
+                                        <td><asp:Label ID="lbItemPrice" runat="server" 
+                                        Text='<%# DataBinder.Eval(Container.DataItem, "WholesalePrice", "{0:###,##0.00} USD") %>' 
+                                        CssClass="texto_7" Font-Bold="true" ForeColor="#333333"></asp:Label></td>
+                                      </tr>
+                                      <tr>
+                                        <td colspan="3"><hr style="background:#a7a8ac!important; margin-top: 2px!important; 
+                                                            margin-bottom: 6px!important;"></td>
+                                      </tr>
+                                    </table>
+
+                                    </ItemTemplate>
+                                </asp:DataList>
+
+                                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style=" text-align:right !important;">
+                                <tr class="list-inline cart-subtotals text-right">
+                                    <td style="width:30%"></td>
+	                                <td >
+                                        <asp:Label ID="lblShipCost" runat="server" Text="Envío" CssClass="texto_7" ForeColor="#58595B"></asp:Label>
+                                    </td>
+	                                <td style="width:30%">
+                                        <asp:Label ID="lbShipCost" runat="server" Font-Bold="true" CssClass="texto_7" ForeColor="#333333"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr class="list-inline cart-subtotals text-right">
+                                    <td style="width:30%"></td>
+	                                <td >
+                                        <asp:Label ID="lblSubTotal" runat="server" Text="Subtotal" CssClass="texto_7" ForeColor="#58595B"></asp:Label>
+                                    </td>
+	                                <td style="width:30%">
+                                        <asp:Label ID="lbSubTotal" runat="server" Font-Bold="true" CssClass="texto_7" ForeColor="#333333"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr class="list-inline cart-subtotals text-right">
+                                    <td style="width:30%"></td>
+	                                <td >
+                                        <asp:Label ID="lblTaxAmt" runat="server" Text="Impuesto" CssClass="texto_7" ForeColor="#58595B"></asp:Label>
+                                    </td>
+	                                <td style="width:30%">
+                                        <asp:Label ID="lbTaxAmt" runat="server" Font-Bold="true" CssClass="texto_7" ForeColor="#333333"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr class="list-inline cart-subtotals text-right">
+                                    <td style="width:30%"></td>
+	                                <td >
+                                        <asp:Label ID="lblTotal" runat="server" Text="Total" CssClass="texto_7" ForeColor="#58595B"></asp:Label>
+                                    </td>
+	                                <td style="width:30%">
+                                        <asp:Label ID="lbTotal" runat="server" Font-Bold="true" CssClass="texto_7" ForeColor="#333333"></asp:Label>
+                                    </td>
+                                </tr>
+                                </table>
+                                <br>
+
+								<div style="text-align:right">
+                                    <asp:LinkButton ID="lnkShoppingCar_Resume" runat="server" class="boton_celeste4" ForeColor="#001E3A" 
+                                    Font-Bold="true" style="margin:0px!important;" OnClick="lnkShoppingCar_Resume_Click">
+                                    <asp:Label ID="Label5" runat="server" Text="Ver carrito"></asp:Label>
+                                    </asp:LinkButton><br><br>
+									<asp:LinkButton ID="lnkShoppingCar_02" runat="server" class="boton_celeste4" ForeColor="#001E3A" 
+                                    Font-Bold="true" style="margin:0px!important; margin-right: -4px!important;" OnClick="lnkShoppingCar_02_Click" >
+                                    <asp:Label ID="Label6" runat="server" Text="Realizar Pago"></asp:Label>
+                                    </asp:LinkButton>
+                                    <br><br>
+								</div>
+
+                            </div>
+
+                            </ul>
+                        </li>
+
+                        <%-- LAST ITEM --%>
+                        <li class="dropdown">
+                            <asp:HyperLink ID="lnkShopingCartLastItem" runat="server"  href="#" class="dropdown-toggle"
+                             data-toggle="dropdown" role="button"  visible="true"
+                            aria-haspopup="true" aria-expanded="false" style="margin-top:-26px; margin-left: -30px; ">
+                            </asp:HyperLink>
+
+                            <ul class="dropdown-menu dropdown-menu--black dropdown-menu--cart menu_carrito zarpe_margen_izquierda5" 
+                            style="margin-top:18px; width:200px!important; background:#ffffff!important; padding:10px; "
+                            id="ulDivShoppingCarLastItem" runat="server">
+
+                           <%-- <div ID="ulDivShoppingCarLastItem" runat="server" style=""></div>--%>
+
+                            <div ID="divShoppingCar_LastItem" runat="server" style=" line-height:1;">
+                                <asp:Label ID="Label18" runat="server" Text="Últimos items agregados" class="texto_7" ForeColor="#58595B"></asp:Label>
+                                <br><br>
+                                <asp:DataList ID="dtlMasterOrderLinesLastItem" runat="server"
+                                ClientIDMode="Static" TabIndex="86" RepeatDirection="Horizontal" RepeatLayout="Flow"
+                                onitemdatabound="dtlMasterOrderLines_ItemDataBound">
+                                    <ItemTemplate>
+
+                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style=" text-align:right !important;">
+                                      <tr>
+                                        <td style="background-color:#ffffff;text-align: center;">
+                                        <asp:Image ID="imgItemProduct" runat="server" 
+                                        ImageUrl='<%# "~/Styles/images/Products/zarpe/"+DataBinder.Eval(Container.DataItem, "ProductID")+"_zarpe_producto_2.jpg" %>' 
+                                        width="50px" /></td>
+                                        <td><asp:Label ID="lbItemProductName" runat="server" 
+                                        Text='<%# DataBinder.Eval(Container.DataItem, "ProductName") %>' CssClass="texto_7"  ForeColor="#58595B" ></asp:Label></td>
+                                        <td><asp:Label ID="lbItemPrice" runat="server" 
+                                        Text='<%# DataBinder.Eval(Container.DataItem, "WholesalePrice", "{0:###,##0.00} USD") %>' 
+                                        CssClass="texto_7" Font-Bold="true" ForeColor="#333333"></asp:Label></td>
+                                      </tr>
+                                      <tr>
+                                        <td colspan="3"><br>
+                                        <hr style="background:#a7a8ac!important;  margin-top: 2px!important; margin-bottom: 6px!important;">
+                                        </td>
+                                      </tr>
+                                    </table>
+
+                                    </ItemTemplate>
+                                </asp:DataList>
+                                <br>
+                                
+                                    <asp:Label ID="lbMessage_LastItem" CssClass="texto_7" ForeColor="#58595B" runat="server"></asp:Label>
+                                    <br><br>
+                                    <asp:LinkButton ID="lnkShoppingCar_02LastItem" runat="server"  class="boton_celeste4" ForeColor="#001E3A" 
+                                    Font-Bold="true" style="margin:0px!important;"
+                                    OnClick="lnkShoppingCar_02_Click">
+                                    <asp:Label ID="lbShoppingCar_02LastItem" runat="server" Text="Realizar Pago"></asp:Label>
+                                    </asp:LinkButton>
+                                <br><br><br>
+                                
+                            </div>
+
+
+                            </ul>
+                        </li>
+
+                        <!-- Contacto -->
+                        <li>
+                            <asp:HyperLink ID="lnkContanctUs" runat="server" NavigateUrl="~/ContactUs.aspx" CssClass="no_ver_en_movil4">
+                            <asp:Label ID="Label28" runat="server" ForeColor="#ffffff" Text="CONTACTO" class="texto_18"></asp:Label><span class="sr-only">(current)</span>
+                            </asp:HyperLink>
+                        </li>
+
+                        <!-- Pais -->
+                        <li class="dropdown">
+                            <asp:HyperLink ID="lnkSelectCurrentCountryMenu" runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <asp:Label ID="lblCurrentCountry" runat="server" ClientIDMode="Static" ForeColor="#ffffff" class="texto_18" Text="País"></asp:Label>
+                                <asp:Image ID="imgCurrentCountry" runat="server" ClientIDMode="Static" class="zarpe_iconomenu" style=" margin-left:5px;" />
+                                <asp:Image ID="Image8" runat="server" ImageUrl="~/Styles/images/flecha_abajo.jpg" Width="15px" style="margin-top:-1px;"/>
+                            </asp:HyperLink>
+
+                            <ul class="dropdown-menu dropdown-menu--black menu-country menu_pais" style="margin-left: -70px!important; background:#ffffff!important; width:140px; ">
+                            <asp:DataList ID="dtlCountriesMenu" runat="server" ClientIDMode="Static" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                            <ItemTemplate>
+
+                            <asp:HiddenField ID="hdCountryID" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "CountryID") %>' Visible="false" />
+                            <asp:HiddenField ID="hdCountryName" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "CountryName") %>' Visible="false" />
+
+                            <li class="zarpe_margen_izquierda4">
+                                <asp:Image ID="imgItemCountry" runat="server" style="margin-left:5px;" Width="22px" ImageUrl='<%# "~/Styles/images/Country/"+DataBinder.Eval(Container.DataItem, "CountryID")+".png" %>' />
+                                <asp:LinkButton ID="lnkCountry" runat="server" style=" margin-left:5px;" class="texto_18" ForeColor="#042842"
+                                Text='<%# DataBinder.Eval(Container.DataItem, "CountryName") %>' OnClick="lnkCountry_Click" ></asp:LinkButton>
+                            </li>
+
+                            </ItemTemplate>
+                            </asp:DataList>
+                            </ul>
+                        </li>
+
+                        <!-- Cerrar sesión -->
+                        <li>
+                        <asp:LinkButton ID="lnkMenuLogOff" runat="server" OnClick="lnkMenuLogOff_Click">
+                            <asp:Image ID="imgMenuLogOff" runat="server" ImageUrl="~/Styles/images/icono_salir_blanco.png"  class="zarpe_iconomenu" />
+                        </asp:LinkButton>
+                        </li>
+
+
+                    </ul>
+        </td>
+        </tr>
+    </table>
+       
+    </td>
+    </tr>
+    </table>
+
+
+<%--<nav ID="navMenuChanging" runat="server" class="menu_6" ></nav>--%>
+
+<!-- Menu Secundario -->
+<table align="center" border="0" cellspacing="0" cellpadding="0"  style="width:100%; max-width:2000px;" >
+<tr>
+<td>
+
+<%--<nav ID="navMenuChanging222" runat="server" class="menu_7" style="display:none;" ></nav>--%>
+
+<nav ID="navMenuChanging" runat="server" class="menu_2" >
+        <div class="container-fluid container" >
+            
+            <div style="margin-top:30px;">
+
+                <div class="logo_menu_1">
+                    <asp:HyperLink ID="lnkHome1" runat="server" NavigateUrl="~/Home_Zarpe.aspx">
+                        <asp:Image ID="Image28" runat="server" ImageUrl="~/Styles/images/logo_zarpe3.png" alt="" />
+                    </asp:HyperLink>
+                </div>
+
+                <div class="logo_menu_2">
+                    <asp:HyperLink ID="lnkHome2" runat="server" NavigateUrl="~/Home_Zarpe.aspx">
+                        <asp:Image ID="Image29" runat="server" ImageUrl="~/Styles/images/logo_zarpe.png" alt="" />
+                    </asp:HyperLink>
+                </div>
+                <div class="responsive " style=" display:none;">
+                    <button type="button" class="navbar-toggle collapsed" href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample">
+                        <!-- <span class="sr-only">Toggle navigation</span> -->
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar">+
+                        </span>
+                    </button>
+                    <div class="col-xs-1 responsive__opt">
+                        <asp:HyperLink ID="lnkLogoGanolifeResponsive" runat="server" class="logo" NavigateUrl="~/Home.aspx">
+                            <asp:Image ID="imgLogoGanolifeResponsive" runat="server" ImageUrl="~/Styles/images/logo-responsive-2.png" Width="28px"/>
+                        </asp:HyperLink>
+                    </div>
+
+
+                    <div class="col-xs-offset-1 col-xs-7 responsive__opt ancho_tablet_1" style="padding-left: 0px; margin-left: 7px!important;">
+                        
+<%--                        <asp:HyperLink ID="lnkMenuBackOfficeResponsive" runat="server" NavigateUrl="#" Target="_blank">
+                            <asp:Image ID="imgMenuBackOfficeResponsive" runat="server" ImageUrl="~/Styles/images/icono_oficina_2.png" Width="24px" />
+                        </asp:HyperLink>--%>
+
+
+                        <!-- Iniciar sesion -->
+                        <asp:LinkButton ID="lnkMenuLoginResponsive" runat="server" OnClick="lnkMenuLogin_Click">
+                            <%--<asp:Image ID="imgMenuLoginResponsive" runat="server" ImageUrl="~/Styles/images/icono_ingresar_l.png" visible="false" />--%>
+                            <asp:Image ID="imgMenuLoginResponsive" runat="server" ImageUrl="~/Styles/images/icono_ingresar_gris.png" Width="24px" />
+                        </asp:LinkButton>
+
+
+                        <!-- Cuando Inicia sesion aparece este icono Perfil -->
+                        <asp:HyperLink ID="lnkMenuProfileResponsive" runat="server" NavigateUrl="~/Zarpe/Profile_Zarpe.aspx">
+                             <asp:Image ID="imgMenuProfileResponsive" runat="server" ImageUrl="~/Styles/images/profile-icon.png" alt="" />
+                        </asp:HyperLink>
+
+
+                        <div class="dropdown">
+                            <asp:HyperLink ID="lnkShopingCartResponsive" runat="server" href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <asp:Image ID="imgShoppingCartResponsive" runat="server" ImageUrl="~/Styles/images/cart.png" alt="" />
+                                <span class="badge">
+                                <asp:Label ID="lbQtyItemsResponsive" runat="server" Text="0" ></asp:Label>
+                                </span>
+                            </asp:HyperLink>
+
+                            <ul class="dropdown-menu dropdown-menu--black dropdown-menu--cart">
+
+                            <div ID="divShoppingCar_1Responsive" runat="server">
+                                <div class="img">
+                                    <asp:Image ID="imgShoppingCarEmptyResponsive" runat="server" ImageUrl="~/Styles/images/icono_compras_b.png" />
+                                </div>
+                                <p><asp:Label ID="Label2" runat="server" Text="Su carrito de compras está vacio" ></asp:Label></p>
+                               <hr />
+                                 <%--<asp:LinkButton ID="lnkShoppingCarEmptyResponsive" runat="server" class="btn btn-success btn-ganolife" Text="COMPRAR AHORA" onclick="lnkShoppingCarEmpty_Click"></asp:LinkButton>--%>
+                            </div>
+
+                            <div ID="divShoppingCar_2Responsive" runat="server">
+                                <asp:Label ID="Label1" runat="server" Text="Últimos items agregados" class="texto_7" ForeColor="#58595B"></asp:Label>
+                                <br><br>
+                                <asp:DataList ID="dtlMasterOrderLinesResponsive" runat="server"
+                                ClientIDMode="Static" TabIndex="86" RepeatDirection="Horizontal" RepeatLayout="Flow"
+                                onitemdatabound="dtlMasterOrderLines_ItemDataBound">
+                                    <ItemTemplate>
+                                    <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" style=" text-align:right !important;">
+                                    <tr >
+                                        <td style="background-color:#ffffff;text-align: left;">
+                                            <asp:Image ID="imgItemProduct" runat="server" 
+                                            ImageUrl='<%# "~/Styles/images/Products/zarpe/"+DataBinder.Eval(Container.DataItem, "ProductID")+"_zarpe_producto_2.jpg" %>' 
+                                            width="50px" />
+                                        </td>
+                                        <td align="left">
+                                             <asp:Label ID="lbItemProductName" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "ProductName") %>' 
+                                             CssClass="texto_7"  ForeColor="#58595B"></asp:Label>
+                                        </td>
+                                        <td>
+                                            <asp:Label ID="lbItemPrice" runat="server" 
+                                            Text='<%# DataBinder.Eval(Container.DataItem, "WholesalePrice", "{0:###,##0.00} USD") %>' 
+                                            CssClass="texto_7" Font-Bold="true" ForeColor="#333333"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                        <hr style="background:#a7a8ac!important;  margin-top: 2px!important; margin-bottom: 6px!important;">
+                                        </td>
+                                    </tr>
+                                    </table>
+                                    </ItemTemplate>
+                                </asp:DataList>
+
+                                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style=" text-align:right !important;">
+                                <tr class="list-inline cart-subtotals text-right">
+                                    <td style="width:30%"></td>
+	                                <td >
+                                        <asp:Label ID="lblShipCostResponsive" runat="server" CssClass="texto_7" ForeColor="#58595B" Text="Envío"></asp:Label>
+                                    </td>
+	                                <td style="width:40%">
+                                        <asp:Label ID="lbShipCostResponsive" runat="server" CssClass="texto_7" Font-Bold="true" ForeColor="#58595B"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr class="list-inline cart-subtotals text-right">
+                                    <td style="width:30%"></td>
+	                                <td >
+                                        <asp:Label ID="lblSubTotalResponsive" runat="server" CssClass="texto_7" ForeColor="#58595B" Text="Subtotal"></asp:Label>
+                                    </td>
+	                                <td style="width:40%">
+                                        <asp:Label ID="lbSubTotalResponsive" runat="server" CssClass="texto_7" Font-Bold="true" ForeColor="#58595B"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr class="list-inline cart-subtotals text-right">
+                                    <td style="width:30%"></td>
+	                                <td >
+                                        <asp:Label ID="lblTaxAmtResponsive" runat="server" CssClass="texto_7" ForeColor="#58595B" Text="Impuesto"></asp:Label>
+                                    </td>
+	                                <td style="width:40%">
+                                        <asp:Label ID="lbTaxAmtResponsive" runat="server" CssClass="texto_7" Font-Bold="true" ForeColor="#58595B"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr class="list-inline cart-subtotals text-right">
+                                    <td style="width:30%"></td>
+	                                <td >
+                                        <asp:Label ID="lblTotalResponsive" runat="server" CssClass="texto_7" ForeColor="#58595B" Text="Total"></asp:Label>
+                                    </td>
+	                                <td style="width:40%">
+                                        <asp:Label ID="lbTotalResponsive" runat="server" CssClass="texto_7" Font-Bold="true" ForeColor="#58595B"></asp:Label>
+                                    </td>
+                                </tr>
+                                </table>
+
+                                <br>
+
+								<div class="cart-buttons ">
+                                    <asp:LinkButton ID="lnkShoppingCar_ResumeResponsive" runat="server" class="boton_celeste4" ForeColor="#001E3A" 
+                                    Font-Bold="true" style="margin:0px!important;" OnClick="lnkShoppingCar_Resume_Click" >
+                                    <asp:Label ID="lblShoppingCar_Resume" runat="server" Text="Ver carrito"></asp:Label>
+                                    </asp:LinkButton><br><br>
+									<asp:LinkButton ID="lnkShoppingCar_02Responsive" runat="server" class="boton_celeste4" ForeColor="#001E3A" 
+                                    Font-Bold="true" style="margin:0px!important;" OnClick="lnkShoppingCar_02_Click">
+                                    <asp:Label ID="lblShoppingCar_02Reponsive" runat="server" Text="Realizar Pago"></asp:Label>
+                                    </asp:LinkButton>
+								</div>
+
+							</div>
+
+                            </ul>
+                        </div>
+
+   
+
+                        <!-- Idiomas tablet -->
+                        <div id="Div1" class="dropdown" runat="server" visible="false">
+                            <asp:HyperLink ID="HyperLink1" runat="server" href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <asp:Image ID="Image7" runat="server" ImageUrl="~/Styles/images/idiomas.png" alt="" />
+                            </asp:HyperLink>
+                            <ul class="dropdown-menu dropdown-menu--black menu-country" style="padding:20px!important;">
+                                <li>
+                                    <asp:HyperLink ID="HyperLink3" runat="server"  href="#">
+                                    <asp:Label ID="Label10" runat="server" Text="ESPAÑOL"></asp:Label>
+                                    </asp:HyperLink> 
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="HyperLink4" runat="server"  href="#">
+                                    <asp:Label ID="Label12" runat="server" Text="INGLES"></asp:Label>
+                                    </asp:HyperLink> 
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+                        <!-- Paises tablet -->
+                        <div class="dropdown">
+                            <asp:HyperLink ID="lnkSelectCurrentCountryMenuResponsive" runat="server" href="" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+                            aria-haspopup="true" aria-expanded="false">
+                            <asp:Image ID="imgCurrentCountryResponsive" runat="server" Width="24px" ImageUrl="~/Styles/images/paises.png" alt="" />
+                            </asp:HyperLink>
+
+                            <ul class="dropdown-menu dropdown-menu--black menu-country">
+                            <asp:DataList ID="dtlCountriesMenuPopup" runat="server" ClientIDMode="Static" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                            <ItemTemplate>
+
+                            <asp:HiddenField ID="hdCountryID" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "CountryID") %>' Visible="false" />
+                            <asp:HiddenField ID="hdCountryName" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "CountryName") %>' Visible="false" />
+
+                            <li>
+                                <asp:Image ID="imgItemCountry" runat="server" style="margin-left:8px;" Width="22px" ImageUrl='<%# "~/Styles/images/Country/"+DataBinder.Eval(Container.DataItem, "CountryID")+".png" %>' />
+                                <asp:LinkButton ID="lnkCountry" runat="server" style=" margin-left:8px;" Text='<%# DataBinder.Eval(Container.DataItem, "CountryName") %>' OnClick="lnkCountry_Click" ></asp:LinkButton>
+                            </li>
+
+                            </ItemTemplate>
+                            </asp:DataList>
+                            </ul>
+                        </div>
+
+
+
+                        <!-- Cerrar sesion -->
+                        <asp:LinkButton ID="lnkMenuLogOffResponsive" runat="server" OnClick="lnkMenuLogOff_Click">
+                            <asp:Image ID="imgMenuLogOffResponsive" runat="server" ImageUrl="~/Styles/images/icono_salir_gris.png" Width="24px"  />
+                        </asp:LinkButton>
+
+                        <%-- LAST ITEM RESPONSIVE --%>
+                        <div class="dropdown">
+                            <asp:HyperLink ID="lnkShopingCartLastItemResponsive" runat="server" href="" class="dropdown-toggle"  Visible="true" 
+                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            </asp:HyperLink>
+
+                            <ul class="dropdown-menu dropdown-menu--black dropdown-menu--cart" id="ulDivShoppingCarLastItemResponsive" runat="server">
+                            <div ID="divShoppingCar_LastItemResponsive" runat="server">
+                                <strong><asp:Label ID="Label21" runat="server" Text="Últimos items agregados"></asp:Label></strong>
+                                <br />
+                                
+                                    <asp:DataList ID="dtlMasterOrderLinesLastItemResponsive" runat="server"
+                                    ClientIDMode="Static" TabIndex="86" RepeatDirection="Horizontal" RepeatLayout="Flow"
+                                    onitemdatabound="dtlMasterOrderLines_ItemDataBound">
+                                    <ItemTemplate>
+                                    <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" style=" text-align:right !important;">
+                                    <tr>
+                                        <td style="background-color:#ffffff;text-align: left;">
+                                            <asp:Image ID="imgItemProduct" runat="server" ImageUrl='<%# "~/Styles/images/Products/zarpe/"+DataBinder.Eval(Container.DataItem, "ProductID")+"_zarpe_producto_2.jpg" %>' width="60px" />
+                                        </td>
+                                        <td align="left">
+                                             <asp:Label ID="lbItemProductName" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "ProductName") %>' 
+                                             CssClass="menu_carrito_texto1" ForeColor="#333333"></asp:Label>
+                                        </td>
+                                        <td>
+                                            <asp:Label ID="lbItemPrice" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "WholesalePrice", "{0:###,##0.00} USD") %>' CssClass="menu_carrito_texto1" ForeColor="#333333"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"><hr style=" border-color:#AFAFAF !important;"></td>
+                                    </tr>
+                                    </table>
+                                    </ItemTemplate>
+                                </asp:DataList>
+                                
+                                <br>
+                                <asp:Label ID="lbMessage_LastItemResponsive" runat="server"></asp:Label>
+                                <br />
+                                <asp:LinkButton ID="lnkShoppingCar_02LastItemResponsive" runat="server" class="btn btn-success btn-ganolife" OnClick="lnkShoppingCar_02_Click">
+                                <asp:Label ID="lbShoppingCar_02LastItemResponsive" runat="server" Text="Realizar Pago"></asp:Label>
+                                </asp:LinkButton>
+                 
+							</div>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Principal -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"  style=" margin-top:-74px;">
+                
+                <div class="clear"></div>
+                <div class="wrapper wrapper--fixed">
+                    <ul class="nav navbar-nav navbar-right navbar-nav--bottom zarpe_pc">
+                        <li class="nav-mov" id="liMenuHome" runat="server">
+                            <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/Home_Zarpe.aspx">
+                                <asp:Label ID="lbHome" runat="server" Text="Inicio"></asp:Label> <span class="sr-only">(current)</span>
+                            </asp:HyperLink>
+                        </li>
+                        <li class="nav-mov" id="liMenuSecret" runat="server">
+                            <asp:HyperLink ID="lnkSecret" runat="server" NavigateUrl="~/Secret_Zarpe.aspx">
+                            <asp:Label ID="lbSecret" runat="server" Text="Fórmula"></asp:Label> <span class="sr-only">(current)</span>
+                            </asp:HyperLink>
+                        </li>
+                        <li class="nav-mov" id="liMenuSuper" runat="server">
+                            <asp:HyperLink ID="lnkSuper" runat="server" NavigateUrl="~/SuperAlimentos_Zarpe.aspx">
+                            <asp:Label ID="lbSuper" runat="server" Text="Súper Alimentos"></asp:Label> <span class="sr-only">(current)</span>
+                            </asp:HyperLink>
+                        </li>
+                        <li class="nav-mov" id="liMenuProducts" runat="server">
+                            <asp:HyperLink ID="lnkProducts" runat="server" NavigateUrl="~/Products_Zarpe.aspx">
+                            <asp:Label ID="lbProducts" runat="server" Text="Productos"></asp:Label> <span class="sr-only">(current)</span>
+                            </asp:HyperLink>
+                        </li>
+                        <li class="nav-mov" id="li3" runat="server">
+                            <asp:HyperLink ID="HyperLink37" runat="server" NavigateUrl="~/Share_Zarpe.aspx">
+                            <asp:Label ID="Label54" runat="server" Text="Negocio en línea"></asp:Label> <span class="sr-only">(current)</span>
+                            </asp:HyperLink>
+                        </li>
+                        <%--<li class="nav-mov" data-nav="formula" id="liMenuFormule" runat="server">
+                            <asp:HyperLink ID="lnkFormule" runat="server" NavigateUrl="~/Home.aspx#formula">
+                            <asp:Label ID="lbFormule" runat="server" Text="Fórmula"></asp:Label> <span class="sr-only">(current)</span>
+                            </asp:HyperLink>
+                        </li>
+                        <li class="nav-mov" data-nav="historia" id="liMenuHistory" runat="server">
+                            <asp:HyperLink ID="lnkHistory" runat="server" NavigateUrl="~/Home.aspx#historia">
+                            <asp:Label ID="lbHistory" runat="server" Text="Historia"></asp:Label> <span class="sr-only">(current)</span>
+                            </asp:HyperLink>
+                        </li>--%>
+                        
+                        <%--<li class="nav-mov" >
+                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="http://get.ganolife.com/plan2016/" target="_blank">
+                            <asp:Label ID="Label14" runat="server" Text="Oportunidad"></asp:Label> 
+                            </asp:HyperLink>
+                        </li>--%>
+
+                        <li class="nav-mov" id="liMenuOportunity" runat="server">
+                            <asp:HyperLink ID="lnkOportunity" runat="server" NavigateUrl="~/Opportunity_Zarpe.aspx">
+                            <asp:Label ID="lbOportunity" runat="server" Text="Oportunidad"></asp:Label> 
+                            </asp:HyperLink>
+                        </li>
+
+                        <li class="nav-mov"  style=" display:none;">
+                            <div ID="HyperLink9" runat="server" href="#" data-toggle="dropdown" style="margin-top:13px; padding-left:20px; 
+                                padding-right:20px;  display:none;">
+                                <asp:Label ID="Label16" runat="server" ClientIDMode="Static" ForeColor="#999999" Text="Zarpe"></asp:Label>
+                            </div>
+
+                            <ul class="dropdown-menu dropdown-menu--black menu-country" style="margin-top:16px;">
+
+                            <li id="liMenuZarpe_HomeZarpe" runat="server">
+                                <asp:HyperLink ID="lnkZarpe_HomeZarpe" runat="server" NavigateUrl="~/Zarpe/Home_Zarpe.aspx">
+                                <asp:Label ID="lbZarpe_HomeZarpe" runat="server" Text="Home"></asp:Label> </asp:HyperLink></li>
+
+                            <li id="liMenuZarpe_DashboardZarpe" runat="server">
+                                <asp:HyperLink ID="lnkZarpe_DashboardZarpe" runat="server" NavigateUrl="~/Zarpe/Dashboard_Zarpe.aspx">
+                                <asp:Label ID="lbZarpe_DashboardZarpe" runat="server" Text="Tablero de Control"></asp:Label> </asp:HyperLink></li>
+
+                            <li id="liMenuZarpe_ProfileZarpe" runat="server">
+                                <asp:HyperLink ID="lnkZarpe_ProfileZarpe" runat="server" NavigateUrl="~/Zarpe/Profile_Zarpe.aspx">
+                                <asp:Label ID="lbZarpe_ProfileZarpe" runat="server" Text="Influenciador"></asp:Label> </asp:HyperLink></li>
+
+                            <li id="liMenuZarpe_First10HomeZarpe" runat="server">
+                                <asp:HyperLink ID="lnkZarpe_First10HomeZarpe" runat="server" NavigateUrl="~/Zarpe/First10_Home_Zarpe.aspx">
+                                <asp:Label ID="lbZarpe_First10HomeZarpe" runat="server" Text="Mis Primeros $10.00"></asp:Label> </asp:HyperLink></li>
+
+                            <li id="liMenuZarpe_First10SendCouponZarpe" runat="server">
+                                <asp:HyperLink ID="lnkZarpe_First10SendCouponZarpe" runat="server" NavigateUrl="~/Zarpe/First10_SendCoupon_Zarpe.aspx">
+                                <asp:Label ID="lbZarpe_First10SendCouponZarpe" runat="server" Text="Envie Descuentos a tus Amigos"></asp:Label> </asp:HyperLink></li>
+
+                            <%--<li><asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/Zarpe/Get3_Home_Zarpe.aspx">
+                                <asp:Label ID="Label20" runat="server" Text="Consiga 3, reciba el suyo GRATIS"></asp:Label> </asp:HyperLink></li>
+                            <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Zarpe/Dashboard_Zarpe.aspx">
+                                <asp:Label ID="Label15" runat="server" Text="Tablero de Control"></asp:Label> </asp:HyperLink></li>--%>
+                            </ul>
+                        </li>
+
+                        <li class="nav-mov" id="liMenuPurchase" runat="server" >
+                            <asp:HyperLink ID="lnkPurchase" runat="server" NavigateUrl="~/Modules/Sales/ShoppingCar_02_Products.aspx">
+                            <asp:Label ID="lbPurchase" runat="server" Text="Comprar" Font-Bold="true"></asp:Label> 
+                            </asp:HyperLink>           
+                        </li>
+                        <li class="nav-mov" data-nav="plan365" id="liMenuPlan365" runat="server" visible="false">
+                            <asp:HyperLink ID="lnkPlan365" runat="server" NavigateUrl="~/Home.aspx#plan365">
+                            <asp:Label ID="lbPlan365" runat="server" Text="Plan 365 "></asp:Label><span class="sr-only">(current)</span>
+                            </asp:HyperLink>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+
+
+            <div class="boton_transparente" >
+            <asp:HyperLink ID="HyperLink40" NavigateUrl="~/Opportunity_Zarpe.aspx" runat="server">
+            <asp:Label ID="Label56" runat="server" Text="¡Arme su tripulación!" class="texto_3" ForeColor="#ffffff"></asp:Label>
+            </asp:HyperLink> 
+            
+            </div>
+        </div>   
+</nav>
+
+</td>
+</tr>
+</table>
+
+
+
+
+<!-- Menu Movil Iconos / No va -->
+<div style=" background:#e7e8ec!important; width:100%; display:none;" >
+<article id="slider" style=" background:#e7e8ec;">
+<input checked type='radio' name='slider' id='slide1' style="display:none;"/>
+<input type='radio' name='slider' id='slide2' style="display:none;"/>
+<%--<input type='radio' name='slider' id='slide3'/>
+<input type='radio' name='slider' id='slide4'/>
+<input type='radio' name='slider' id='slide5'/>--%>
+<div id="slides">
+	<div id="container">
+		<div class="inner">
+			<article>
+			<asp:HyperLink ID="HyperLink18" class="menu_padding2" NavigateUrl="~/Share_Zarpe.aspx#videos"  runat="server">
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/Styles/images/zarpe_menu_1.jpg" style="width:100%; max-width:60px;" />
+            <asp:Label ID="Label31" runat="server" Text="COMPARTIR VIDEOS"  CssClass="texto_20" Font-Bold="true"></asp:Label>
+            </asp:HyperLink> 
+
+            <asp:HyperLink ID="HyperLink19" class="menu_padding2" NavigateUrl="~/Share_Zarpe.aspx#productos" runat="server">
+            <asp:Image ID="Image3" runat="server" ImageUrl="~/Styles/images/zarpe_menu_2.jpg" style="width:100%; max-width:60px;" /> 
+            <asp:Label ID="Label32" runat="server" Text="COMPARTIR PRODUCTOS"  CssClass="texto_20" Font-Bold="true"></asp:Label>
+            </asp:HyperLink>
+
+            <asp:HyperLink ID="HyperLink20" class="menu_padding2" NavigateUrl="~/Share_Zarpe.aspx#superalimentos" runat="server">
+            <asp:Image ID="Image17" runat="server" ImageUrl="~/Styles/images/zarpe_menu_3.jpg" style="width:100%; max-width:60px;" /> 
+            <asp:Label ID="Label33" runat="server" Text="COMPARTIR SÚPER ALIMENTOS"  CssClass="texto_20" Font-Bold="true"></asp:Label>
+            </asp:HyperLink> 
+
+            <asp:HyperLink ID="HyperLink21" class="menu_padding2" NavigateUrl="~/Share_Zarpe.aspx#herramientas" runat="server">
+            <asp:Image ID="Image18" runat="server" ImageUrl="~/Styles/images/zarpe_menu_4.jpg" style="width:100%; max-width:60px;" /> 
+            <asp:Label ID="Label35" runat="server" Text="COMPARTIR DOCUMENTOS"  CssClass="texto_20" Font-Bold="true"></asp:Label>
+            </asp:HyperLink>
+			</article>
+
+			<article>
+            <asp:HyperLink ID="HyperLink22" class="menu_padding2" NavigateUrl="~/Share_Zarpe.aspx#blog" runat="server">
+            <asp:Image ID="Image19" runat="server" ImageUrl="~/Styles/images/zarpe_menu_5.jpg" style="width:100%; max-width:60px;" />
+            <asp:Label ID="Label36" runat="server" Text="COMPARTIR BLOG"  CssClass="texto_20" Font-Bold="true"></asp:Label>
+            </asp:HyperLink>
+
+			<asp:HyperLink ID="HyperLink23" class="menu_padding2" NavigateUrl="~/Share_Zarpe.aspx#prospectos" runat="server">
+            <asp:Image ID="Image20" runat="server" ImageUrl="~/Styles/images/zarpe_menu_6.jpg" style="width:100%; max-width:60px;" />
+            <asp:Label ID="Label37" runat="server" Text="CONTROL DE PROSPECTOS"  CssClass="texto_20" Font-Bold="true"></asp:Label>
+            </asp:HyperLink> 
+			</article>
+		</div>
+	</div>
+</div>
+<div id="commands">
+	<label for='slide1'></label>
+	<label for='slide2'></label>
+	<%--<label for='slide3'></label>
+	<label for='slide4'></label>
+	<label for='slide5'></label>--%>
+</div>
+<div id="active" >
+	<label for='slide1'></label>
+	<label for='slide2'></label>
+	<%--<label for='slide3'></label>
+	<label for='slide4'></label>
+	<label for='slide5'></label>--%>
+</div>
+</article>
+</div>
+
+
+
+
+
+<!-- Slider Menu Movil Iconos -->
+<table id="menuShare_Movil" runat="server" width="100%" border="0" align="center" cellpadding="0" cellspacing="0" 
+style="height:120px; margin-bottom:20px; background:#e6e6e6; " class="zarpe_movil">
+    <tr>
+    <td align="center" >
+        
+
+        <!-- Bienvenido / Share --> 
+            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style=" background:#ffffff!important; ">
+                <tr>
+                <td>
+                <table width="92%" border="0" align="center" cellpadding="0" cellspacing="0" >
+                <tr>
+                <td align="right">
+                <asp:Image ID="Image37" runat="server" ImageUrl="~/Styles/images/zarpe_logo2.jpg" style="width:120px; margin-right:20px;" />
+                </td>
+                <td align="right" style="line-height:0; ">
+                <br>
+                <asp:Label ID="Label74" runat="server" Text="Bienvenido (a)" class="titulo_8b" ForeColor="#042743" ></asp:Label>
+                <asp:Label ID="Label75" runat="server" Text="Nombre" class="titulo_8b" Font-Bold="true" ForeColor="#042743" ></asp:Label> 
+                <br>
+                <asp:Label ID="Label76" runat="server" Text="¡Aquí tienes todas las herramientas necesarias para tu negocio!" class="texto_3b" 
+                ForeColor="#929397" ></asp:Label> 
                 </td>
                 </tr>
                 </table>
-            </div>
-            <br>
-            </td>
-            </tr>
-</table>
-
-
-
-    <asp:UpdatePanel ID="upMenu" runat="server" ClientIDMode="Static">
-    <ContentTemplate>
-
-
-
-<!--Nuevo Menu Principal -->
-<aside class="main-sidebar">
-    <section class="sidebar">
-      <ul class="sidebar-menu" data-widget="tree">
-        <li>
-          <asp:HyperLink ID="LinkButton1" runat="server" NavigateUrl="~/Dashboard.aspx#top" TabIndex="7" class="menu_dashboard" >
-            <i class="fa"></i>
-            <asp:Label ID="Label15" runat="server" Text="Dashboard" meta:resourcekey="lblMenuHomeResource1" class="texto_menu" ></asp:Label> 
-          </asp:HyperLink>
-        </li>
-        <li>
-          <asp:HyperLink ID="LinkButton5" runat="server" NavigateUrl="~/Modules/CRM/CRMdashboard.aspx#top" TabIndex="8" class="menu_crm" >
-            <i class="fa"></i>
-            <asp:Label ID="Label17" runat="server" Text="CRM" meta:resourcekey="Label1Resource1" class="texto_menu" ></asp:Label> 
-          </asp:HyperLink> 
-        </li>
-        <li>
-          <asp:HyperLink ID="LinkButton16" runat="server" NavigateUrl="~/Modules/Orders/OrderDashboard.aspx#top" TabIndex="9" class="menu_pedido" >
-            <i class="fa"></i>
-            <asp:Label ID="Label26" runat="server" Text="Pedidos" meta:resourcekey="Label5Resource1" class="texto_menu" ></asp:Label> 
-          </asp:HyperLink>
-        </li>
-        <li>
-          <asp:HyperLink ID="LinkButton17" runat="server" NavigateUrl="~/Modules/WarehouseManager/Home.aspx#top" TabIndex="10" class="menu_sucursales" >
-            <i class="fa"></i>
-            <asp:Label ID="Label27" runat="server" Text="Gestión de Sucursales" meta:resourcekey="lblBranchManagementResource1" class="texto_menu" ></asp:Label> 
-          </asp:HyperLink>
-        </li>
-        <li>
-          <asp:HyperLink ID="LinkButton18" runat="server" NavigateUrl="~/Modules/Reports/Dashboard.aspx" TabIndex="10" class="menu_reportes" >
-            <i class="fa"></i>
-            <asp:Label ID="Label28" runat="server" Text="Reportes" meta:resourcekey="Label16Resource1" class="texto_menu" ></asp:Label> 
-          </asp:HyperLink>
-        </li>
-        <li>
-          <asp:HyperLink ID="LinkButton19" runat="server" NavigateUrl="~/Modules/Management/Accounting/AccountingDashboard.aspx" class="menu_finanzas" >
-            <i class="fa"></i>
-            <asp:Label ID="Label29" runat="server" Text="Finanzas" meta:resourcekey="Label13Resource1" class="texto_menu" ></asp:Label> 
-          </asp:HyperLink>
-        </li>
-        <li>
-          <asp:HyperLink ID="LinkButton20" runat="server" NavigateUrl="~/Modules/RRHH/RRHHDashboard.aspx" class="menu_rrhh" >
-            <i class="fa"></i>
-            <asp:Label ID="Label30" runat="server" Text="RRHH" class="texto_menu" ></asp:Label> 
-          </asp:HyperLink>
-        </li>
-        <li>
-          <asp:HyperLink ID="LinkButton21" runat="server" NavigateUrl="~/Modules/SMS/SmsDashboard.aspx" class="menu_sms" >
-            <i class="fa"></i>
-            <asp:Label ID="Label31" runat="server" Text="SMS" class="texto_menu" ></asp:Label> 
-          </asp:HyperLink>
-        </li>      
-
-        <%--<li>
-          <asp:LinkButton ID="LinkButton13" runat="server" href="Modules/Extralife/Extralife.aspx" class="icono_extralife" >
-            <i class="fa"></i>
-            <asp:Image ID="Image6" runat="server" ImageUrl="~/Styles/img/icono_menu_extralife_texto.png" 
-            style="margin-top:-14px;" class="extralife_texto"/>
-            <asp:Image ID="Image7" runat="server" ImageUrl="~/Styles/img/icono_menu_extralife_texto_on.png" 
-            style="margin-top:-14px;" class="extralife_texto_on"/>   
-          </asp:LinkButton>
-        </li>--%>
-        
-        <%--<li>
-          <asp:LinkButton ID="LinkButton15" runat="server" href="Modules/Contacto/Contacto.aspx" class="icono_ayuda" >
-            <i class="fa"></i>
-            <asp:Label ID="Label24" runat="server" Text="¿Quieres ayuda?" class="texto_menu" ></asp:Label>    
-          </asp:LinkButton>
-        </li>  
-        <li>
-          <div class="" style="border:1px solid #cccccc; padding:5px; margin:12px 11px 3px 20px ; ">
-            <asp:Image ID="Image15" runat="server" ImageUrl="~/Styles/img/icono_telefono.png"/>
-            <asp:Label ID="Label39" runat="server" Text="¡Contáctanos!" ForeColor="#8e8e8e" class="texto_home_13" ></asp:Label>         
-          </div>
-        </li>--%>
-
-      </ul>
-    </section>
-</aside>
-
-
-
-<!-- Contenido total lado izquierda -->
-<table border="0" align="center" cellpadding="8" cellspacing="8" style="display:none;">
-            <tr>
-            <td align="left">
-            <!-- Menu Principal Horizontal -->
-            <div  class="ocultar_en_pc22"  runat="server" style="height: 90px!important; display:none;">
-            <div id="menu_inicio">
-                        <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/Dashboard.aspx#top" TabIndex="7"
-                        CssClass="menu_inicio_borde icono_menu icono_inicio ancho_item_menu" >
-                        <i class="icono_espacio_menu"></i><asp:Label ID="lblMenuHome" runat="server" Text="Dashboard" meta:resourcekey="lblMenuHomeResource1" ></asp:Label>
-                        </asp:HyperLink>
-            </div>
-            <div id="menu_crm">
-                        <%--<asp:HyperLink ID="HyperLink1" runat="server" CssClass="menu_crm_borde" >--%>
-                        <asp:HyperLink ID="lnkCRM" runat="server" NavigateUrl="~/Modules/CRM/CRMdashboard.aspx#top" TabIndex="8" 
-                        CssClass="menu_inicio_borde icono_menu icono_cmr ancho_item_menu" >
-                        <i class="icono_espacio_menu"></i><asp:Label ID="Label1" runat="server" Text="CRM" meta:resourcekey="Label1Resource1" ></asp:Label>
-                        </asp:HyperLink>  
-            </div>
-            <div id="menu_ventas">
-                        <%--<asp:HyperLink ID="HyperLink2" runat="server" CssClass="menu_ventas_borde" >--%>
-                        <asp:HyperLink ID="lnkSales" runat="server" NavigateUrl="~/Modules/Orders/OrderDashboard.aspx#top" TabIndex="9" 
-                        CssClass="menu_inicio_borde icono_menu icono_distribuidores ancho_item_menu" ><i class="icono_espacio_menu"></i> <asp:Label 
-                        ID="Label5" runat="server" Text="Pedidos" meta:resourcekey="Label5Resource1" ></asp:Label>
-                        </asp:HyperLink>
-            </div>
-            <div id="menu_sucursales">
-                        <%--<asp:HyperLink ID="HyperLink2" runat="server" CssClass="menu_sucursales_borde" >--%>
-                        <asp:HyperLink ID="lnkBranchOffice" runat="server" NavigateUrl="~/Modules/WarehouseManager/Home.aspx#top" TabIndex="10" 
-                            CssClass="menu_inicio_borde icono_menu icono_pedidos ancho_item_menu" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="lblBranchManagement" runat="server" Text="Entrega de Mercadería" meta:resourcekey="lblBranchManagementResource1"></asp:Label>
-                        </asp:HyperLink>
-            </div>
-            <div id="menu_reportes">
-                        <%--<asp:HyperLink ID="HyperLink2" runat="server" CssClass="menu_reportes_borde" >--%>
-                        <asp:HyperLink ID="lnkReports" runat="server" NavigateUrl="~/Modules/Reports/Dashboard.aspx" TabIndex="10"  
-                            CssClass="menu_inicio_borde icono_menu icono_reportes ancho_item_menu" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label16" runat="server" Text="Reportes" meta:resourcekey="Label16Resource1" ></asp:Label>
-                        </asp:HyperLink>
-             </div>
-            <div id="menu_finanzas">
-                        <asp:HyperLink ID="lnkFinance" runat="server" NavigateUrl="~/Modules/Management/Accounting/AccountingDashboard.aspx" 
-                            CssClass="menu_inicio_borde icono_menu icono_finanzas ancho_item_menu" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label13" runat="server" Text="Finanzas" meta:resourcekey="Label13Resource1" ></asp:Label>
-                        </asp:HyperLink>
-            </div>
-            <div id="menu_recursos">
-                        <asp:HyperLink ID="lnkRecursos" runat="server" NavigateUrl="~/Modules/RRHH/RRHHDashboard.aspx" 
-                            CssClass="menu_inicio_borde icono_menu icono_recursos ancho_item_menu" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label8" runat="server" Text="RRHH" ></asp:Label>
-                        </asp:HyperLink>
-            </div>
-            <div id="menu_sms">
-                        <asp:HyperLink ID="lnkSMS" runat="server" NavigateUrl="~/Modules/SMS/SmsDashboard.aspx" 
-                            CssClass="menu_inicio_borde icono_menu icono_sms ancho_item_menu" >
-                            <i class="icono_espacio_menu"></i> 
-                            <asp:Label ID="Label2" runat="server" Text="SMS" ></asp:Label>
-                        </asp:HyperLink>
-            </div>
-             
-            </div>
-
-
-            <!-- / Menu Principal antiguo -->
-            <div class="tabs_lateral_contenido" style="margin-left:30px;">
-                <div class="tabs_contenido">
-
-                <%--<div style="padding: 10px;">
-                <asp:Image ID="imgLogoGanoLife2" runat="server" 
-                    ImageUrl="~/Styles/2015/img/logo.png" ToolTip="Logo GanoLife" />
-                </div>--%>
-                
-                <div class="tab_panel active" id="tab_menu_principal">
-                <!-- Menu Principal Izquierda-->
-
-
-                <nav id="menu_izquierda" class="ocultar_en_pc222"  runat="server" style="height: 66px!important; display:none;">
-                <ul id="menu_principal_visible"  runat="server">
-
-                        <ul>
-                        <li>
-                        <asp:HyperLink ID="lnkCRMCustomers" runat="server" 
-                                NavigateUrl="~/Modules/CRM/CRMdashboard.aspx#top" CssClass="icono_menu icono_vacio" >
-                                <i class="icono_espacio_menu"></i><asp:Label ID="Label92" runat="server" Text="- Clientes" 
-                                meta:resourcekey="Label2Resource1" ></asp:Label>
-</asp:HyperLink>
-                        </li>
-                        <li>
-                        <asp:HyperLink ID="lnkCRMMarketing" runat="server" 
-                                NavigateUrl="~/dashboard.aspx#top" CssClass="icono_menu icono_vacio" ><i class="icono_espacio_menu"></i><asp:Label 
-                                ID="Label93" runat="server" Text="- Marketing" 
-                                meta:resourcekey="Label3Resource1" ></asp:Label>
-</asp:HyperLink>
-                        </li>
-                        <li>
-                        <asp:HyperLink ID="lnkCRMReports" runat="server" NavigateUrl="~/dashboard.aspx#top" CssClass="icono_menu icono_vacio" ><i class="icono_espacio_menu"></i><asp:Label 
-                                ID="Label94" runat="server" Text="- Reportes" 
-                                meta:resourcekey="Label4Resource1" ></asp:Label>
-</asp:HyperLink>
-                        </li>
-                        </ul>
-                                    
-
-                    <li id="menu_almacen2">
-                        <asp:HyperLink ID="lnkWarehouse" runat="server" Visible="false" 
-                            NavigateUrl="~/Modules/Inventory/Home.aspx#top" CssClass="menu_almacen_borde icono_menu icono_pedidos" >
-                        <i class="icono_espacio_menu"></i> <asp:Label ID="Label96" runat="server" 
-                            Text="Almacén e Inventario" meta:resourcekey="Label6Resource1" ></asp:Label>
-                        </asp:HyperLink>
-<%--                        <ul>
-                        <li>
-                        <asp:HyperLink ID="lnkWarehouseManagment" runat="server" 
-                                NavigateUrl="~/dashboard.aspx#top" CssClass="icono_menu icono_vacio" ><i class="icono_espacio_menu"></i><asp:Label 
-                                ID="Label7" runat="server" Text="- Almacén" meta:resourcekey="Label7Resource1" ></asp:Label>
-</asp:HyperLink>
-                        </li>
-                        <li>
-                        <asp:HyperLink ID="lnkWarehouseProducts" runat="server" 
-                                NavigateUrl="~/dashboard.aspx#top" CssClass="icono_menu icono_vacio"  ><i class="icono_espacio_menu"></i><asp:Label 
-                                ID="Label8" runat="server" Text="- Productos" 
-                                meta:resourcekey="Label8Resource1" ></asp:Label>
-</asp:HyperLink>
-                        </li>
-                        <li>
-                        <asp:HyperLink ID="lnkWarehouseOrders" runat="server" 
-                                NavigateUrl="~/dashboard.aspx#top" CssClass="icono_menu icono_vacio" ><i class="icono_espacio_menu"></i><asp:Label 
-                                ID="Label9" runat="server" Text="- Pedidos" meta:resourcekey="Label9Resource1" ></asp:Label>
-</asp:HyperLink>
-                        </li>
-                        <li>
-                        <asp:HyperLink ID="lnkWarehouseReports" runat="server" 
-                                NavigateUrl="~/dashboard.aspx#top" CssClass="icono_menu icono_vacio" ><i class="icono_espacio_menu"></i><asp:Label 
-                                ID="Label10" runat="server" Text="- Reportes" 
-                                meta:resourcekey="Label10Resource1" ></asp:Label>
-</asp:HyperLink>
-                        </li>
-                        </ul>--%>
-                    </li>
-
-                    
-
-               <%--     <li id="menu_fabricacion">
-                        <asp:HyperLink ID="lnkMRP" runat="server" 
-                            NavigateUrl="~/Modules/Inventory/InventoryDashboard.aspx#top" 
-                            CssClass="menu_fabricacion_borde icono_menu icono_fabricacion" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label15" runat="server" Text="Gestión de  Inventarios" 
-                            meta:resourcekey="Label15Resource1" ></asp:Label>
-                        </asp:HyperLink>
-                    </li>--%>
-
-                <%--    <li id="menu_almacen">
-                        <asp:HyperLink ID="HyperLink6" runat="server" 
-                            NavigateUrl="~/Modules/CDA/CDADashboard.aspx#top" 
-                            CssClass="menu_almacen_borde icono_menu icono_cda" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label2" runat="server" Text="Centros de Apoyo (CDA)" ></asp:Label>
-                        </asp:HyperLink>
-                    </li>--%>
-                    
-          <%--          <li id="menu_ewallet" >
-                        <asp:HyperLink ID="lnkPOS" runat="server" NavigateUrl="~/Modules/Ewallet/EwalletDashboard.aspx#top" 
-                            CssClass="menu_ewallet_borde icono_menu icono_ewallet" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label12" runat="server" Text="EWallet" ></asp:Label>
-</asp:HyperLink>
-                    </li>--%>
-
-                    <li id="menu_humanos">
-                        <asp:HyperLink ID="lnkRRHH" runat="server" NavigateUrl="~/dashboard.aspx#top" Visible="true"
-                            CssClass="menu_humanos_borde icono_menu icono_recursos"><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label14" runat="server" Text="Recursos Humanos" 
-                            meta:resourcekey="Label14Resource1" ></asp:Label>
-</asp:HyperLink>
-                    </li>
-
-                    <li id="menu_compras">
-                        <asp:HyperLink ID="lnkPurchases" runat="server" Visible="false"
-                            NavigateUrl="~/dashboard.aspx#top" 
-                            CssClass="menu_compras_borde icono_menu icono_compras" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label11" runat="server" Text="Compras" meta:resourcekey="Label11Resource1" ></asp:Label>
-                        </asp:HyperLink>
-                    </li>
-                             
-
-
-                   <%-- <li id="menu_email">
-                        <asp:HyperLink ID="HyperLink1" runat="server" 
-                            NavigateUrl="http://www.ganolife.pe/Correo/" Target="_blank"  
-                            CssClass="menu_email_borde icono_menu icono_contacto" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label19" runat="server" Text="Email" meta:resourcekey="Label19Resource1" ></asp:Label>
-</asp:HyperLink>
-                    </li>--%>
-
-          <%--          <li id="menu_nube">
-                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Cloud.aspx#top" 
-                            CssClass="menu_nube_borde icono_menu icono_nube" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label20" runat="server" Text="Mi Nube" meta:resourcekey="Label20Resource1" ></asp:Label>
-</asp:HyperLink>
-                    </li>--%>
-                 
-                 <%--   <li id="menu_configuracion">
-                        <asp:HyperLink ID="lnkTools" runat="server" NavigateUrl="~/Modules/Management/ManagementDashboard.aspx#top"  
-                            CssClass="menu_configuracion_borde icono_menu icono_administracion" ><i class="icono_espacio_menu"></i> <asp:Label 
-                            ID="Label17" runat="server" Text="Gerencia" 
-                            meta:resourcekey="Label17Resource1" ></asp:Label>
-</asp:HyperLink>
-                    </li>--%>
-
-     <%--                <li id="menu_seguridad">
-                        <asp:HyperLink ID="lnkSecurity" runat="server"  
-                             NavigateUrl="~/Modules/Security/User.aspx#top" 
-                             CssClass="menu_seguridad_borde icono_menu icono_seguridad" ><i class="icono_espacio_menu"></i> <asp:Label 
-                             ID="Label18" runat="server" Text="Usuario" 
-                             meta:resourcekey="Label18Resource1" ></asp:Label>
-</asp:HyperLink>
-                    </li>--%>
-
-
-                </ul>
-                </nav>
-                <!-- /Menu Principal Izquierda-->
-
-
                 <br>
+                </td>
+                </tr>
+            </table>
 
-                </div>
 
 
-                </div>
+		<div class="showcase-slider ancho_slide" style=""  >
+			<div id="MS59d154dcb57d8" class="ms-skin-black-2 " >
+
+				 				 
+			<div class="ms-slide" >
+			<div class="ms-thumb" >
+            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" >
+            <tr>
+            <td align="center" valign="top">
+            <asp:HyperLink ID="HyperLink31" NavigateUrl="~/Share_Zarpe.aspx#videos"  runat="server" > 
+            <asp:Image ID="Image21" runat="server" ImageUrl="~/Styles/images/zarpe_menu_1.png" class="ancho_imagen2" />
+            <asp:Label ID="Label46" runat="server" Text="COMPARTIR<br>VIDEOS"  CssClass="texto_menu" Font-Bold="true"></asp:Label>
+            </asp:HyperLink> 
+            </td>
+
+            <td class="ancho_imagen" ></td>
+
+            <td align="center" valign="top" style="margin-right:-10px; display: block;">
+            <asp:HyperLink ID="HyperLink32" NavigateUrl="~/Share_Zarpe.aspx#productos" runat="server">
+            <asp:Image ID="Image22" runat="server" ImageUrl="~/Styles/images/zarpe_menu_2.png" class="ancho_imagen2" /> 
+            <asp:Label ID="Label47" runat="server" Text="COMPARTIR<br>PRODUCTOS"  CssClass="texto_menu" Font-Bold="true"></asp:Label>
+            </asp:HyperLink>
+            </td>
+
+            <td class="ancho_imagen" ></td>
+
+            <td align="center" valign="top">
+            <asp:HyperLink ID="HyperLink33" NavigateUrl="~/Share_Zarpe.aspx#superalimentos" runat="server">
+            <asp:Image ID="Image23" runat="server" ImageUrl="~/Styles/images/zarpe_menu_3.png" class="ancho_imagen2" /> 
+            <asp:Label ID="Label49" runat="server" Text="COMPARTIR<br>SÚPER ALIMENTOS" style="width:92px;display:block;line-height: 14px!important;" 
+            CssClass="texto_menu" Font-Bold="true"></asp:Label>
+            </asp:HyperLink>
+            </td>
+
+            <td class="ancho_imagen" ></td>
+
+            <td align="center" valign="top">
+            <asp:HyperLink ID="HyperLink54" NavigateUrl="~/Share_Zarpe.aspx#superalimentos" runat="server">
+            <asp:Image ID="Image36" runat="server" ImageUrl="~/Styles/images/zarpe_menu_4.png" class="ancho_imagen2" /> 
+            <asp:Label ID="Label77" runat="server" Text="COMPARTIR<br>EVENTOS"  CssClass="texto_menu" Font-Bold="true"></asp:Label>
+            </asp:HyperLink>
+            </td>
+
+            <td class="ancho_imagen" ></td>
+
+            <td align="center" valign="top">
+            <asp:HyperLink ID="HyperLink55" NavigateUrl="~/Share_Zarpe.aspx#superalimentos" runat="server">
+            <asp:Image ID="Image38" runat="server" ImageUrl="~/Styles/images/zarpe_menu_5.png" class="ancho_imagen2" /> 
+            <asp:Label ID="Label78" runat="server" Text="ACTIVA<br>TU NEGOCIO"  style="width:80px;display:block;line-height: 14px!important;"
+            CssClass="texto_menu" Font-Bold="true"></asp:Label>
+            </asp:HyperLink>
+            </td>
+
+
+            <td class="ancho_imagen" ></td>
+
+            <td align="center" valign="top">
+            <asp:HyperLink ID="HyperLink34" NavigateUrl="~/Share_Zarpe.aspx#herramientas" runat="server">
+            <asp:Image ID="Image24" runat="server" ImageUrl="~/Styles/images/zarpe_menu_6.png" class="ancho_imagen2" /> 
+            <asp:Label ID="Label51" runat="server" Text="DESCARGAR<br>CONTENIDO"  CssClass="texto_menu" Font-Bold="true"></asp:Label><br><br>
+            </asp:HyperLink>
+            </td>
+
+            <td class="ancho_imagen" ></td>
+
+            <td align="center" valign="top">
+            <asp:HyperLink ID="HyperLink35" NavigateUrl="~/Share_Zarpe.aspx#blog" runat="server">
+            <asp:Image ID="Image25" runat="server" ImageUrl="~/Styles/images/zarpe_menu_7.png" class="ancho_imagen2" />
+            <asp:Label ID="Label52" runat="server" Text="COMPARTIR<br>BLOG"  CssClass="texto_menu" Font-Bold="true"></asp:Label>
+            </asp:HyperLink>
+            </td>
+
+            <td class="ancho_imagen" ></td>
+
+            <td align="center" valign="top">
+            <asp:HyperLink ID="HyperLink36" NavigateUrl="~/Share_Zarpe.aspx#prospectos" runat="server">
+            <asp:Image ID="Image26" runat="server" ImageUrl="~/Styles/images/zarpe_menu_8.png" class="ancho_imagen2" />
+            <asp:Label ID="Label53" runat="server" Text="CONTROL DE<br>PROSPECTOS"  CssClass="texto_menu" Font-Bold="true"></asp:Label>
+            </asp:HyperLink>
+            </td>
+
+            </tr>
+            </table> 	                 
             </div>
+			</div>
+					
+        
+			<%--<div class="ms-slide" >
+            <div class="ms-thumb" >
+            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" >
+            <tr>
+            <td class="ancho_imagen" ></td>
+            </tr>
+            </table> 
+
+			</div>
+			</div>--%>
+
+
+			</div>		 
+		</div>
+    </td>
+    </tr>
+</table>    
+		
+		<script>
+		    (window.MSReady = window.MSReady || []).push(function ($) {
+
+		        "use strict";
+		        var masterslider_57d8 = new MasterSlider();
+		        // slider controls
+		        masterslider_57d8.control('arrows', { autohide: true, overVideo: true });
+		        masterslider_57d8.control('bullets', { autohide: true, overVideo: true, dir: 'h', align: 'bottom', space: 5, margin: 10 });
+		        masterslider_57d8.control('thumblist', { autohide: false, overVideo: true, dir: 'h', speed: 17, inset: false, arrows: false, hover: false, customClass: '', align: 'bottom', type: 'thumbs', margin: 5, width: 100, height: 100, space: 5, fillMode: 'fill' });
+		        masterslider_57d8.control('scrollbar', { autohide: false, overVideo: true, dir: 'h', inset: true, align: 'top', color: '#3D3D3D', margin: 10, width: 4 });
+		        masterslider_57d8.control('slideinfo', { autohide: false, overVideo: true, dir: 'v', align: 'right', inset: false, margin: 20, size: 300 });
+		        // slider setup
+		        masterslider_57d8.setup("MS59d154dcb57d8", {
+		            width: 499,
+		            height: 539,
+		            minHeight: 0,
+		            space: 0,
+		            start: 1,
+		            grabCursor: true,
+		            swipe: true,
+		            mouse: true,
+		            keyboard: false,
+		            layout: "boxed",
+		            wheel: false,
+		            autoplay: false,
+		            instantStartLayers: false,
+		            mobileBGVideo: false,
+		            loop: false,
+		            shuffle: false,
+		            preload: 0,
+		            heightLimit: true,
+		            autoHeight: false,
+		            smoothHeight: true,
+		            endPause: false,
+		            overPause: true,
+		            fillMode: "fill",
+		            centerControls: true,
+		            startOnAppear: false,
+		            layersMode: "center",
+		            autofillTarget: "",
+		            hideLayers: false,
+		            fullscreenMargin: 0,
+		            speed: 20,
+		            dir: "h",
+		            parallaxMode: 'swipe',
+		            view: "basic"
+		        });
+
+		        window.masterslider_instances = window.masterslider_instances || [];
+		        window.masterslider_instances.push(masterslider_57d8);
+		    });
+		</script>
+
+<script type="text/javascript" src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/dist/slide/masterslider.min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
 
 
 
+
+
+
+<%--<div class="css-slider-wrapper ver_en_movil"></div>--%>
+    
+
+
+
+    
+
+
+    <!-- Menu PC / Share --> 
+    <table id="menuShare_PC" runat="server" width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="zarpe_pc"
+    style=" background:#e6e7e9; height:120px; margin-bottom:20px; " >
+    <tr>
+    <td align="center">
+
+    <!-- Bienvenido / Share --> 
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style=" background:#ffffff!important; ">
+        <tr>
+        <td>
+
+        <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0" >
+        <tr>
+        <td align="right">
+        <asp:Label ID="Label81" runat="server" Text="Bienvenido (a)" class="titulo_8b" ForeColor="#042743" ></asp:Label>
+        <asp:Label ID="lbFirstName" runat="server" Text="Nombre" class="titulo_8b" Font-Bold="true" ForeColor="#042743" ></asp:Label> 
+        <br>
+        <asp:Label ID="Label73" runat="server" Text="¡Aquí tienes todas las herramientas necesarias para tu negocio!" class="texto_3b" 
+        ForeColor="#929397" ></asp:Label> 
+        </td>
+        </tr>
+        </table>
+        <br><br>
+        </td>
+        </tr>
+    </table>
+
+
+
+        <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:1100px">
+        <tr>
+        <td align="center"> 
+        <asp:HyperLink ID="HyperLink11" class="menu_padding" NavigateUrl="~/Share_Zarpe.aspx#videos" runat="server">
+        <asp:Image ID="Image10" runat="server" ImageUrl="~/Styles/images/zarpe_menu_1.png" style="width:100%; max-width:60px;" /><br> 
+        <asp:Label ID="Label66" runat="server" Text="COMPARTIR VIDEOS"  CssClass="texto_20" ForeColor="#728191" Font-Bold="true"></asp:Label>
+        </asp:HyperLink> 
+
+        <asp:HyperLink ID="HyperLink12" class="menu_padding" NavigateUrl="~/Share_Zarpe.aspx#productos" runat="server">
+        <asp:Image ID="Image11" runat="server" ImageUrl="~/Styles/images/zarpe_menu_2.png" style="width:100%; max-width:60px;" /><br> 
+        <asp:Label ID="Label15" runat="server" Text="COMPARTIR PRODUCTOS"  CssClass="texto_20" ForeColor="#728191" Font-Bold="true"></asp:Label>
+        </asp:HyperLink> 
+
+        <asp:HyperLink ID="HyperLink13" class="menu_padding" NavigateUrl="~/Share_Zarpe.aspx#superalimentos" runat="server">
+        <asp:Image ID="Image12" runat="server" ImageUrl="~/Styles/images/zarpe_menu_3.png" style="width:100%; max-width:60px;" /><br> 
+        <asp:Label ID="Label17" runat="server" Text="COMPARTIR<br>SÚPER ALIMENTOS"  CssClass="texto_20" ForeColor="#728191" Font-Bold="true"></asp:Label>
+        </asp:HyperLink> 
+
+        <asp:HyperLink ID="HyperLink56" class="menu_padding" NavigateUrl="~/Share_Zarpe.aspx#superalimentos" runat="server">
+        <asp:Image ID="Image39" runat="server" ImageUrl="~/Styles/images/zarpe_menu_4.png" style="width:100%; max-width:60px;" /><br> 
+        <asp:Label ID="Label89" runat="server" Text="COMPARTIR EVENTOS"  CssClass="texto_20" ForeColor="#728191" Font-Bold="true"></asp:Label>
+        </asp:HyperLink> 
+
+        <asp:HyperLink ID="HyperLink57" class="menu_padding" NavigateUrl="~/Share_Zarpe.aspx#superalimentos" runat="server">
+        <asp:Image ID="Image40" runat="server" ImageUrl="~/Styles/images/zarpe_menu_5.png" style="width:100%; max-width:60px;" /><br> 
+        <asp:Label ID="Label90" runat="server" Text="ACTIVA<br>TU NEGOCIO"  CssClass="texto_20" ForeColor="#728191" Font-Bold="true"></asp:Label>
+        </asp:HyperLink> 
+
+        <asp:HyperLink ID="HyperLink14" class="menu_padding" NavigateUrl="~/Share_Zarpe.aspx#herramientas" runat="server">
+        <asp:Image ID="Image13" runat="server" ImageUrl="~/Styles/images/zarpe_menu_6.png" style="width:100%; max-width:60px;" /><br> 
+        <asp:Label ID="Label19" runat="server" Text="DESCARGAR CONTENIDO"  CssClass="texto_20" ForeColor="#728191" Font-Bold="true"></asp:Label>
+        </asp:HyperLink> 
+
+        <asp:HyperLink ID="HyperLink15" class="menu_padding" NavigateUrl="~/Share_Zarpe.aspx#blog" runat="server">
+        <asp:Image ID="Image14" runat="server" ImageUrl="~/Styles/images/zarpe_menu_7.png" style="width:100%; max-width:60px;" /><br> 
+        <asp:Label ID="Label20" runat="server" Text="COMPARTIR<br>BLOG"  CssClass="texto_20" ForeColor="#728191" Font-Bold="true"></asp:Label>
+        </asp:HyperLink> 
+
+        <asp:HyperLink ID="HyperLink16" class="menu_padding" NavigateUrl="~/Share_Zarpe.aspx#prospectos" runat="server">
+        <asp:Image ID="Image15" runat="server" ImageUrl="~/Styles/images/zarpe_menu_8.png" style="width:100%; max-width:60px;" /><br> 
+        <asp:Label ID="Label27" runat="server" Text="CONTROL DE PROSPECTOS"  CssClass="texto_20" ForeColor="#728191" Font-Bold="true"></asp:Label>
+        </asp:HyperLink> 
+
+        </td>
+        </tr>
+        </table>
+    </td>
+    </tr>
+    </table>
+
+
+
+
+
+
+<header id="headInShare" runat="server" style=" display:none;"></header>
+
+
+
+
+
+</ContentTemplate>
+</asp:UpdatePanel>
+
+
+<asp:ContentPlaceHolder ID="MainContent" runat="server">
+</asp:ContentPlaceHolder>
+
+</div>
+
+<table align="center" border="0" cellspacing="0" cellpadding="0" style="width:100%;background:#ffffff; max-width:2000px; display:none;" >
+        <tr>
+        <td align="center">
+
+<table align="center" border="0" cellspacing="0" cellpadding="0" style="width:100%; max-width:2000px; " >
+        <tr>
+        <td align="center">
+        <asp:HyperLink ID="HyperLink8"  NavigateUrl="~/Opportunity_Zarpe.aspx" Target="_blank" runat="server">
+        <asp:Image ID="Image4" runat="server" ImageUrl="~/Styles/images/zarpe_fondo29.jpg" CssClass="zarpe_pc" style="width:100%; max-width:2000px;"/> 
+        <asp:Image ID="Image30" runat="server" ImageUrl="~/Styles/images/zarpe_fondo29b.jpg" CssClass="zarpe_movil" style="width:100%; max-width:2000px;"/> 
+        </asp:HyperLink>
+        </td>
+        </tr>
+</table>
+
+        </td>
+        </tr>
+</table>
+
+
+<!-- Banner 2 -->
+<%--<div class="wrapper-home">
+
+<asp:HyperLink ID="HyperLink7" NavigateUrl="~/Opportunity.aspx" runat="server">
+<asp:Image ID="Image9" runat="server" ImageUrl="~/Styles/images/oportunidad_banner.jpg" CssClass="imagen-header no_ver_en_movil2"/>
+<asp:Image ID="Image10" runat="server" ImageUrl="~/Styles/images/oportunidad_banner2.jpg" CssClass="imagen-header ver_en_movil"/>
+</asp:HyperLink>
+
+</div>--%>
+
+
+
+<table align="center" border="0" cellspacing="0" cellpadding="0" style="width:100%; max-width:2000px;" >
+<tr>
+<td align="center">
+<asp:HyperLink ID="HyperLink43" runat="server" NavigateUrl="https://hoy.zar.pe/aboutchris/" Target="_blank" >
+<asp:Image ID="Image47" runat="server" ImageUrl="~/Styles/images/zarpe_fondo44.jpg" CssClass="imagen-header no_ver_en_movil2" />
+<asp:Image ID="Image49" runat="server" ImageUrl="~/Styles/images/zarpe_fondo44_movil.jpg" CssClass="imagen-header ver_en_movil" />
+</asp:HyperLink>
+
+
+</td>
+</tr>
+</table>
+
+
+
+<div class="banner_10" >
+<table align="center" border="0" cellspacing="0" cellpadding="0" style="width:100%; max-width:2000px; height:200px;" >
+        <tr>
+        <td align="center"><br>
+
+
+        <!-- Compartir -->
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" >
+        <tr>
+        <td align="left">
+
+        <div class="ancho_footer1" >
+                
+                <asp:HyperLink ID="HyperLink38" runat="server" NavigateUrl="https://api.whatsapp.com/send?phone=51934732284&text=Hola!%20Quiero%20recibir%20más%20información%20" target="_blank" class="ver_en_movil2222">
+                    <asp:Image ID="Image34" runat="server" ImageUrl="~/Styles/images/zarpe_whasap3.png" class="icono_social" />
+                </asp:HyperLink>
+
+                <asp:HyperLink ID="HyperLink50" runat="server" NavigateUrl="https://m.me/zarperu" target="_blank" class="ver_en_movil2222">
+                    <asp:Image ID="Image35" runat="server" ImageUrl="~/Styles/images/zarpe_msn3.png" class="icono_social"/>
+                </asp:HyperLink>
+
+                <asp:HyperLink ID="footerHiperlink2" runat="server" NavigateUrl="https://www.facebook.com/zarpeconnosotros/" Target="_blank">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Styles/images/zarpe_facebook.png" class="icono_social"></asp:Image>
+                </asp:HyperLink>
+                <asp:HyperLink ID="HyperLink17" runat="server" NavigateUrl="https://www.instagram.com/zar_pe/" Target="_blank">
+                    <asp:Image ID="Image16" runat="server" ImageUrl="~/Styles/images/zarpe_instagram.png" class="icono_social"></asp:Image>
+                </asp:HyperLink>
+                <asp:HyperLink ID="HyperLink39" runat="server" NavigateUrl="https://www.youtube.com/channel/UCfNI9n5J0_xXJUJ4z2hAt_A" Target="_blank">
+                    <asp:Image ID="Image31" runat="server" ImageUrl="~/Styles/images/zarpe_youtube.png" class="icono_social2"></asp:Image>
+                </asp:HyperLink>
+                <asp:Label ID="footerLabel2" runat="server" class="texto_3" Font-Bold="true" ForeColor="#1a5c8c" Text=" Síganos en nuestras redes"></asp:Label>
+                <br>
+        </div>
+
+        <div class="ancho_footer2 no_ver_en_movil2" >
+            <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0" >
+            <tr>
+            <td align="right"><asp:Image ID="Image32" runat="server" ImageUrl="~/Styles/images/zarpe_mail.png" Width="30px"></asp:Image>
+            </td>
+
+            <td align="right" width="124px">
+            <asp:Label ID="Label61" runat="server" class="texto_17" Font-Bold="true" ForeColor="#195b8d" Text="Contáctenos"></asp:Label><br>
+            <asp:Label ID="Label62" runat="server" class="titulo_9" Font-Bold="true" ForeColor="#1b5b87" Text="info@zar.pe"></asp:Label>
             </td>
             </tr>
-</table>
-
-
-
-
-
-
-
-
-<aside id="pagina_barra_lateral" runat="server"  >
-        <div >
-            <!-- Mini logo -->
-            <%--<div class="logo_modulo" >
-                <a href="#">
-                <asp:Image ID="Image2" runat="server" ImageUrl="~/Styles/2015/img/logo_365.png" ToolTip="Logo 365"/>
-                </a>
-            </div>--%>
-            <!-- /Mini logo -->
+            </table>
+        
+        
         </div>
-</aside>
-<!-- /Contenido total lado  izquierda -->
 
 
 
-    </ContentTemplate>
-    </asp:UpdatePanel>
-
-
-<asp:UpdatePanel ID="upPopupShoppingCar" runat="server">
-<ContentTemplate>
-
-     <!-- Popup Proximamente -->
-
-</ContentTemplate>
-</asp:UpdatePanel>
+        </td>
+        </tr>
+        </table>
 
 
 
-
-<asp:UpdatePanel ID="upMenu2" runat="server">
-<ContentTemplate>
-
-    <!-- /Menu Tiles Principal Ocultado -->
-    <div id="centrado" runat="server" class="ocultar_menu_tiles222" style="display:none;">
-
-        <div id="fondo_menu_tablet" runat="server"  >
-
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_inicio" >
-            <asp:HyperLink ID="hlnkMenuInicio" runat="server" NavigateUrl="~/Dashboard.aspx#top" >
-            <div runat="server" class="icono_inicio_tablet"></div>
-            <div runat="server" class="tile_informacion">
-            <asp:Label ID="hlblMenuInicio" runat="server" Text="Dashboard" meta:resourcekey="hlblMenuInicioResource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
+            <div class="footer-content__data txt-r" style=" display:none;">
+                <span class="footer-content__data__title contact">
+                    <asp:Label ID="lbReferenceMessageFooter" runat="server" Text="Usuario le ha referido a esta página"></asp:Label>
+                </span>
+                <br>
+                <span class="footer-content__data__correo">
+                     <asp:Label ID="lbReferenceEmailFooter" runat="server" Text="Usuario le ha referido a esta página"></asp:Label>
+                </span>
             </div>
 
 
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_crm" >
-            <asp:HyperLink ID="hlnkMenuCRM" runat="server" NavigateUrl="~/Modules/CRM/CRMdashboard.aspx#top" >
-            <div runat="server" class="icono_crm_tablet"></div>
-            <div runat="server" class="tile_informacion">
-            <asp:Label ID="hlblMenuCRM" runat="server" Text="CRM" meta:resourcekey="hlblMenuCRMResource1"></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
+        <!-- Menu pie de pagina -->
+        <div class="" style="text-align:center;">
+            <div class="ver_en_movil" >
+
+                <asp:Label ID="Label57" runat="server" class="texto_17" Font-Bold="true" ForeColor="#195b8d" Text="Contáctenos"></asp:Label>
+                <asp:Label ID="Label58" runat="server" class="titulo_9" Font-Bold="true" ForeColor="#1b5b87" Text="info@zar.pe"></asp:Label>
+
+                <table width="70%" border="0" align="center" cellpadding="0" cellspacing="0" >
+                <tr>
+                <td align="center"><hr style="background:#85a7c0!important; width:100%; "></td>
+                </tr>
+                </table>
+                
+                <asp:HyperLink ID="HyperLink25" NavigateUrl="~/PrivacyPolicy.aspx" runat="server">
+                    <asp:Label ID="Label40" runat="server" Text="Políticas de privacidad" ForeColor="#165c8d" class="texto_4" Font-Bold="true"></asp:Label>
+                </asp:HyperLink>
+                <br>
+                <asp:HyperLink ID="HyperLink26" NavigateUrl="~/TermsandConditions.aspx" runat="server">
+                <asp:Label ID="Label41" runat="server" Text="Términos y condiciones" ForeColor="#165c8d" class="texto_4" Font-Bold="true"></asp:Label>
+                </asp:HyperLink>
+                <br>
+                <asp:HyperLink ID="HyperLink27" NavigateUrl="~/PolicyPersonalData.aspx" runat="server">
+                <asp:Label ID="Label42" runat="server" Text="Políticas sobre el Uso de datos personales y derechos ARCO" ForeColor="#165c8d" class="texto_4" Font-Bold="true"></asp:Label>
+                </asp:HyperLink>
+                <br>
+                <asp:HyperLink ID="HyperLink28" NavigateUrl="~/DataProtection.aspx" runat="server">
+                <asp:Label ID="Label43" runat="server" Text="Protección de Datos" ForeColor="#165c8d" class="texto_4" Font-Bold="true"></asp:Label>
+                </asp:HyperLink>
+                <br>
+                <asp:HyperLink ID="HyperLink29" NavigateUrl="~/Cookiepolicy.aspx" runat="server">
+                <asp:Label ID="Label44" runat="server" Text="Uso de Cookies" ForeColor="#165c8d" class="texto_4" Font-Bold="true"></asp:Label>
+                </asp:HyperLink>
+                <br>
+                <asp:HyperLink ID="HyperLink30" NavigateUrl="~/LibrodeReclamaciones.aspx" runat="server">
+                <asp:Label ID="Label45" runat="server" Text="Libro de reclamaciones" ForeColor="#165c8d" class="texto_4" Font-Bold="true"></asp:Label>
+                </asp:HyperLink>
+                <br>
+                <asp:HyperLink ID="HyperLink24" NavigateUrl="#" runat="server">
+                            <asp:Label ID="Label39" runat="server" Text="BLOG" ForeColor="#165c8d" class="texto_4" Font-Bold="true"></asp:Label>
+                </asp:HyperLink>
+                
+                <br>
+                <asp:HyperLink ID="HyperLink52" NavigateUrl="~/ContactUs.aspx" runat="server">
+                            <asp:Label ID="Label71" runat="server" Text="Contacto" ForeColor="#165c8d" class="texto_4" Font-Bold="true"></asp:Label>
+                </asp:HyperLink>
 
 
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_ventas">
-            <asp:HyperLink ID="hlnkMenuSales" runat="server" NavigateUrl="~/Modules/Orders/OrderDashboard.aspx#top"  >
-            <div id="Div1" runat="server" class="icono_distribuidores_tablet"></div>
-            <div id="Div4" runat="server" class="tile_informacion">
-            <asp:Label ID="hlblMenuSales"  runat="server" Text="Ventas / Pedidos" meta:resourcekey="hlblMenuSalesResource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
+                <table width="70%" border="0" align="center" cellpadding="0" cellspacing="0" >         
+                <tr>
+                <td align="center"><hr style="background:#85a7c0!important; width:100%; "></td>
+                </tr>
+                </table>
 
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_sucursales">
-            <asp:HyperLink ID="hlnkBranchOffice" runat="server" NavigateUrl="~/Modules/WarehouseManager/Home.aspx#top" >
-            <div id="Div8" runat="server" class="icono_sucursales_tablet"></div>
-            <div id="Div9" runat="server" class="tile_informacion">
-            <asp:Label ID="hlblBranchOffice" runat="server" Text="Entrega de Mercadería" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_reportes">
-            <asp:HyperLink ID="hlnkMenuReports" runat="server" NavigateUrl="~/Modules/Reports/Dashboard.aspx#top" >
-            <div id="Div10" runat="server" class="icono_reportes_tablet"></div>
-            <div id="Div11" runat="server" class="tile_informacion">
-            <asp:Label ID="hlblMenuReports"  runat="server" Text="Reportes" meta:resourcekey="hlblMenuReportsResource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-
-
-
-            <div id="Div5" class="tile_menu_tablet icono_menu_tablet boton_tablet_almacen" runat="server" Visible="false">
-            <asp:HyperLink ID="hlnkMenuWarehouse" runat="server" NavigateUrl="~/Modules/Inventory/Home.aspx#top" >
-            <div id="Div6" runat="server" class="icono_pedidos_tablet"></div>
-            <div id="Div7" runat="server" class="tile_informacion">
-            <asp:Label ID="hlblMenuWarehouse"  runat="server" Text="Almacén e Inventario" meta:resourcekey="hlblMenuWarehouseResource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_compras" runat="server" Visible="false">
-            <asp:HyperLink ID="hlnkMenuPurchases" runat="server" NavigateUrl="#top" CssClass="menu-link" >
-            <div id="Div2" runat="server" class="icono_compras_tablet"></div>
-            <div id="Div3" runat="server" class="tile_informacion">
-            <asp:Label ID="hlblMenuPurchases" runat="server" Text="Compras" meta:resourcekey="hlblMenuPurchasesResource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
             </div>
 
-<%--            <div id="target-content">
-            <a href="#contenedor_de_pagina" class="close"></a>
-            <div id="target-inner" > 
-            <asp:Label ID="lblMenuCRM" runat="server" Text="CRM" 
-                    meta:resourcekey="lblMenuCRMResource2" ></asp:Label><hr style="margin-top:0px;" >
-                  <table  width="100%" border="0" align="center" cellpadding="6" cellspacing="0">
-                  <tr>
-                    <td align="center">
-                    <asp:HyperLink ID="hlnkMenuCRMCustomers" runat="server" 
-                            class="tile_menu_tablet boton_tablet_crmsub boton_zoom" 
-                            style="width:90px!important; height:90px!important;" 
-                            NavigateUrl="~/Modules/CRM/CRMdashboard.aspx#top" ><div runat="server" class="submenu_crm"><asp:Label 
-                                ID="hlblMenuCRMCustomers" runat="server" Text="Clientes" 
-                                meta:resourcekey="hlblMenuCRMCustomersResource1" ></asp:Label>
-</div>
-</asp:HyperLink>
-     
-                    <asp:HyperLink ID="hlnkMenuCRMMarketing" runat="server" 
-                            class="tile_menu_tablet  boton_tablet_crmsub boton_zoom" 
-                            style="width:90px!important; height:90px!important;" NavigateUrl="#" ><div runat="server" class="submenu_crm"><asp:Label 
-                                ID="hlblMenuCRMMarketing" runat="server" Text="Marketing" 
-                                meta:resourcekey="hlblMenuCRMMarketingResource1" ></asp:Label>
-</div>
-</asp:HyperLink>
+            <div class=" footer-content__data--join ocultar_en_movil" style="color:#165c8d; ">
+            <br><br>    
+                <span class="texto_7">
+                    <asp:HyperLink ID="lnkFooterPrivacyPolicy" NavigateUrl="~/PrivacyPolicy.aspx" runat="server">
+                    <asp:Label ID="lbFooterPrivacyPolicy" runat="server" Text="Politicas de privacidad" Font-Bold="true" ForeColor="#165c8d" Font-Size="12px"></asp:Label>
+                    </asp:HyperLink>
+                </span>|
+                <span class="texto_7">
+                    <asp:HyperLink ID="lnkFooterTermsandConditions" NavigateUrl="~/TermsandConditions.aspx" runat="server">
+                    <asp:Label ID="lbFooterTermsandConditions" runat="server" Text="Términos y condiciones" Font-Bold="true" ForeColor="#165c8d" Font-Size="12px"></asp:Label>
+                    </asp:HyperLink>
+                </span>|
+                <span class="texto_7">
+                    <asp:HyperLink ID="footerHiperlink6" NavigateUrl="~/PolicyPersonalData.aspx" runat="server">
+                    <asp:Label ID="Label38" runat="server" Text="Políticas sobre el Uso de datos personales y derechos ARCO" Font-Bold="true" ForeColor="#165c8d" Font-Size="12px"></asp:Label>
+                    </asp:HyperLink>
+                </span>|
+                <span class="texto_7">
+                    <asp:HyperLink ID="lnkFooterDataProtection" NavigateUrl="~/DataProtection.aspx" runat="server">
+                    <asp:Label ID="lbFooterDataProtection" runat="server" Text="Protección de Datos" Font-Bold="true" ForeColor="#165c8d" Font-Size="12px"></asp:Label>
+                    </asp:HyperLink>
+                </span>|
+                <span class="texto_7">
+                    <asp:HyperLink ID="lnkFooterCookiepolicy" NavigateUrl="~/Cookiepolicy.aspx" runat="server">
+                    <asp:Label ID="lbFooterCookiepolicy" runat="server" Text="Uso de Cookies" Font-Bold="true" ForeColor="#165c8d" Font-Size="12px"></asp:Label>
+                    </asp:HyperLink>
+                </span>|
+                <span class="texto_7">
+                    <asp:HyperLink ID="lnkFooterLibrodeReclamaciones" NavigateUrl="~/LibrodeReclamaciones.aspx" runat="server">
+                    <asp:Label ID="lbFooterLibrodeReclamaciones" runat="server" Text="Libro de reclamaciones" Font-Bold="true" ForeColor="#165c8d" Font-Size="12px"></asp:Label>
+                    </asp:HyperLink>
+                </span>|
+                <span class="texto_7">
+                    <asp:HyperLink ID="lnkFooterBlog" NavigateUrl="#" runat="server">
+                            <asp:Label ID="lbFooterBlog" runat="server" Text="BLOG" ForeColor="#185c8d" Font-Bold="true" Font-Size="12px"></asp:Label>
+                     </asp:HyperLink>
+                </span>|
+                <span class="texto_7">
+                    <asp:HyperLink ID="HyperLink53" NavigateUrl="~/ContactUs.aspx" runat="server">
+                            <asp:Label ID="Label72" runat="server" Text="Contacto" ForeColor="#185c8d" Font-Bold="true" Font-Size="12px"></asp:Label>
+                     </asp:HyperLink>
+                </span>
+                <br>
+                <%--<span id="siteseal"><script async type="text/javascript" 
+                src="https://seal.godaddy.com/getSeal?sealID=BrHxd1TkJRUoyan5LaQK11yuXTucjcSfclHum2BoOInDzsi5afbqLVbTXdfm"></script></span>
+                <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>--%>
 
-                    <asp:HyperLink ID="hlnkMenuCRMReports" runat="server" 
-                            class="tile_menu_tablet boton_tablet_crmsub boton_zoom" 
-                            style="width:90px!important; height:90px!important;" NavigateUrl="#" ><div runat="server" class="submenu_crm"><asp:Label 
-                                ID="hlblMenuCRMReports" runat="server" Text="Reportes" 
-                                meta:resourcekey="hlblMenuCRMReportsResource1" ></asp:Label>
-</div>
-</asp:HyperLink>
-                    </td>
-                  </tr>
-                  </table>
+
+                
             </div>
-            </div>--%>
-
-<%--            <div id="target-content2">
-            <a href="#contenedor_de_pagina" class="close"></a>
-            <div id="target-inner2" > 
-            <asp:Label ID="lblMenuWarehouse" runat="server" Text="Almacén e Inventario" 
-                    meta:resourcekey="lblMenuWarehouseResource2" ></asp:Label><hr style="margin-top:0px;" >
-                  <table  width="100%" border="0" align="center" cellpadding="6" cellspacing="0">
-                  <tr>
-                    <td align="center">
-                    <asp:HyperLink ID="hlnkMenuWarehouseManagment" runat="server" 
-                            class="tile_menu_tablet boton_tablet_almacensub boton_zoom" 
-                            style="width:90px!important; height:90px!important;" NavigateUrl="#" ><div runat="server" class="submenu_crm"><asp:Label 
-                                ID="hlbkMenuWarehouseManagment" runat="server" Text="Almacén" 
-                                meta:resourcekey="hlbkMenuWarehouseManagmentResource1" ></asp:Label>
-</div>
-</asp:HyperLink>
-     
-                    <asp:HyperLink ID="hlnkMenuWarehouseProducts" runat="server" 
-                            class="tile_menu_tablet  boton_tablet_almacensub boton_zoom" 
-                            style="width:90px!important; height:90px!important;" NavigateUrl="#" ><div runat="server" class="submenu_crm"><asp:Label 
-                                ID="hlbkMenuWarehouseProducts" runat="server" Text="Productos" 
-                                meta:resourcekey="hlbkMenuWarehouseProductsResource1" ></asp:Label>
-</div>
-</asp:HyperLink>
-
-                    <asp:HyperLink ID="hlnkMenuWarehouseOrders" runat="server" 
-                            class="tile_menu_tablet boton_tablet_almacensub boton_zoom" 
-                            style="width:90px!important; height:90px!important;" NavigateUrl="#" ><div runat="server" class="submenu_crm"><asp:Label 
-                                ID="hlbkMenuWarehouseOrders" runat="server" Text="Pedidos" 
-                                meta:resourcekey="hlbkMenuWarehouseOrdersResource1" ></asp:Label>
-</div>
-</asp:HyperLink>
-
-                    <asp:HyperLink ID="hlnkMenuWarehouseReports" runat="server" 
-                            class="tile_menu_tablet boton_tablet_almacensub boton_zoom" 
-                            style="width:90px!important; height:90px!important;" NavigateUrl="#" ><div runat="server" class="submenu_crm"><asp:Label 
-                                ID="hlbkMenuWarehouseReports" runat="server" Text="Reportes" 
-                                meta:resourcekey="hlbkMenuWarehouseReportsResource1" ></asp:Label>
-</div>
-</asp:HyperLink>
-
-                    </td>
-                  </tr>
-                  </table>
-            </div>
-            </div>--%>
             
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_pos" runat="server" Visible="false">
-            <asp:HyperLink ID="hlnkMenuPOS" runat="server" NavigateUrl="#top" 
-                    CssClass="menu-link" ><div runat="server" class="icono_pos_tablet"></div>
-            <div runat="server" class="tile_informacion"><asp:Label ID="hlblMenuPOS" 
-                    runat="server" Text="POS" meta:resourcekey="hlblMenuPOSResource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_finanzas" runat="server" >
-            <asp:HyperLink ID="hlnkMenuFinance" runat="server" NavigateUrl="~/Modules/Management/Accounting/AccountingDashboard.aspx" CssClass="menu-link" >
-            <div runat="server" class="icono_finanzas_tablet"></div>
-            <div runat="server" class="tile_informacion"><asp:Label ID="hlblMenuFinance" 
-                    runat="server" Text="Finanzas" meta:resourcekey="hlblMenuFinanceResource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_seguridad">
-            <asp:HyperLink ID="hlnkMenuSms" runat="server" NavigateUrl="~/Modules/SMS/SmsDashboard.aspx">
-            <div id="Div13" runat="server" class="icono_sms_tablet"></div>
-            <div id="Div14" runat="server" class="tile_informacion">
-                <asp:Label ID="Label7" runat="server" Text="SMS" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_rrhh" runat="server" Visible="true">
-            <asp:HyperLink ID="hlnkMenuRRHH" runat="server" NavigateUrl="#top" 
-                    CssClass="menu-link" ><div runat="server" class="icono_rrhh_tablet"></div>
-            <div runat="server" class="tile_informacion"><asp:Label ID="hlblMenuRRHH" 
-                    runat="server" Text="Recursos Humanos" 
-                    meta:resourcekey="hlblMenuRRHHResource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_fabricacion" runat="server" Visible="false" >
-            <asp:HyperLink ID="hlnkMenuMRP" runat="server" NavigateUrl="~/Modules/Inventory/InventoryDashboard.aspx#top" 
-                    CssClass="" ><div runat="server" class="icono_fabricacion_tablet"></div>
-            <div runat="server" class="tile_informacion"><asp:Label ID="hlblMenuMRP" 
-                    runat="server" Text="Gestión de  Inventarios" meta:resourcekey="hlblMenuMRPResource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_cda" runat="server" Visible="false">
-            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Modules/CDA/CDADashboard.aspx#top" 
-                    CssClass="" ><div runat="server" class="icono_cda_tablet"></div>
-            <div runat="server" class="tile_informacion"><asp:Label ID="Label3" runat="server" Text="Centros de Apoyo (CDA)"></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_ewallet" runat="server" Visible="false" >
-            <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/Modules/Ewallet/EwalletDashboard.aspx#top" 
-                    CssClass="" ><div runat="server" class="icono_ewallet_tablet"></div>
-            <div runat="server" class="tile_informacion"><asp:Label ID="Label4" runat="server" Text="Créditos E-Wallet" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_reportes" runat="server" Visible="false">
-            <asp:HyperLink ID="HyperLink3" runat="server" 
-                    NavigateUrl="http://www.ganolife.pe/Correo/" Target="_blank" ><div runat="server" class="icono_contacto_tablet"></div>
-            <div runat="server" class="tile_informacion"><asp:Label ID="Label21" runat="server" 
-                    Text="Email" meta:resourcekey="Label21Resource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_reportes" runat="server" Visible="false">
-            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Cloud.aspx#top" ><div runat="server" class="icono_nube_tablet"></div>
-            <div runat="server" class="tile_informacion"><asp:Label ID="Label22" runat="server" 
-                    Text="Entrega de Pedidos" meta:resourcekey="Label22Resource1" ></asp:Label>
-            </div>
-            </asp:HyperLink>
-            </div>
-
- 
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_herramientas" runat="server" Visible="false" >
-            <asp:HyperLink ID="hlnkMenuTools" runat="server" NavigateUrl="~/Modules/Management/ManagementDashboard.aspx#top" ><div runat="server" class="icono_administracion_tablet"></div>
-<div runat="server" class="tile_informacion"><asp:Label ID="hlblMenuTools" 
-        runat="server" Text="Gerencia" meta:resourcekey="hlblMenuToolsResource1" ></asp:Label>
-</div>
-</asp:HyperLink>
-            </div>
-           
-            <div class="tile_menu_tablet icono_menu_tablet boton_tablet_seguridad" runat="server" Visible="false" >
-            <asp:HyperLink ID="hlnkSecurity" runat="server"  NavigateUrl="~/Modules/Security/User.aspx#top" ><div runat="server" class="icono_seguridad_tablet"></div>
-<div runat="server" class="tile_informacion"><asp:Label ID="hlblMenuSecurity" 
-        runat="server" Text="Usuario" meta:resourcekey="hlblMenuSecurityResource1" ></asp:Label>
-</div>
-</asp:HyperLink>
-            </div>
-
-
-        </div>
-
-    </div>
-    <!-- /Menu Tiles Principal -->
-
-</ContentTemplate>
-</asp:UpdatePanel>
-
-
-<!-- Contenido -->
-<div id="contenido_de_pagina2" >
-
-
-    <!-- Bloque -->
-    <div class="fila-ajustable" >
-
-
-        <!-- Contenido 1 -->
-        <div class="columna_ancho12">
-
-
-            <!-- Titulo de paginas -->
-           <%-- <div style="margin-top:20px">
-            <h2><asp:Label ID="lblTituloPagina" runat="server" ForeColor="#515151" Text="Home - Dashboard"></asp:Label></h2>    
-            </div>--%>
-
-            <!-- Indicador de posicion para menu tablet -->
-            <div class="colocar_derecha" style="margin-right:50px; ">
-            <a href="#" >
-            <asp:Image ID="imgUserPhoto" runat="server" ImageUrl="~/Styles/2015/img/icono_menu3.png" ToolTip="Mostrar menu" 
-                    CssClass="ver_menu_tiles" meta:resourcekey="imgUserPhotoResource1"  /> 
-            </a>
-            </div>
-
-
-            <!-- Titulo oculto -->
-            <%--<div id="titulo-usuario" style="display:none;">
-            <h1>
-            <asp:Label ID="lblTituloUsuario" runat="server" Text="Bienvenido"></asp:Label>
-            </h1>
-            </div>--%>
-
-            <asp:Label ID="Linea_Home" runat="server" meta:resourcekey="Linea_HomeResource1"></asp:Label>
-
-            <!-- Submenu oculto -->
-            <div class="header2 ocultar" id="header2">
-
-<%--            <div style="padding:10px 25px; float:left;">
-            <div class="pix_diapo">
-                <div>
-                    <asp:HyperLink ID="lnkBanner01" runat="server" NavigateUrl="#" ToolTip="Publicidad">
-                    <img src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/banner-slider/images/ganolife-banner-slide01.jpg' width="1150" height="150">
-                    </asp:HyperLink>
-                </div>
-                <div>
-                    <asp:HyperLink ID="lnkBanner02" runat="server" NavigateUrl="#" ToolTip="Publicidad">
-                    <img src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/banner-slider/images/ganolife-banner-slide02.jpg' width="1150" height="150">
-                    </asp:HyperLink>
-                </div>
-                <div>
-                    <asp:HyperLink ID="lnkBanner03" runat="server" NavigateUrl="#" ToolTip="Publicidad">
-                    <img src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/banner-slider/images/ganolife-banner-slide03.jpg' width="1150" height="150">
-                    </asp:HyperLink>
-                </div>
-			</div> 
-            </div>--%>
-
-            <nav id="submenu-inferior">
-            	<%--<p style="text-align:left; font-size:20px;color:#FFF;margin:0;padding:0;">SUBMENU*</p>--%>
-                <%--<uc1:wucSubMenu ID="wucSubMenu1" runat="server" />--%>
-            </nav>
-
-            </div>
-
-
+            <br>
+            <asp:Label class="texto_4" ID="footerLabel4" runat="server" Text="Todos los derechos reservados" Font-Bold="true" ForeColor="#165c8d"></asp:Label>
+            <br>
+            <asp:Label class="texto_4" ID="Label29" runat="server" Text="Zarpe" Font-Bold="true" ForeColor="#165c8d"></asp:Label>
+            <asp:Image ID="Image33" runat="server" ImageUrl="~/Styles/images/zarpe_r.png" Width="8px" style="margin-top:2px; margin-left:-4px"></asp:Image>
+            <asp:Label class="texto_4" ID="Label59" runat="server" Text=" 2018" Font-Bold="true" ForeColor="#165c8d"></asp:Label>
+            <br><br>
         </div>
 
 
-    </div>
 
-</div>
-
-
-
-<!-- /Contenedor principal -->
-
-
-</div>
-
-
-
-
-<div class="main" >
-
-
-     <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-
-
-
-</div>
-
-
-<br>
-
-<asp:UpdatePanel ID="upFooter" runat="server">
-<ContentTemplate>
-
-<div class="footer" style="margin-top: -20px">
-
-<!-- Contenedor principal -->
-<div id="contenedor_de_pagina2" class="ancho_de_pagina">
-
-
-
-<!-- Footer -->
-<footer  style="background-color: #f1f1f1" >
-
-<table width="100%" height="100%" border="0" align="center" cellpadding="4" cellspacing="0" style=" background-color:#f1f1f1;">
-  <tr>
-    <td width="3%"> 
-    </td>
-    <td width="61%" valign="top" align="left"> 
-        <div class="colocar_izquierda">
-        <asp:Label ID="lblDerechosReservados" runat="server" 
-                Text="2017 Ganolife - Derechos Reservados" 
-                meta:resourcekey="lblDerechosReservadosResource1"></asp:Label>
-        </div>
-        <br>
-        <div class="colocar_izquierda">
-        <asp:HyperLink ID="lnkPrivacidad" runat="server" TabIndex="20" 
-                NavigateUrl="~/PrivacyPolicy.aspx#top" ForeColor="#343432" 
-                CssClass="piepag_link" ToolTip="Políticas de Privacidad" 
-                meta:resourcekey="lnkPrivacidadResource1">Políticas de Privacidad</asp:HyperLink>
-        |
-        <%--<asp:HyperLink ID="lnkTerminos" runat="server" TabIndex="21"  NavigateUrl="~/TermsofUse.aspx#top" 
-                ForeColor="#343432" CssClass="piepag_link" ToolTip="Términos de Uso" 
-                meta:resourcekey="lnkTerminosResource1">Términos de Uso</asp:HyperLink>
-        |--%>
-        <asp:HyperLink ID="lnkCondiciones" runat="server" TabIndex="22" 
-                NavigateUrl="~/TermsandConditions.aspx#top" ForeColor="#343432" 
-                CssClass="piepag_link" ToolTip="Términos y Condiciones" 
-                meta:resourcekey="lnkCondicionesResource1">Términos y Condiciones</asp:HyperLink>
-        |
-        <asp:HyperLink ID="lnkContactenos" runat="server" TabIndex="23" 
-                NavigateUrl="~/ContactUs.aspx#top" ForeColor="#343432" CssClass="piepag_link" 
-                ToolTip="Contáctenos" meta:resourcekey="lnkContactenosResource1">Contáctenos</asp:HyperLink>
-        <%--|
-        <asp:HyperLink ID="lnkPreguntas" runat="server" NavigateUrl="~/Faq.aspx#top" ForeColor="#343432" CssClass="piepag_link" ToolTip="Preguntas Frecuentes">Preguntas Frecuentes</asp:HyperLink>
-        |
-        <asp:HyperLink ID="lnkMapa" runat="server" NavigateUrl="~/SiteMap.aspx#top" ForeColor="#343432" CssClass="piepag_link" ToolTip="Mapa de sitio">Mapa de sitio</asp:HyperLink>--%>
-        </div>
-    </td>
-
-    <td width="5%"> 
-    </td>
-
-    <td width="28%" valign="top" align="right"><!-- Social -->
-        <div class="colocar_derecha" id="social">
-        
-        <asp:HyperLink ID="lnkSocialFacebook" runat="server" 
-                NavigateUrl="https://www.facebook.com/Ganolife.Sitio.Oficial" 
-                CssClass="facebook" ToolTip="facebook" Target="_blank" 
-                meta:resourcekey="lnkSocialFacebookResource1"> <asp:Image ID="imgFacebook" 
-                runat="server" ImageUrl="~/Styles/2015/img/icono_facebook.png" 
-                meta:resourcekey="imgFacebookResource1" />
-        
-</asp:HyperLink>
-        
-        <asp:HyperLink ID="lnkSocialYoutube" runat="server" 
-                NavigateUrl="http://www.youtube.com/user/ganolifeint/" CssClass="youtube" 
-                ToolTip="youtube" Target="_blank" meta:resourcekey="lnkSocialYoutubeResource1"> <asp:Image 
-                ID="imgYoutube" runat="server" ImageUrl="~/Styles/2015/img/icono_youtube.png" 
-                meta:resourcekey="imgYoutubeResource1" />
-        
-</asp:HyperLink>
-        
-        <asp:HyperLink ID="lnkSocialTwiter" runat="server" 
-                NavigateUrl="http://twitter.com/GanoLifePeru/" CssClass="twitter" 
-                ToolTip="twitter" Target="_blank" meta:resourcekey="lnkSocialTwiterResource1"> <asp:Image 
-                ID="imgTwitter" runat="server" ImageUrl="~/Styles/2015/img/icono_twitter.png" 
-                meta:resourcekey="imgTwitterResource1" />
-        
-</asp:HyperLink>
-
-        <br /><asp:Label ID="lblText1" runat="server" Text="Desarollado por: " 
-                meta:resourcekey="lblText1Resource1" ></asp:Label><asp:Label ID="lblText2" 
-                runat="server" Text="Área de Sistemas Ganolife" Font-Bold="True" 
-                meta:resourcekey="lblText2Resource1" ></asp:Label>
-
-        </div>
-
-    </td>
-    <td width="3%"> 
-    </td>
-
-
-  </tr>
+        </td>
+        </tr>
 </table>
+</div>
+
+
+<footer class="footer-container" >
 
 </footer>
-<!-- /Footer -->
-
-
-</div>
-<!-- /Contenedor principal -->
-
-
-</div>
 
 
 
+<asp:Panel ID="popupCountries" runat="server" ClientIDMode="Static" class="modal fade in modal--home" tabindex="-1" 
+role="dialog" aria-labelledby="myModalLabel" >
+
+<%--    <div class="modal fade in modal--home" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">--%>
+      <div class="modal-dialog" >
+        <div class="modal-content">
+          <div class="wrapper" >
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close" onclick=" $('#popupCountries').bPopup().close(); ">
+                <div class="span" aria-hidden="true">x</div>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="col-md-5">
+                      <br>
+                      <asp:Label ID="Label3" runat="server" Text="Usuarios Registrados" Font-Bold="True" class="texto_7"></asp:Label><br> 
+                      <asp:Label ID="Label13" runat="server" Text="Selecciona el país donde te encuentras" Cssclass="no_ver_en_movil2 texto_7" ></asp:Label>
+                
+
+                <div class="select__countries">
+                  <ul>
+
+                        <asp:DataList ID="dtlCountriesPopup" runat="server" ClientIDMode="Static" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                        <ItemTemplate>
+
+                        <asp:HiddenField ID="hdCountryID" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "CountryID") %>' Visible="false" />
+                        <asp:HiddenField ID="hdCountryName" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "CountryName") %>' Visible="false" />
+
+                        <li class="margen_banderas" >
+                            <asp:LinkButton ID="lnkCountry" runat="server" OnClick="lnkCountry_Click">
+                            <asp:Image ID="imgItemCountry" runat="server" Width="28px" 
+                            ImageUrl='<%# "~/Styles/images/Country/"+DataBinder.Eval(Container.DataItem, "CountryID")+".png" %>' />
+                            &nbsp;
+                            <asp:Label ID="lbItemCountry" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "CountryName") %>' class="texto_7"></asp:Label>
+                            </asp:LinkButton>
+                        </li>
+
+                        </ItemTemplate>
+                        </asp:DataList>
+
+                  </ul>
+
+                </div>
+                <br />
+                 <span>
+                      <asp:Label ID="Label22" runat="server" CssClass="no_ver_en_movil2 texto_7" Text="Bienvenidos a ZARPE"  
+                      Font-Bold="True" ForeColor="#666666"></asp:Label>
+                 </span>
+              </div>
+              <div class="col-md-7 ">
+                    <br>
+                    <asp:Label ID="Label24" runat="server" Text="Usuarios Nuevos <br />" Font-Bold="True"  class="texto_7"></asp:Label>
+                    <asp:Label ID="Label8" runat="server" Text="Si aún no estamos en tu país" Cssclass="no_ver_en_movil2 texto_7"></asp:Label>
+                          <%--<asp:HyperLink ID="HyperLink33" runat="server"></asp:HyperLink>--%>
+                    <asp:Label ID="Label25" runat="server" Text="Regístrate" Cssclass="no_ver_en_movil2 texto_7" Font-Bold="True"></asp:Label>
+                <div class="no_ver_en_movil2">
+                    <asp:Label ID="Label7" runat="server" Text="Y conoceras primero las noticias de Zarpe en tu país." class="texto_7"></asp:Label>
+                </div>
+                
+                 <div id="Div2" runat="server">
+                 
+                       <div class="ancho_zarpe30">
+                       <asp:TextBox ID="txtEmailRegisterPopup" runat="server" ClientIDMode="Static" 
+                       class="campo_texto_zarpe_2  texto_7" 
+                       data-msg-required="Please enter your email address." placeholder="Correo electrónico" ></asp:TextBox>
+                       </div>
+
+                       <div class="ancho_zarpe30" style="margin-top: 8px;">
+                       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" 
+                       runat="server" visible ="false">
+                        <span>
+                            <asp:TextBox ID="hdCountryIDPopup" runat="server" ClientIDMode="Static" style="display:none;"   />
+                            <asp:Label ID="lblCurrentCountryPopup" runat="server" ClientIDMode="Static" Text="Selecciona tu país" ></asp:Label>
+                            <asp:Image ID="imgCurrentCountryPopup" runat="server" ClientIDMode="Static" Width="22px" style=" margin-left:5px;" />
+                            <span class="caret"></span>
+                        </span>
+<%--                        <span class="hide">
+                            <asp:Label ID="Label8" runat="server" Text="El Salvador "></asp:Label>
+                            <span class="flag-icon flag-icon-sv flag-icon--caret"></span>
+                            <span class="caret"></span>
+                        </span>--%>
+                        <ul class="dropdown-menu dropdown-menu--black ">
+                        <asp:DataList ID="dtlCountriesAllPopup" runat="server" ClientIDMode="Static" RepeatLayout="Flow" RepeatDirection="Horizontal">
+                        <ItemTemplate>
+
+                        <asp:HiddenField ID="hdCountryID" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "CountryID") %>' Visible="false" />
+                        <asp:HiddenField ID="hdCountryName" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "CountryName") %>' Visible="false" />
+
+                        <li>
+                            <a onclick='<%# "AssignedCountryPopup("+ DataBinder.Eval(Container.DataItem, "CountryID") +",\""+ DataBinder.Eval(Container.DataItem, "CountryName") + "\",\"" + System.Configuration.ConfigurationManager.AppSettings["WebPagePath"] + "/Styles/images/Country/Flags/"+DataBinder.Eval(Container.DataItem, "CountryISOLetter")+".png" + "\");" %>' >
+                            <span class="flag-icon">
+                            <asp:Image ID="imgItemCountry" runat="server" ImageUrl='<%# "~/Styles/images/Country/Flags/"+DataBinder.Eval(Container.DataItem, "CountryISOLetter")+".png" %>' />
+                            </span>
+                             &nbsp; &nbsp;
+                            <asp:Label ID="lbItemCountry" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "CountryName") %>' ></asp:Label>
+                            </a>
+                        </li>
+
+                        </ItemTemplate>
+                        </asp:DataList>
+                        </ul>
+                        </a>
+                      
+                        <asp:DropDownList ID="ddlCountriesAllPopup" runat="server" ClientIDMode="Static" class=" select_2">
+                        </asp:DropDownList>               
+                        </div>
 
 
-<script type='text/javascript' src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/2015/menu/js/classie.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"]%>'></script>
-<script type='text/javascript' src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Styles/2015/menu/js/sidebarEffects.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"]%>'></script>
+                    <div class="ancho_zarpe30 bajar_movil">
+                    <asp:LinkButton ID="lnkRegisterPopup" runat="server" ClientIDMode="Static" Text="Registrarme" 
+                    style="background:#a4cde1;margin:5px;padding:9px;width:130px!important;border-radius:30px; padding-left:12px;padding-right:12px;" 
+                    ValidationGroup="ValidateRegisterPopup" OnClick="lnkRegisterPopup_Click" class="texto_3" ForeColor="#052941">
+                    </asp:LinkButton>
+                    </div>
+
+
+                    <table width="100%">
+                    <tr>
+                    <td class="alinear_en_movil">
+                        <asp:RequiredFieldValidator ID="frvCountryIDPopup" runat="server" ControlToValidate="hdCountryIDPopup" ErrorMessage="Seleccione su País" Font-Bold="True" 
+                        CssClass="mover_izq2" ForeColor="Red" SetFocusOnError="True" ValidationGroup="ValidateRegisterPopup" ></asp:RequiredFieldValidator>
+
+                        <br />
+                        <asp:RequiredFieldValidator ID="rfvEmailRegisterPopup" runat="server" ControlToValidate="txtEmailRegisterPopup" ErrorMessage="Ingrese Email" Font-Bold="True" 
+                        CssClass="mover_izq2" ForeColor="Red" SetFocusOnError="True" ValidationGroup="ValidateRegisterPopup" ></asp:RequiredFieldValidator>
+                        <br />
+                        <asp:RegularExpressionValidator ID="revEmailRegisterPopup" runat="server" ControlToValidate="txtEmailRegisterPopup" ErrorMessage="Ingrese Email Valido" Font-Bold="True" 
+                         ForeColor="Red" SetFocusOnError="True" ValidationGroup="ValidateRegisterPopup"
+                        Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ></asp:RegularExpressionValidator>
+                    </td>
+                    </tr>
+                    </table>
+
+                
+                    <span>
+                      <asp:Label ID="Label9" runat="server" CssClass="ver_en_movil " 
+                      Text="Bienvenidos a ZARPE"  Font-Bold="True" ForeColor="#666666"></asp:Label>
+                    </span>
+                </div>
+
+
+                <div class="col-md-6 col-md-offset-3"><br><div class="no_ver_en_movil2"> <br></div>
+                <asp:Image ID="imgGanolifePopup"  runat="server" ImageUrl="~/Styles/images/zarpe_logo2.jpg" CssClass="no_ver_en_movil2" 
+                style="margin-top:-30px" Width="160px" /><div class="no_ver_en_movil2"> <br><br></div>
+                </div>
+                <div class="form__selects" >
+                  <div class="col-md-6 col-xs-6">
+                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                     <span>
+                     <asp:Label ID="Label30" runat="server" CssClass="no_ver_en_movil2" Text="Selecciona tu Idioma"></asp:Label> 
+                     <asp:Label ID="Labe548" runat="server" CssClass="ver_en_movil" Text="Idioma"></asp:Label> 
+                     <span class="caret subir_en_tablet4"></span></span>
+                     <span class="hide">
+                     <asp:Label ID="Label48" runat="server" Text="Español"></asp:Label> 
+                     <span class="caret"></span></span>
+                     <ul class="dropdown-menu dropdown-menu--black mover_izq4">
+                        
+                        <li>
+                            <asp:HyperLink ID="HyperLink210" runat="server" NavigateUrl="#">
+                                <asp:Label ID="Label34" runat="server" Text="Ingles" class="texto_7"></asp:Label>
+                            </asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink211" runat="server" NavigateUrl="#">
+                                <asp:Label ID="Label482" runat="server" Text="Español" class="texto_7"></asp:Label>
+                            </asp:HyperLink>
+                        </li>
+                       <%--   <li>
+                            <asp:HyperLink ID="HyperLink220" runat="server" NavigateUrl="#">
+                                <asp:Label ID="Label49" runat="server" Text="Francés"></asp:Label>
+                            </asp:HyperLink>
+                        </li>
+                           <li>
+                            <asp:HyperLink ID="HyperLink221" runat="server" NavigateUrl="#">
+                                <asp:Label ID="Label59" runat="server" Text="Portugués"></asp:Label>
+                            </asp:HyperLink>
+                        </li>--%>
+                        
+                     </ul>
+                     </a>
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                      <asp:HyperLink ID="lnkPopupCountriesHomeZarpe" runat="server" class="link-ganolife" NavigateUrl="~/Home_Zarpe.aspx">
+                          <asp:Label ID="Label50" runat="server" Text="Ir a ZARPE" class="texto_7"></asp:Label>
+                      </asp:HyperLink>
+                  </div>
+                </div>
+                <br><br>
+              </div><br class="clear"><br>
+            </div>
+          </div>
+        </div>
+      </div>
+<%--    </div>--%>
+
+</asp:Panel>
+
+
+	 <%-- Gracias por registrarte --%>
+    <asp:Panel ID="popupThankYou" runat="server" BackColor="#f7f7f7" Height="280px" CssClass="PopupStyle ancho_popup" 
+    style="background:#ffffff; box-shadow: 5px 5px 20px 3px rgba(0,0,0,0.2); padding:14px; " ClientIDMode="Static">
+        <div style="padding:6px; float:right">
+            <asp:HyperLink ID="HyperLink2" runat="server" onclick=" $('#popupThankYou').bPopup().close(); ">
+            <asp:Image ID="Image5" runat="server" ImageUrl="~/Styles/images/zarpe_x.jpg" />
+            </asp:HyperLink>
+        </div>
+        
+         
+        <div style="width:100%; padding:20px; border:1px solid #8193a1; text-align:center ">
+
+        <asp:Image ID="Image6" runat="server" ImageUrl="~/Styles/images/zarpe_logo2.jpg" Width="170px"/>
+        <br>
+        <asp:Label ID="lbMessageRegisterOK" runat="server" Text="Gracias por registrarte"  class="titulo_7" ></asp:Label><br>
+        <asp:Label ID="lbMessageRegisterSendMail" runat="server" class="texto_16" 
+        Text="En breve recibirás un correo de confirmación en la bandeja de tu correo electrónico" ></asp:Label>
+        <br><br>
+
+        <asp:HyperLink ID="lnkPopupRegister" runat="server" NavigateUrl="~/Home_Zarpe.aspx" class="boton_celeste" >
+        <asp:Label ID="Label63" runat="server" ForeColor="#001e3a" CssClass="texto_3" Text="Continuar" ></asp:Label>
+        </asp:HyperLink>
+
+        <br>
+        </div>
+        <br>
+</asp:Panel>
+
+
+
+
+<div id="fb-root"></div>
+
+<script>
+(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=1593903597522194";
+        fjs.parentNode.insertBefore(js, fjs);
+} (document, 'script', 'facebook-jssdk'));</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('span > li').unwrap();
+
+    });
+</script>
 
 
 
 
 
-</div>
-<!-- /Total -->
-
-</ContentTemplate>
-</asp:UpdatePanel>
-
-
-    </form>
-
-
-    <script type='text/javascript' src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/2015/js/vendor/bootstrap.min.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
-    <script type='text/javascript' src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/2015/js/plugins.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
-    <script type='text/javascript' src='<%= System.Configuration.ConfigurationManager.AppSettings["WebPagePath"]%>/Scripts/2015/js/main.js<%= System.Configuration.ConfigurationManager.AppSettings["WebVersion"] %>'></script>
 
 
 
+</form>
 </body>
+      
 </html>
