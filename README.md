@@ -1332,6 +1332,9 @@ style="height:120px; margin-bottom:20px; background:#e6e6e6; " class="zarpe_movi
                 </tr>
             </table>
 
+        <div class="menu_posicion" style=" float:right; margin-top:40px; margin-right:30px;" >
+        <asp:Image ID="Image41" runat="server" ImageUrl="~/Styles/images/zarpe_flecha4b.png" style="width:20px;" />
+        </div>
 
 
 		<div class="showcase-slider ancho_slide" style=""  >
